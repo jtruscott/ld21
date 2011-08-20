@@ -19,3 +19,9 @@ class Characters:
 
     class box_single:
         horiz = chr(0xC4)
+
+    class scrollbar:
+        vert = chr(0xB3)
+        cross = chr(0xD8)
+        top = chr(0xD1)
+        bottom = chr(0xCF)

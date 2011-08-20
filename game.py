@@ -22,15 +22,17 @@ def on(event):
         return fn
     return wrapper
 
-def fire(event):
-    [f() for f in listeners[event]]
+def fire(event, *args):
+    if event not in listeners:
+        log.warn('fired event %s and nobody cared', event)
+        return
+    [f(*args) for f in listeners[event]]
 
 def start():
     log.debug("Starting up")
-    import draw, hud, gameprompt
+    import draw, hud, gameprompt, terminal
 
-    draw.setup()
-    hud.setup()
+    fire('setup')
     fire('clear')
     fire('tick')
     fire('prompt')

@@ -1,8 +1,12 @@
 import logging
 #logging.basicConfig(filename='debug.log', level=logging.INFO)
 logger = logging.getLogger('')
-hdlr = logging.FileHandler('debug.log', mode='w')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+#clear the log
+with open('debug.log', 'w') as dbglog:
+    dbglog.write('')
+
+hdlr = logging.FileHandler('debug.log')
+formatter = logging.Formatter('%(asctime)s %(name)s:%(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.DEBUG)

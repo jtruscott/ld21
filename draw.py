@@ -1,6 +1,7 @@
 import WConio as W
 import constants as C
 from collections import namedtuple
+import game
 import logging
 log = logging.getLogger('draw')
 
@@ -10,6 +11,7 @@ class Text:
     def __init__(self, color=W.WHITE, x=1, y=1, text = '', right_justify=False):
         (self.text, self.color, self.x, self.y, self.right_justify) = (text, color, x, y, right_justify)
 
+@game.on('setup')
 def setup():
     #setup the screen
     log.debug('setting up screen')
@@ -17,7 +19,8 @@ def setup():
     subprocess.call(['mode', 'con', 'lines=%i' % (C.height+1), 'cols=%i' % C.width], shell=True)
     W.textmode()
 
-
+def color_char(fg=W.WHITE,bg=W.BLACK):
+    return chr(fg + (bg << 4))
 
 def create_box(width, height,
             left = None, top = None,
@@ -27,8 +30,9 @@ def create_box(width, height,
             draw_top=True, draw_bottom=True,
             corners=None):
     #setup
-    BC = chr(border_color + (border_background_color << 4))
-    BG = chr(interior_color + (interior_background_color << 4))
+    BC = color_char(border_color, border_background_color)
+    BG = color_char(interior_color, interior_background_color)
+    
     height_adj = int(draw_top) + int(draw_bottom)
     real_height = height - 2 + height_adj
     (tl, tr, bl, br) = (boxtype.tl, boxtype.tr, boxtype.bl, boxtype.br)
@@ -90,7 +94,6 @@ def draw_box_text(box):
 
 def clear():
     W.clrscr()
-    import game
     game.on('clear')
 
 def put_at(x, y, msg, color=None):

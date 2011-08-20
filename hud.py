@@ -9,6 +9,7 @@ class boxes:
     #container
     pass
 
+@game.on('setup')
 def setup():
     boxes.topbar = draw.create_box(C.width, 3,
                             left = 0, top = 0,
