@@ -17,6 +17,7 @@ def setup():
     log.debug('setting up screen')
     import subprocess
     subprocess.call(['mode', 'con', 'lines=%i' % (C.height+1), 'cols=%i' % C.width], shell=True)
+    W.settitle('On The Run! (LD#21: Escape)')
     W.textmode()
 
 def color_char(fg=W.WHITE,bg=W.BLACK):
@@ -32,7 +33,7 @@ def create_box(width, height,
     #setup
     BC = color_char(border_color, border_background_color)
     BG = color_char(interior_color, interior_background_color)
-    
+
     height_adj = int(draw_top) + int(draw_bottom)
     real_height = height - 2 + height_adj
     (tl, tr, bl, br) = (boxtype.tl, boxtype.tr, boxtype.bl, boxtype.br)

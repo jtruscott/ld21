@@ -1,18 +1,11 @@
-import functools
-import logging, sys
-import random
+import logging
 log = logging.getLogger('game')
 
-listeners = {}
-
-class Node:
-    def __init__(self, name, ip_addr, processor, storage, bandwidth, exposure):
-        (self.name, self.ip_addr, self.processor, self.storage, self.bandwidth, self.exposure) = (name, ip_addr, processor, storage, bandwidth, exposure)
-
 class state:
-    mission = 1
-    time = 2500
-    current_node = Node('Test Node', '10.0.0.1', *[random.randint(1,6) for _ in range(4)])
+    pass
+
+
+listeners = {}
 
 def on(event):
     def wrapper(fn):
@@ -28,9 +21,14 @@ def fire(event, *args):
         return
     [f(*args) for f in listeners[event]]
 
+@on('setup')
+def setup_state():
+    state.mission = 1
+    state.time = 2500
+
 def start():
     log.debug("Starting up")
-    import draw, hud, gameprompt, terminal
+    import draw, hud, gameprompt, terminal, nodes
 
     fire('setup')
     fire('clear')

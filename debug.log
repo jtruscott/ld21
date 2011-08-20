@@ -1,18 +1,20 @@
-2011-08-20 02:46:54,414 game:DEBUG Starting up
-2011-08-20 02:46:54,415 game:DEBUG on setup: setup
-2011-08-20 02:46:54,415 game:DEBUG on setup: setup
-2011-08-20 02:46:54,415 game:DEBUG on clear: draw_hud
-2011-08-20 02:46:54,415 game:DEBUG on tick: hud_tick
-2011-08-20 02:46:54,417 gameprompt:DEBUG asf
-2011-08-20 02:46:54,417 game:DEBUG on clear: prompt_hbar
-2011-08-20 02:46:54,417 game:DEBUG on prompt: do_prompt
-2011-08-20 02:46:54,421 game:DEBUG on setup: setup_terminal
-2011-08-20 02:46:54,421 game:DEBUG on specialkey: on_specialkey
-2011-08-20 02:46:54,421 game:DEBUG on clear: on_clear
-2011-08-20 02:46:54,421 draw:DEBUG setting up screen
-2011-08-20 02:46:54,467 game:DEBUG on tick: topbar_tick
-2011-08-20 02:46:54,467 game:DEBUG on tick: nodebar_tick
-2011-08-20 02:46:54,470 terminal:INFO 68
-2011-08-20 02:46:54,470 hud:DEBUG draw_hud
-2011-08-20 02:46:54,479 hud:DEBUG hud_tick
-2011-08-20 02:47:01,793 root:DEBUG Shutting down
+2011-08-20 10:15:56,572 game:DEBUG on setup: setup_state
+2011-08-20 10:15:56,572 game:DEBUG Starting up
+2011-08-20 10:15:56,573 game:DEBUG on setup: setup
+2011-08-20 10:15:56,573 game:DEBUG on setup: setup
+2011-08-20 10:15:56,573 game:DEBUG on tick: topbar_tick
+2011-08-20 10:15:56,575 game:DEBUG on tick: nodebar_tick
+2011-08-20 10:15:56,575 game:DEBUG on clear: draw_hud
+2011-08-20 10:15:56,575 game:DEBUG on tick: hud_tick
+2011-08-20 10:15:56,575 gameprompt:DEBUG asf
+2011-08-20 10:15:56,575 game:DEBUG on clear: prompt_hbar
+2011-08-20 10:15:56,575 game:DEBUG on prompt: do_prompt
+2011-08-20 10:15:56,576 game:DEBUG on setup: setup_terminal
+2011-08-20 10:15:56,576 game:DEBUG on specialkey: on_specialkey
+2011-08-20 10:15:56,576 game:DEBUG on clear: on_clear
+2011-08-20 10:15:56,585 game:DEBUG on setup: setup_nodes
+2011-08-20 10:15:56,585 draw:DEBUG setting up screen
+2011-08-20 10:15:56,630 terminal:INFO 68
+2011-08-20 10:15:56,631 hud:DEBUG draw_hud
+2011-08-20 10:15:56,645 hud:DEBUG hud_tick
+2011-08-20 10:15:56,957 root:DEBUG Shutting down
