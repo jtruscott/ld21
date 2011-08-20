@@ -9,14 +9,18 @@ log = logging.getLogger('gameprompt')
 
 commands = []
 old_matches = ''
-def format_time(t):
+def format_time(t, tv=False):
+    if tv:
+        tv = '+'
+    else:
+        tv = ''
     if t < 60:
-        return '%is' % t
+        return '%i%ss' % (t, tv)
     if t < 3600:
-        return '%im %is' % (t / 60, t % 60)
+        return '%im %i%ss' % (t / 60, t % 60, tv)
     if t < 86400:
-        return '%ih %im %is' % (t / 3600, t / 60 % 60, t % 60)
-    return '%id %ih %im %is' % (t / 86400, t / 3600 % 60, t / 60 % 60, t % 60)
+        return '%ih %im %i%ss' % (t / 3600, t / 60 % 60, t % 60, tv)
+    return '%id %ih %im %i%ss' % (t / 86400, t / 3600 % 60, t / 60 % 60, t % 60, tv)
 
 def display_suggestion(msg):
     global old_matches
@@ -42,7 +46,7 @@ def display_suggestion(msg):
             targetwidth = C.width / len(matches)
             W.textcolor(W.DARKGREY)
             for command in matches:
-                W.cputs(('%s (%s)' % (command.command, format_time(command.time))).center(targetwidth))
+                W.cputs(('%s (%s)' % (command.command, format_time(command.time, command.time_variable))).center(targetwidth))
     return matches
 
 def get_input():

@@ -16,6 +16,8 @@ class NoDefault: pass
 
 class Command:
     hide = False
+    description = None
+    time_variable = False
     def __init__(self, command=None, arguments=None, time=None):
         if command:
             self.command = command
@@ -50,7 +52,7 @@ class Command:
             def print_version(s, f=None):
                 pass
 
-        self.parser = Parser(prog=self.command)
+        self.parser = Parser(description=self.description, prog=self.command)
         self.add_options(self.parser)
     
     def add_options(self, parser):
@@ -88,11 +90,12 @@ class ErrorCommand(InternalCommand):
     Real commands.
 '''
 class LSCommand(Command):
-    arguments = "[target_directory]"
+    arguments = "[-la] [target_directory]"
+    description = "Scan the current node and display a list of files"
     time = 5
     def add_options(self, p):
-        p.add_option('-l', dest='long', action='store_true', help='Provide long listings')
-        p.add_option('-a', dest='all', action='store_true', help='Show even hidden files')
+        p.add_option('-l', '--long', dest='long', action='store_true', help='Provide long listings')
+        p.add_option('-a', '--all', dest='all', action='store_true', help='Show even hidden files')
 
     def action(self, args, command_line):
         (options, args) = self.parse(args)
@@ -105,7 +108,31 @@ class LSCommand(Command):
                 'none'.ljust(10),
                 file_name
             ))
+        return self.time
 
+
+class NeighborsCommand(Command):
+    command = "neighbors"
+    arguments = "[-s]"
+    description = """Scan the networks attached to the current node and display a list of neighboring connected nodes"""
+    time = 30
+    time_variable = True
+    def add_options(self, p):
+        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 5s per neighbor)')
+    
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        base = game.state.current_node
+        t = self.time
+        if options.stats:
+            t += 5
+        terminal.add_line('Not implemented yet')
+        return t
+
+
+'''
+    Parser bits
+'''
 @game.on('command')
 def parse_command(command_line, match):
     if not command_line:
@@ -145,11 +172,13 @@ def on_specialkey(key):
 commands = dict(
     ls=LSCommand('ls'),
     dir=LSCommand('dir'),
+    neighbors=NeighborsCommand(),
+    
     things=Command('things', '', 10),
     other=Command('other things', '', 100),
     hats=Command('hats', '[style]', 1000),
     hack=Command('hack', '[the] [gibson]', 10000),
-    
+
     _unknown=UnknownCommand(),
     _error=ErrorCommand(),
 )

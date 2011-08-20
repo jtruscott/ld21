@@ -1,25 +1,1624 @@
-2011-08-20 12:47:52,740 game:DEBUG on setup: setup_state
-2011-08-20 12:47:52,740 game:DEBUG on shutdown: shutdown
-2011-08-20 12:47:52,740 game:DEBUG Starting up
-2011-08-20 12:47:52,742 game:DEBUG on setup: setup
-2011-08-20 12:47:52,742 game:DEBUG on setup: setup
-2011-08-20 12:47:52,742 game:DEBUG on tick: topbar_tick
-2011-08-20 12:47:52,742 game:DEBUG on tick: nodebar_tick
-2011-08-20 12:47:52,742 game:DEBUG on clear: draw_hud
-2011-08-20 12:47:52,743 game:DEBUG on tick: hud_tick
-2011-08-20 12:47:52,743 game:DEBUG on clear: prompt_hbar
-2011-08-20 12:47:52,743 game:DEBUG on prompt: do_prompt
-2011-08-20 12:47:52,744 game:DEBUG on setup: setup_terminal
-2011-08-20 12:47:52,744 game:DEBUG on specialkey: on_specialkey
-2011-08-20 12:47:52,744 game:DEBUG on clear: on_clear
-2011-08-20 12:47:52,753 game:DEBUG on setup: setup_nodes
-2011-08-20 12:47:52,765 game:DEBUG on command: parse_command
-2011-08-20 12:47:52,765 game:DEBUG on specialkey: on_specialkey
-2011-08-20 12:47:52,765 draw:DEBUG setting up screen
-2011-08-20 12:47:52,812 hud:DEBUG draw_hud
-2011-08-20 12:47:52,825 hud:DEBUG hud_tick
-2011-08-20 12:47:53,801 hud:DEBUG hud_tick
-2011-08-20 12:49:40,381 hud:DEBUG hud_tick
-2011-08-20 12:49:41,782 gameprompt:DEBUG took a ctrl-c
-2011-08-20 12:49:41,783 game:DEBUG shutting down
-2011-08-20 12:49:41,783 root:DEBUG Shutting down
+2011-08-20 14:30:17,756 game:DEBUG on setup: setup_state
+2011-08-20 14:30:17,756 game:DEBUG on shutdown: shutdown
+2011-08-20 14:30:17,756 game:DEBUG Starting up
+2011-08-20 14:30:17,757 game:DEBUG on setup: setup
+2011-08-20 14:30:17,757 game:DEBUG on setup: setup
+2011-08-20 14:30:17,759 game:DEBUG on tick: topbar_tick
+2011-08-20 14:30:17,759 game:DEBUG on tick: nodebar_tick
+2011-08-20 14:30:17,759 game:DEBUG on clear: draw_hud
+2011-08-20 14:30:17,759 game:DEBUG on tick: hud_tick
+2011-08-20 14:30:17,759 game:DEBUG on clear: prompt_hbar
+2011-08-20 14:30:17,759 game:DEBUG on prompt: do_prompt
+2011-08-20 14:30:17,760 game:DEBUG on setup: setup_terminal
+2011-08-20 14:30:17,760 game:DEBUG on specialkey: on_specialkey
+2011-08-20 14:30:17,760 game:DEBUG on clear: on_clear
+2011-08-20 14:30:17,773 game:DEBUG on setup: setup_nodes
+2011-08-20 14:30:17,782 game:DEBUG on command: parse_command
+2011-08-20 14:30:17,782 game:DEBUG on specialkey: on_specialkey
+2011-08-20 14:30:17,786 draw:DEBUG setting up screen
+2011-08-20 14:30:17,845 nodes:DEBUG i: 0
+2011-08-20 14:30:17,845 nodes:DEBUG trying to link commlink 205.254.73.233 at 124,191
+2011-08-20 14:30:17,845 nodes:DEBUG found target 205.254.73.233 at 124,191
+2011-08-20 14:30:17,845 nodes:DEBUG linked target
+2011-08-20 14:30:17,845 nodes:DEBUG i: 1
+2011-08-20 14:30:17,845 nodes:DEBUG trying to link commlink 213.14.200.213 at 156,32
+2011-08-20 14:30:17,845 nodes:DEBUG found target 213.14.200.213 at 156,32
+2011-08-20 14:30:17,845 nodes:DEBUG linked target
+2011-08-20 14:30:17,845 nodes:DEBUG i: 2
+2011-08-20 14:30:17,845 nodes:DEBUG trying to link commlink 121.183.149.194 at 12,184
+2011-08-20 14:30:17,845 nodes:DEBUG found target 160.229.75.234 at 10,184
+2011-08-20 14:30:17,845 nodes:DEBUG linked target
+2011-08-20 14:30:17,845 nodes:DEBUG i: 3
+2011-08-20 14:30:17,845 nodes:DEBUG trying to link commlink 177.37.178.107 at 81,184
+2011-08-20 14:30:17,845 nodes:DEBUG gave up
+2011-08-20 14:30:17,846 nodes:DEBUG i: 4
+2011-08-20 14:30:17,846 nodes:DEBUG trying to link commlink 109.253.189.195 at 156,191
+2011-08-20 14:30:17,846 nodes:DEBUG found target 109.253.189.195 at 156,191
+2011-08-20 14:30:17,846 nodes:DEBUG linked target
+2011-08-20 14:30:17,846 nodes:DEBUG i: 5
+2011-08-20 14:30:17,846 nodes:DEBUG trying to link commlink 96.144.6.10 at 124,152
+2011-08-20 14:30:17,846 nodes:DEBUG found target 96.144.6.10 at 124,152
+2011-08-20 14:30:17,846 nodes:DEBUG linked target
+2011-08-20 14:30:17,846 nodes:DEBUG i: 6
+2011-08-20 14:30:17,848 nodes:DEBUG trying to link commlink 254.73.109.228 at 35,153
+2011-08-20 14:30:17,848 nodes:DEBUG found target 200.240.3.134 at 33,151
+2011-08-20 14:30:17,848 nodes:DEBUG linked target
+2011-08-20 14:30:17,848 nodes:DEBUG i: 7
+2011-08-20 14:30:17,848 nodes:DEBUG trying to link commlink 207.56.69.99 at 48,95
+2011-08-20 14:30:17,848 nodes:DEBUG found target 207.56.69.99 at 48,95
+2011-08-20 14:30:17,848 nodes:DEBUG linked target
+2011-08-20 14:30:17,848 nodes:DEBUG i: 8
+2011-08-20 14:30:17,848 nodes:DEBUG trying to link commlink 92.106.26.66 at 111,15
+2011-08-20 14:30:17,848 nodes:DEBUG gave up
+2011-08-20 14:30:17,848 nodes:DEBUG i: 9
+2011-08-20 14:30:17,848 nodes:DEBUG trying to link commlink 60.188.189.113 at 5,133
+2011-08-20 14:30:17,848 nodes:DEBUG gave up
+2011-08-20 14:30:17,848 nodes:DEBUG i: 10
+2011-08-20 14:30:17,849 nodes:DEBUG trying to link commlink 3.95.88.125 at 32,53
+2011-08-20 14:30:17,849 nodes:DEBUG found target 3.95.88.125 at 32,53
+2011-08-20 14:30:17,849 nodes:DEBUG linked target
+2011-08-20 14:30:17,849 nodes:DEBUG i: 11
+2011-08-20 14:30:17,849 nodes:DEBUG trying to link commlink 99.186.81.152 at 133,143
+2011-08-20 14:30:17,849 nodes:DEBUG found target 99.186.81.152 at 133,143
+2011-08-20 14:30:17,849 nodes:DEBUG linked target
+2011-08-20 14:30:17,851 nodes:DEBUG i: 12
+2011-08-20 14:30:17,851 nodes:DEBUG trying to link commlink 143.106.114.230 at 74,9
+2011-08-20 14:30:17,851 nodes:DEBUG found target 20.45.129.114 at 70,13
+2011-08-20 14:30:17,851 nodes:DEBUG linked target
+2011-08-20 14:30:17,851 nodes:DEBUG i: 13
+2011-08-20 14:30:17,851 nodes:DEBUG trying to link commlink 244.237.242.29 at 77,42
+2011-08-20 14:30:17,851 nodes:DEBUG gave up
+2011-08-20 14:30:17,851 nodes:DEBUG i: 14
+2011-08-20 14:30:17,851 nodes:DEBUG trying to link commlink 198.181.160.211 at 12,20
+2011-08-20 14:30:17,851 nodes:DEBUG gave up
+2011-08-20 14:30:17,851 nodes:DEBUG i: 15
+2011-08-20 14:30:17,851 nodes:DEBUG trying to link commlink 202.168.23.11 at 191,193
+2011-08-20 14:30:17,851 nodes:DEBUG gave up
+2011-08-20 14:30:17,851 nodes:DEBUG i: 16
+2011-08-20 14:30:17,851 nodes:DEBUG trying to link commlink 42.48.242.184 at 12,129
+2011-08-20 14:30:17,851 nodes:DEBUG found target 111.96.170.199 at 8,132
+2011-08-20 14:30:17,852 nodes:DEBUG linked target
+2011-08-20 14:30:17,852 nodes:DEBUG i: 17
+2011-08-20 14:30:17,852 nodes:DEBUG trying to link commlink 86.104.222.29 at 104,166
+2011-08-20 14:30:17,852 nodes:DEBUG gave up
+2011-08-20 14:30:17,852 nodes:DEBUG i: 18
+2011-08-20 14:30:17,852 nodes:DEBUG trying to link commlink 188.210.198.214 at 167,196
+2011-08-20 14:30:17,852 nodes:DEBUG found target 188.210.198.214 at 167,196
+2011-08-20 14:30:17,852 nodes:DEBUG linked target
+2011-08-20 14:30:17,854 nodes:DEBUG i: 19
+2011-08-20 14:30:17,854 nodes:DEBUG trying to link commlink 62.27.83.239 at 150,76
+2011-08-20 14:30:17,854 nodes:DEBUG found target 240.90.17.164 at 153,76
+2011-08-20 14:30:17,854 nodes:DEBUG linked target
+2011-08-20 14:30:17,854 nodes:DEBUG i: 20
+2011-08-20 14:30:17,854 nodes:DEBUG trying to link commlink 192.11.68.65 at 184,68
+2011-08-20 14:30:17,854 nodes:DEBUG gave up
+2011-08-20 14:30:17,854 nodes:DEBUG i: 21
+2011-08-20 14:30:17,855 nodes:DEBUG trying to link commlink 123.54.156.182 at 46,77
+2011-08-20 14:30:17,855 nodes:DEBUG gave up
+2011-08-20 14:30:17,855 nodes:DEBUG i: 22
+2011-08-20 14:30:17,855 nodes:DEBUG trying to link commlink 62.27.83.239 at 150,76
+2011-08-20 14:30:17,855 nodes:DEBUG found target 240.90.17.164 at 153,76
+2011-08-20 14:30:17,855 nodes:DEBUG linked target
+2011-08-20 14:30:17,855 nodes:WARNING relinking 62.27.83.239 and 240.90.17.164
+2011-08-20 14:30:17,855 nodes:DEBUG i: 23
+2011-08-20 14:30:17,855 nodes:DEBUG trying to link commlink 205.254.73.233 at 124,191
+2011-08-20 14:30:17,855 nodes:DEBUG gave up
+2011-08-20 14:30:17,855 nodes:DEBUG i: 24
+2011-08-20 14:30:17,855 nodes:DEBUG trying to link commlink 92.1.40.15 at 166,64
+2011-08-20 14:30:17,855 nodes:DEBUG gave up
+2011-08-20 14:30:17,855 nodes:DEBUG i: 25
+2011-08-20 14:30:17,855 nodes:DEBUG trying to link commlink 20.45.129.114 at 70,13
+2011-08-20 14:30:17,855 nodes:DEBUG found target 20.45.129.114 at 70,13
+2011-08-20 14:30:17,855 nodes:DEBUG linked target
+2011-08-20 14:30:17,855 nodes:DEBUG i: 26
+2011-08-20 14:30:17,857 nodes:DEBUG trying to link commlink 250.169.186.155 at 171,53
+2011-08-20 14:30:17,857 nodes:DEBUG gave up
+2011-08-20 14:30:17,857 nodes:DEBUG i: 27
+2011-08-20 14:30:17,857 nodes:DEBUG trying to link commlink 180.51.25.210 at 5,115
+2011-08-20 14:30:17,857 nodes:DEBUG gave up
+2011-08-20 14:30:17,857 nodes:DEBUG i: 28
+2011-08-20 14:30:17,857 nodes:DEBUG trying to link commlink 215.49.22.17 at 154,39
+2011-08-20 14:30:17,857 nodes:DEBUG found target 14.201.74.60 at 154,35
+2011-08-20 14:30:17,858 nodes:DEBUG linked target
+2011-08-20 14:30:17,858 nodes:DEBUG i: 29
+2011-08-20 14:30:17,858 nodes:DEBUG trying to link commlink 243.63.200.55 at 109,36
+2011-08-20 14:30:17,858 nodes:DEBUG gave up
+2011-08-20 14:30:17,858 nodes:DEBUG i: 30
+2011-08-20 14:30:17,858 nodes:DEBUG trying to link commlink 213.81.145.164 at 123,69
+2011-08-20 14:30:17,858 nodes:DEBUG gave up
+2011-08-20 14:30:17,858 nodes:DEBUG i: 31
+2011-08-20 14:30:17,858 nodes:DEBUG trying to link commlink 251.84.111.131 at 35,115
+2011-08-20 14:30:17,858 nodes:DEBUG gave up
+2011-08-20 14:30:17,858 nodes:DEBUG i: 32
+2011-08-20 14:30:17,858 nodes:DEBUG trying to link commlink 208.79.17.248 at 41,6
+2011-08-20 14:30:17,858 nodes:DEBUG gave up
+2011-08-20 14:30:17,858 nodes:DEBUG i: 33
+2011-08-20 14:30:17,858 nodes:DEBUG trying to link commlink 206.33.240.87 at 25,62
+2011-08-20 14:30:17,858 nodes:DEBUG gave up
+2011-08-20 14:30:17,859 nodes:DEBUG i: 34
+2011-08-20 14:30:17,859 nodes:DEBUG trying to link commlink 170.54.78.29 at 4,79
+2011-08-20 14:30:17,859 nodes:DEBUG gave up
+2011-08-20 14:30:17,859 nodes:DEBUG i: 35
+2011-08-20 14:30:17,859 nodes:DEBUG trying to link commlink 213.81.145.164 at 123,69
+2011-08-20 14:30:17,859 nodes:DEBUG gave up
+2011-08-20 14:30:17,859 nodes:DEBUG i: 36
+2011-08-20 14:30:17,859 nodes:DEBUG trying to link commlink 203.144.2.67 at 165,154
+2011-08-20 14:30:17,861 nodes:DEBUG gave up
+2011-08-20 14:30:17,861 nodes:DEBUG i: 37
+2011-08-20 14:30:17,861 nodes:DEBUG trying to link commlink 106.47.52.56 at 159,60
+2011-08-20 14:30:17,861 nodes:DEBUG gave up
+2011-08-20 14:30:17,861 nodes:DEBUG i: 38
+2011-08-20 14:30:17,861 nodes:DEBUG trying to link commlink 142.85.55.116 at 191,111
+2011-08-20 14:30:17,861 nodes:DEBUG gave up
+2011-08-20 14:30:17,861 nodes:DEBUG i: 39
+2011-08-20 14:30:17,861 nodes:DEBUG trying to link commlink 68.31.81.127 at 120,199
+2011-08-20 14:30:17,861 nodes:DEBUG gave up
+2011-08-20 14:30:17,861 nodes:DEBUG i: 40
+2011-08-20 14:30:17,861 nodes:DEBUG trying to link commlink 60.43.130.51 at 59,93
+2011-08-20 14:30:17,861 nodes:DEBUG found target 60.43.130.51 at 59,93
+2011-08-20 14:30:17,861 nodes:DEBUG linked target
+2011-08-20 14:30:17,861 nodes:DEBUG i: 41
+2011-08-20 14:30:17,861 nodes:DEBUG trying to link commlink 16.211.60.115 at 82,149
+2011-08-20 14:30:17,862 nodes:DEBUG found target 16.211.60.115 at 82,149
+2011-08-20 14:30:17,862 nodes:DEBUG linked target
+2011-08-20 14:30:17,862 nodes:DEBUG i: 42
+2011-08-20 14:30:17,862 nodes:DEBUG trying to link commlink 47.172.185.91 at 35,79
+2011-08-20 14:30:17,862 nodes:DEBUG found target 47.172.185.91 at 35,79
+2011-08-20 14:30:17,862 nodes:DEBUG linked target
+2011-08-20 14:30:17,862 nodes:DEBUG i: 43
+2011-08-20 14:30:17,862 nodes:DEBUG trying to link commlink 177.37.178.107 at 81,184
+2011-08-20 14:30:17,862 nodes:DEBUG found target 151.190.83.210 at 77,187
+2011-08-20 14:30:17,862 nodes:DEBUG linked target
+2011-08-20 14:30:17,864 nodes:DEBUG i: 44
+2011-08-20 14:30:17,864 nodes:DEBUG trying to link commlink 193.35.115.132 at 148,16
+2011-08-20 14:30:17,864 nodes:DEBUG gave up
+2011-08-20 14:30:17,864 nodes:DEBUG i: 45
+2011-08-20 14:30:17,864 nodes:DEBUG trying to link commlink 148.223.193.115 at 159,138
+2011-08-20 14:30:17,864 nodes:DEBUG found target 148.223.193.115 at 159,138
+2011-08-20 14:30:17,864 nodes:DEBUG linked target
+2011-08-20 14:30:17,864 nodes:DEBUG i: 46
+2011-08-20 14:30:17,864 nodes:DEBUG trying to link commlink 115.249.56.81 at 11,197
+2011-08-20 14:30:17,865 nodes:DEBUG found target 115.249.56.81 at 11,197
+2011-08-20 14:30:17,865 nodes:DEBUG linked target
+2011-08-20 14:30:17,865 nodes:DEBUG i: 47
+2011-08-20 14:30:17,865 nodes:DEBUG trying to link commlink 10.38.121.214 at 158,13
+2011-08-20 14:30:17,865 nodes:DEBUG found target 10.38.121.214 at 158,13
+2011-08-20 14:30:17,865 nodes:DEBUG linked target
+2011-08-20 14:30:17,865 nodes:DEBUG i: 48
+2011-08-20 14:30:17,865 nodes:DEBUG trying to link commlink 178.9.47.221 at 27,200
+2011-08-20 14:30:17,865 nodes:DEBUG found target 178.9.47.221 at 27,200
+2011-08-20 14:30:17,865 nodes:DEBUG linked target
+2011-08-20 14:30:17,865 nodes:DEBUG i: 49
+2011-08-20 14:30:17,865 nodes:DEBUG trying to link commlink 5.194.122.6 at 184,123
+2011-08-20 14:30:17,865 nodes:DEBUG found target 91.196.18.197 at 181,127
+2011-08-20 14:30:17,865 nodes:DEBUG linked target
+2011-08-20 14:30:17,865 nodes:DEBUG i: 50
+2011-08-20 14:30:17,865 nodes:DEBUG trying to link commlink 169.183.36.18 at 185,181
+2011-08-20 14:30:17,865 nodes:DEBUG found target 104.132.230.35 at 185,183
+2011-08-20 14:30:17,865 nodes:DEBUG linked target
+2011-08-20 14:30:17,865 nodes:DEBUG i: 51
+2011-08-20 14:30:17,865 nodes:DEBUG trying to link commlink 106.193.28.224 at 42,148
+2011-08-20 14:30:17,867 nodes:DEBUG gave up
+2011-08-20 14:30:17,867 nodes:DEBUG i: 52
+2011-08-20 14:30:17,867 nodes:DEBUG trying to link commlink 169.97.187.155 at 132,185
+2011-08-20 14:30:17,867 nodes:DEBUG gave up
+2011-08-20 14:30:17,867 nodes:DEBUG i: 53
+2011-08-20 14:30:17,867 nodes:DEBUG trying to link commlink 188.150.50.125 at 172,58
+2011-08-20 14:30:17,867 nodes:DEBUG found target 22.116.16.60 at 173,57
+2011-08-20 14:30:17,867 nodes:DEBUG linked target
+2011-08-20 14:30:17,868 nodes:DEBUG i: 54
+2011-08-20 14:30:17,868 nodes:DEBUG trying to link commlink 29.53.40.30 at 180,121
+2011-08-20 14:30:17,868 nodes:DEBUG found target 96.78.218.160 at 176,120
+2011-08-20 14:30:17,868 nodes:DEBUG linked target
+2011-08-20 14:30:17,868 nodes:DEBUG i: 55
+2011-08-20 14:30:17,868 nodes:DEBUG trying to link commlink 35.133.130.109 at 151,179
+2011-08-20 14:30:17,868 nodes:DEBUG found target 25.84.120.237 at 150,177
+2011-08-20 14:30:17,868 nodes:DEBUG linked target
+2011-08-20 14:30:17,868 nodes:DEBUG i: 56
+2011-08-20 14:30:17,868 nodes:DEBUG trying to link commlink 219.175.78.77 at 59,183
+2011-08-20 14:30:17,868 nodes:DEBUG found target 219.175.78.77 at 59,183
+2011-08-20 14:30:17,868 nodes:DEBUG linked target
+2011-08-20 14:30:17,868 nodes:DEBUG i: 57
+2011-08-20 14:30:17,868 nodes:DEBUG trying to link commlink 3.57.154.108 at 190,168
+2011-08-20 14:30:17,868 nodes:DEBUG gave up
+2011-08-20 14:30:17,868 nodes:DEBUG i: 58
+2011-08-20 14:30:17,868 nodes:DEBUG trying to link commlink 238.15.4.145 at 141,121
+2011-08-20 14:30:17,868 nodes:DEBUG gave up
+2011-08-20 14:30:17,869 nodes:DEBUG i: 59
+2011-08-20 14:30:17,869 nodes:DEBUG trying to link commlink 245.92.239.166 at 160,141
+2011-08-20 14:30:17,869 nodes:DEBUG gave up
+2011-08-20 14:30:17,869 nodes:DEBUG i: 60
+2011-08-20 14:30:17,869 nodes:DEBUG trying to link commlink 181.38.24.128 at 78,78
+2011-08-20 14:30:17,869 nodes:DEBUG found target 181.38.24.128 at 78,78
+2011-08-20 14:30:17,869 nodes:DEBUG linked target
+2011-08-20 14:30:17,869 nodes:DEBUG i: 61
+2011-08-20 14:30:17,869 nodes:DEBUG trying to link commlink 28.251.91.54 at 87,107
+2011-08-20 14:30:17,871 nodes:DEBUG gave up
+2011-08-20 14:30:17,871 nodes:DEBUG i: 62
+2011-08-20 14:30:17,871 nodes:DEBUG trying to link commlink 63.232.243.107 at 107,143
+2011-08-20 14:30:17,871 nodes:DEBUG found target 225.24.13.12 at 111,139
+2011-08-20 14:30:17,871 nodes:DEBUG linked target
+2011-08-20 14:30:17,871 nodes:DEBUG i: 63
+2011-08-20 14:30:17,871 nodes:DEBUG trying to link commlink 104.229.199.70 at 192,56
+2011-08-20 14:30:17,871 nodes:DEBUG found target 134.152.149.75 at 191,53
+2011-08-20 14:30:17,871 nodes:DEBUG linked target
+2011-08-20 14:30:17,871 nodes:DEBUG i: 64
+2011-08-20 14:30:17,871 nodes:DEBUG trying to link commlink 123.66.209.1 at 135,99
+2011-08-20 14:30:17,871 nodes:DEBUG gave up
+2011-08-20 14:30:17,871 nodes:DEBUG i: 65
+2011-08-20 14:30:17,871 nodes:DEBUG trying to link commlink 233.215.57.254 at 89,54
+2011-08-20 14:30:17,871 nodes:DEBUG found target 243.93.120.108 at 87,51
+2011-08-20 14:30:17,871 nodes:DEBUG linked target
+2011-08-20 14:30:17,871 nodes:DEBUG i: 66
+2011-08-20 14:30:17,871 nodes:DEBUG trying to link commlink 187.1.108.183 at 167,198
+2011-08-20 14:30:17,871 nodes:DEBUG found target 188.210.198.214 at 167,196
+2011-08-20 14:30:17,872 nodes:DEBUG linked target
+2011-08-20 14:30:17,872 nodes:DEBUG i: 67
+2011-08-20 14:30:17,872 nodes:DEBUG trying to link commlink 170.54.78.29 at 4,79
+2011-08-20 14:30:17,872 nodes:DEBUG gave up
+2011-08-20 14:30:17,872 nodes:DEBUG i: 68
+2011-08-20 14:30:17,872 nodes:DEBUG trying to link commlink 60.188.189.113 at 5,133
+2011-08-20 14:30:17,872 nodes:DEBUG found target 111.96.170.199 at 8,132
+2011-08-20 14:30:17,872 nodes:DEBUG linked target
+2011-08-20 14:30:17,872 nodes:DEBUG gave up
+2011-08-20 14:30:17,874 nodes:DEBUG i: 69
+2011-08-20 14:30:17,874 nodes:DEBUG trying to link commlink 215.148.130.203 at 38,186
+2011-08-20 14:30:17,874 nodes:DEBUG gave up
+2011-08-20 14:30:17,874 nodes:DEBUG i: 70
+2011-08-20 14:30:17,874 nodes:DEBUG trying to link commlink 49.137.24.20 at 9,118
+2011-08-20 14:30:17,874 nodes:DEBUG found target 72.180.81.197 at 8,120
+2011-08-20 14:30:17,874 nodes:DEBUG linked target
+2011-08-20 14:30:17,874 nodes:DEBUG i: 71
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 153.137.154.207 at 30,141
+2011-08-20 14:30:17,875 nodes:DEBUG gave up
+2011-08-20 14:30:17,875 nodes:DEBUG i: 72
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 91.139.144.60 at 63,48
+2011-08-20 14:30:17,875 nodes:DEBUG gave up
+2011-08-20 14:30:17,875 nodes:DEBUG i: 73
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 70.144.187.140 at 67,132
+2011-08-20 14:30:17,875 nodes:DEBUG found target 70.144.187.140 at 67,132
+2011-08-20 14:30:17,875 nodes:DEBUG linked target
+2011-08-20 14:30:17,875 nodes:DEBUG i: 74
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 95.225.39.191 at 190,165
+2011-08-20 14:30:17,875 nodes:DEBUG gave up
+2011-08-20 14:30:17,875 nodes:DEBUG i: 75
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 239.113.95.102 at 197,20
+2011-08-20 14:30:17,875 nodes:DEBUG found target 239.113.95.102 at 197,20
+2011-08-20 14:30:17,875 nodes:DEBUG linked target
+2011-08-20 14:30:17,875 nodes:DEBUG i: 76
+2011-08-20 14:30:17,875 nodes:DEBUG trying to link commlink 248.211.32.251 at 126,138
+2011-08-20 14:30:17,877 nodes:DEBUG found target 248.211.32.251 at 126,138
+2011-08-20 14:30:17,877 nodes:DEBUG linked target
+2011-08-20 14:30:17,877 nodes:DEBUG i: 77
+2011-08-20 14:30:17,877 nodes:DEBUG trying to link commlink 58.160.26.79 at 196,60
+2011-08-20 14:30:17,877 nodes:DEBUG found target 58.160.26.79 at 196,60
+2011-08-20 14:30:17,877 nodes:DEBUG linked target
+2011-08-20 14:30:17,877 nodes:DEBUG i: 78
+2011-08-20 14:30:17,877 nodes:DEBUG trying to link commlink 241.117.119.180 at 68,104
+2011-08-20 14:30:17,877 nodes:DEBUG found target 241.117.119.180 at 68,104
+2011-08-20 14:30:17,878 nodes:DEBUG linked target
+2011-08-20 14:30:17,878 nodes:DEBUG i: 79
+2011-08-20 14:30:17,878 nodes:DEBUG trying to link commlink 5.165.239.19 at 85,141
+2011-08-20 14:30:17,878 nodes:DEBUG gave up
+2011-08-20 14:30:17,878 nodes:DEBUG i: 80
+2011-08-20 14:30:17,878 nodes:DEBUG trying to link commlink 87.182.38.207 at 96,142
+2011-08-20 14:30:17,878 nodes:DEBUG found target 212.104.154.58 at 96,145
+2011-08-20 14:30:17,878 nodes:DEBUG linked target
+2011-08-20 14:30:17,878 nodes:DEBUG i: 81
+2011-08-20 14:30:17,878 nodes:DEBUG trying to link commlink 173.19.36.55 at 103,192
+2011-08-20 14:30:17,878 nodes:DEBUG found target 118.140.190.127 at 104,189
+2011-08-20 14:30:17,878 nodes:DEBUG linked target
+2011-08-20 14:30:17,878 nodes:DEBUG i: 82
+2011-08-20 14:30:17,878 nodes:DEBUG trying to link commlink 93.198.183.228 at 72,20
+2011-08-20 14:30:17,878 nodes:DEBUG gave up
+2011-08-20 14:30:17,878 nodes:DEBUG i: 83
+2011-08-20 14:30:17,878 nodes:DEBUG trying to link commlink 3.68.148.219 at 75,136
+2011-08-20 14:30:17,878 nodes:DEBUG gave up
+2011-08-20 14:30:17,880 nodes:DEBUG i: 84
+2011-08-20 14:30:17,880 nodes:DEBUG trying to link commlink 215.48.220.137 at 2,38
+2011-08-20 14:30:17,880 nodes:DEBUG found target 244.61.29.46 at 6,42
+2011-08-20 14:30:17,880 nodes:DEBUG linked target
+2011-08-20 14:30:17,880 nodes:DEBUG i: 85
+2011-08-20 14:30:17,880 nodes:DEBUG trying to link commlink 165.111.200.84 at 100,80
+2011-08-20 14:30:17,880 nodes:DEBUG found target 165.111.200.84 at 100,80
+2011-08-20 14:30:17,880 nodes:DEBUG linked target
+2011-08-20 14:30:17,880 nodes:DEBUG i: 86
+2011-08-20 14:30:17,880 nodes:DEBUG trying to link commlink 49.137.24.20 at 9,118
+2011-08-20 14:30:17,881 nodes:DEBUG found target 49.137.24.20 at 9,118
+2011-08-20 14:30:17,881 nodes:DEBUG linked target
+2011-08-20 14:30:17,881 nodes:DEBUG i: 87
+2011-08-20 14:30:17,881 nodes:DEBUG trying to link commlink 99.186.81.152 at 133,143
+2011-08-20 14:30:17,881 nodes:DEBUG found target 99.186.81.152 at 133,143
+2011-08-20 14:30:17,881 nodes:DEBUG linked target
+2011-08-20 14:30:17,881 nodes:WARNING relinking 99.186.81.152 and 99.186.81.152
+2011-08-20 14:30:17,881 nodes:DEBUG i: 88
+2011-08-20 14:30:17,881 nodes:DEBUG trying to link commlink 52.10.7.95 at 109,3
+2011-08-20 14:30:17,881 nodes:DEBUG found target 208.150.125.6 at 107,1
+2011-08-20 14:30:17,881 nodes:DEBUG linked target
+2011-08-20 14:30:17,881 nodes:DEBUG i: 89
+2011-08-20 14:30:17,881 nodes:DEBUG trying to link commlink 26.82.183.192 at 38,100
+2011-08-20 14:30:17,881 nodes:DEBUG found target 183.88.110.41 at 41,103
+2011-08-20 14:30:17,881 nodes:DEBUG linked target
+2011-08-20 14:30:17,881 nodes:DEBUG i: 90
+2011-08-20 14:30:17,881 nodes:DEBUG trying to link commlink 109.253.189.195 at 156,191
+2011-08-20 14:30:17,881 nodes:DEBUG found target 129.255.125.129 at 154,192
+2011-08-20 14:30:17,881 nodes:DEBUG linked target
+2011-08-20 14:30:17,882 nodes:DEBUG i: 91
+2011-08-20 14:30:17,882 nodes:DEBUG trying to link commlink 29.53.40.30 at 180,121
+2011-08-20 14:30:17,882 nodes:DEBUG gave up
+2011-08-20 14:30:17,882 nodes:DEBUG i: 92
+2011-08-20 14:30:17,882 nodes:DEBUG trying to link commlink 159.186.68.234 at 26,10
+2011-08-20 14:30:17,882 nodes:DEBUG gave up
+2011-08-20 14:30:17,882 nodes:DEBUG i: 93
+2011-08-20 14:30:17,882 nodes:DEBUG trying to link commlink 48.66.32.108 at 127,47
+2011-08-20 14:30:17,884 nodes:DEBUG found target 86.254.254.136 at 131,49
+2011-08-20 14:30:17,884 nodes:DEBUG linked target
+2011-08-20 14:30:17,884 nodes:DEBUG i: 94
+2011-08-20 14:30:17,884 nodes:DEBUG trying to link commlink 62.225.40.113 at 148,43
+2011-08-20 14:30:17,884 nodes:DEBUG found target 167.69.168.116 at 146,45
+2011-08-20 14:30:17,884 nodes:DEBUG linked target
+2011-08-20 14:30:17,884 nodes:DEBUG gave up
+2011-08-20 14:30:17,884 nodes:DEBUG i: 95
+2011-08-20 14:30:17,884 nodes:DEBUG trying to link commlink 68.199.214.22 at 179,182
+2011-08-20 14:30:17,884 nodes:DEBUG gave up
+2011-08-20 14:30:17,884 nodes:DEBUG i: 96
+2011-08-20 14:30:17,884 nodes:DEBUG trying to link commlink 179.82.5.40 at 190,112
+2011-08-20 14:30:17,884 nodes:DEBUG found target 142.85.55.116 at 191,111
+2011-08-20 14:30:17,884 nodes:DEBUG linked target
+2011-08-20 14:30:17,884 nodes:DEBUG i: 97
+2011-08-20 14:30:17,884 nodes:DEBUG trying to link commlink 18.159.246.42 at 11,91
+2011-08-20 14:30:17,884 nodes:DEBUG gave up
+2011-08-20 14:30:17,885 nodes:DEBUG i: 98
+2011-08-20 14:30:17,885 nodes:DEBUG trying to link commlink 162.116.108.71 at 17,158
+2011-08-20 14:30:17,885 nodes:DEBUG found target 162.116.108.71 at 17,158
+2011-08-20 14:30:17,885 nodes:DEBUG linked target
+2011-08-20 14:30:17,885 nodes:DEBUG i: 99
+2011-08-20 14:30:17,885 nodes:DEBUG trying to link commlink 35.229.87.150 at 106,117
+2011-08-20 14:30:17,885 nodes:DEBUG gave up
+2011-08-20 14:30:17,885 nodes:DEBUG i: 100
+2011-08-20 14:30:17,885 nodes:DEBUG trying to link commlink 240.77.81.121 at 112,56
+2011-08-20 14:30:17,887 nodes:DEBUG gave up
+2011-08-20 14:30:17,887 nodes:DEBUG i: 101
+2011-08-20 14:30:17,887 nodes:DEBUG trying to link commlink 139.170.118.53 at 117,153
+2011-08-20 14:30:17,887 nodes:DEBUG gave up
+2011-08-20 14:30:17,887 nodes:DEBUG i: 102
+2011-08-20 14:30:17,887 nodes:DEBUG trying to link commlink 216.26.33.173 at 139,61
+2011-08-20 14:30:17,887 nodes:DEBUG gave up
+2011-08-20 14:30:17,888 nodes:DEBUG i: 103
+2011-08-20 14:30:17,888 nodes:DEBUG trying to link commlink 250.30.119.66 at 137,111
+2011-08-20 14:30:17,888 nodes:DEBUG gave up
+2011-08-20 14:30:17,888 nodes:DEBUG i: 104
+2011-08-20 14:30:17,888 nodes:DEBUG trying to link commlink 160.212.77.169 at 186,118
+2011-08-20 14:30:17,888 nodes:DEBUG found target 252.155.168.121 at 188,117
+2011-08-20 14:30:17,888 nodes:DEBUG linked target
+2011-08-20 14:30:17,888 nodes:DEBUG i: 105
+2011-08-20 14:30:17,888 nodes:DEBUG trying to link commlink 240.77.81.121 at 112,56
+2011-08-20 14:30:17,888 nodes:DEBUG gave up
+2011-08-20 14:30:17,888 nodes:DEBUG i: 106
+2011-08-20 14:30:17,888 nodes:DEBUG trying to link commlink 2.81.59.23 at 46,101
+2011-08-20 14:30:17,888 nodes:DEBUG found target 2.81.59.23 at 46,101
+2011-08-20 14:30:17,888 nodes:DEBUG linked target
+2011-08-20 14:30:17,888 nodes:DEBUG i: 107
+2011-08-20 14:30:17,888 nodes:DEBUG trying to link commlink 55.234.126.232 at 106,186
+2011-08-20 14:30:17,888 nodes:DEBUG gave up
+2011-08-20 14:30:17,888 nodes:DEBUG i: 108
+2011-08-20 14:30:17,890 nodes:DEBUG trying to link commlink 18.86.183.37 at 64,179
+2011-08-20 14:30:17,890 nodes:DEBUG found target 18.86.183.37 at 64,179
+2011-08-20 14:30:17,890 nodes:DEBUG linked target
+2011-08-20 14:30:17,890 nodes:DEBUG i: 109
+2011-08-20 14:30:17,890 nodes:DEBUG trying to link commlink 142.187.248.134 at 115,159
+2011-08-20 14:30:17,890 nodes:DEBUG gave up
+2011-08-20 14:30:17,890 nodes:DEBUG i: 110
+2011-08-20 14:30:17,890 nodes:DEBUG trying to link commlink 127.19.104.144 at 65,54
+2011-08-20 14:30:17,891 nodes:DEBUG gave up
+2011-08-20 14:30:17,891 nodes:DEBUG i: 111
+2011-08-20 14:30:17,891 nodes:DEBUG trying to link commlink 3.99.76.84 at 161,15
+2011-08-20 14:30:17,891 nodes:DEBUG found target 10.38.121.214 at 158,13
+2011-08-20 14:30:17,891 nodes:DEBUG linked target
+2011-08-20 14:30:17,891 nodes:DEBUG i: 112
+2011-08-20 14:30:17,891 nodes:DEBUG trying to link commlink 3.68.148.219 at 75,136
+2011-08-20 14:30:17,891 nodes:DEBUG gave up
+2011-08-20 14:30:17,891 nodes:DEBUG i: 113
+2011-08-20 14:30:17,891 nodes:DEBUG trying to link commlink 87.182.38.207 at 96,142
+2011-08-20 14:30:17,891 nodes:DEBUG gave up
+2011-08-20 14:30:17,891 nodes:DEBUG i: 114
+2011-08-20 14:30:17,891 nodes:DEBUG trying to link commlink 129.255.125.129 at 154,192
+2011-08-20 14:30:17,891 nodes:DEBUG gave up
+2011-08-20 14:30:17,891 nodes:DEBUG i: 115
+2011-08-20 14:30:17,891 nodes:DEBUG trying to link commlink 205.145.216.126 at 181,113
+2011-08-20 14:30:17,891 nodes:DEBUG found target 78.118.51.117 at 183,109
+2011-08-20 14:30:17,891 nodes:DEBUG linked target
+2011-08-20 14:30:17,892 nodes:DEBUG i: 116
+2011-08-20 14:30:17,892 nodes:DEBUG trying to link commlink 208.150.125.6 at 107,1
+2011-08-20 14:30:17,892 nodes:DEBUG found target 52.10.7.95 at 109,3
+2011-08-20 14:30:17,892 nodes:DEBUG linked target
+2011-08-20 14:30:17,892 nodes:WARNING relinking 208.150.125.6 and 52.10.7.95
+2011-08-20 14:30:17,892 nodes:DEBUG i: 117
+2011-08-20 14:30:17,892 nodes:DEBUG trying to link commlink 3.24.157.56 at 21,130
+2011-08-20 14:30:17,892 nodes:DEBUG found target 131.197.99.119 at 18,132
+2011-08-20 14:30:17,892 nodes:DEBUG linked target
+2011-08-20 14:30:17,892 nodes:DEBUG i: 118
+2011-08-20 14:30:17,892 nodes:DEBUG trying to link commlink 49.137.24.20 at 9,118
+2011-08-20 14:30:17,894 nodes:DEBUG found target 180.51.25.210 at 5,115
+2011-08-20 14:30:17,894 nodes:DEBUG linked target
+2011-08-20 14:30:17,894 nodes:DEBUG i: 119
+2011-08-20 14:30:17,894 nodes:DEBUG trying to link commlink 154.106.66.118 at 64,130
+2011-08-20 14:30:17,894 nodes:DEBUG gave up
+2011-08-20 14:30:17,894 nodes:DEBUG i: 120
+2011-08-20 14:30:17,894 nodes:DEBUG trying to link commlink 178.9.47.221 at 27,200
+2011-08-20 14:30:17,894 nodes:DEBUG gave up
+2011-08-20 14:30:17,894 nodes:DEBUG i: 121
+2011-08-20 14:30:17,894 nodes:DEBUG trying to link commlink 11.253.210.75 at 43,1
+2011-08-20 14:30:17,894 nodes:DEBUG gave up
+2011-08-20 14:30:17,894 nodes:DEBUG i: 122
+2011-08-20 14:30:17,894 nodes:DEBUG trying to link commlink 167.219.33.113 at 96,86
+2011-08-20 14:30:17,894 nodes:DEBUG gave up
+2011-08-20 14:30:17,894 nodes:DEBUG i: 123
+2011-08-20 14:30:17,894 nodes:DEBUG trying to link commlink 210.72.155.59 at 80,186
+2011-08-20 14:30:17,895 nodes:DEBUG found target 177.37.178.107 at 81,184
+2011-08-20 14:30:17,895 nodes:DEBUG linked target
+2011-08-20 14:30:17,895 nodes:DEBUG gave up
+2011-08-20 14:30:17,895 nodes:DEBUG i: 124
+2011-08-20 14:30:17,895 nodes:DEBUG trying to link commlink 165.111.200.84 at 100,80
+2011-08-20 14:30:17,895 nodes:DEBUG found target 165.111.200.84 at 100,80
+2011-08-20 14:30:17,895 nodes:DEBUG linked target
+2011-08-20 14:30:17,895 nodes:WARNING relinking 165.111.200.84 and 165.111.200.84
+2011-08-20 14:30:17,895 nodes:DEBUG i: 125
+2011-08-20 14:30:17,895 nodes:DEBUG trying to link commlink 147.24.101.109 at 22,44
+2011-08-20 14:30:17,895 nodes:DEBUG found target 228.44.91.98 at 26,40
+2011-08-20 14:30:17,897 nodes:DEBUG linked target
+2011-08-20 14:30:17,897 nodes:DEBUG i: 126
+2011-08-20 14:30:17,897 nodes:DEBUG trying to link commlink 193.243.6.32 at 89,126
+2011-08-20 14:30:17,897 nodes:DEBUG gave up
+2011-08-20 14:30:17,897 nodes:DEBUG i: 127
+2011-08-20 14:30:17,897 nodes:DEBUG trying to link commlink 220.189.111.96 at 113,165
+2011-08-20 14:30:17,897 nodes:DEBUG gave up
+2011-08-20 14:30:17,897 nodes:DEBUG i: 128
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 0.71.40.239 at 81,199
+2011-08-20 14:30:17,898 nodes:DEBUG gave up
+2011-08-20 14:30:17,898 nodes:DEBUG i: 129
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 33.122.55.56 at 139,26
+2011-08-20 14:30:17,898 nodes:DEBUG found target 33.122.55.56 at 139,26
+2011-08-20 14:30:17,898 nodes:DEBUG linked target
+2011-08-20 14:30:17,898 nodes:DEBUG i: 130
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 125.176.218.189 at 170,129
+2011-08-20 14:30:17,898 nodes:DEBUG gave up
+2011-08-20 14:30:17,898 nodes:DEBUG i: 131
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 193.243.6.32 at 89,126
+2011-08-20 14:30:17,898 nodes:DEBUG gave up
+2011-08-20 14:30:17,898 nodes:DEBUG i: 132
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 42.48.242.184 at 12,129
+2011-08-20 14:30:17,898 nodes:DEBUG found target 82.134.213.106 at 11,131
+2011-08-20 14:30:17,898 nodes:DEBUG linked target
+2011-08-20 14:30:17,898 nodes:DEBUG i: 133
+2011-08-20 14:30:17,898 nodes:DEBUG trying to link commlink 119.36.203.166 at 90,39
+2011-08-20 14:30:17,900 nodes:DEBUG found target 119.36.203.166 at 90,39
+2011-08-20 14:30:17,900 nodes:DEBUG linked target
+2011-08-20 14:30:17,900 nodes:DEBUG i: 134
+2011-08-20 14:30:17,900 nodes:DEBUG trying to link commlink 5.165.239.19 at 85,141
+2011-08-20 14:30:17,900 nodes:DEBUG gave up
+2011-08-20 14:30:17,900 nodes:DEBUG i: 135
+2011-08-20 14:30:17,900 nodes:DEBUG trying to link commlink 239.214.0.62 at 193,70
+2011-08-20 14:30:17,900 nodes:DEBUG found target 239.214.0.62 at 193,70
+2011-08-20 14:30:17,900 nodes:DEBUG linked target
+2011-08-20 14:30:17,900 nodes:DEBUG i: 136
+2011-08-20 14:30:17,901 nodes:DEBUG trying to link commlink 151.190.83.210 at 77,187
+2011-08-20 14:30:17,901 nodes:DEBUG found target 177.37.178.107 at 81,184
+2011-08-20 14:30:17,901 nodes:DEBUG linked target
+2011-08-20 14:30:17,901 nodes:WARNING relinking 151.190.83.210 and 177.37.178.107
+2011-08-20 14:30:17,901 nodes:DEBUG i: 137
+2011-08-20 14:30:17,901 nodes:DEBUG trying to link commlink 173.198.240.9 at 195,140
+2011-08-20 14:30:17,901 nodes:DEBUG found target 119.161.130.47 at 193,142
+2011-08-20 14:30:17,901 nodes:DEBUG linked target
+2011-08-20 14:30:17,901 nodes:DEBUG i: 138
+2011-08-20 14:30:17,901 nodes:DEBUG trying to link commlink 172.243.114.177 at 37,85
+2011-08-20 14:30:17,901 nodes:DEBUG gave up
+2011-08-20 14:30:17,901 nodes:DEBUG i: 139
+2011-08-20 14:30:17,901 nodes:DEBUG trying to link commlink 102.61.27.197 at 46,126
+2011-08-20 14:30:17,901 nodes:DEBUG found target 102.61.27.197 at 46,126
+2011-08-20 14:30:17,901 nodes:DEBUG linked target
+2011-08-20 14:30:17,901 nodes:DEBUG i: 140
+2011-08-20 14:30:17,901 nodes:DEBUG trying to link commlink 126.170.224.68 at 13,192
+2011-08-20 14:30:17,901 nodes:DEBUG found target 126.170.224.68 at 13,192
+2011-08-20 14:30:17,901 nodes:DEBUG linked target
+2011-08-20 14:30:17,903 nodes:DEBUG i: 141
+2011-08-20 14:30:17,903 nodes:DEBUG trying to link commlink 58.55.167.217 at 192,67
+2011-08-20 14:30:17,903 nodes:DEBUG gave up
+2011-08-20 14:30:17,903 nodes:DEBUG i: 142
+2011-08-20 14:30:17,903 nodes:DEBUG trying to link commlink 18.1.55.64 at 129,77
+2011-08-20 14:30:17,903 nodes:DEBUG gave up
+2011-08-20 14:30:17,903 nodes:DEBUG i: 143
+2011-08-20 14:30:17,903 nodes:DEBUG trying to link commlink 241.82.109.224 at 149,78
+2011-08-20 14:30:17,904 nodes:DEBUG gave up
+2011-08-20 14:30:17,904 nodes:DEBUG i: 144
+2011-08-20 14:30:17,904 nodes:DEBUG trying to link commlink 202.167.241.154 at 190,69
+2011-08-20 14:30:17,904 nodes:DEBUG gave up
+2011-08-20 14:30:17,904 nodes:DEBUG i: 145
+2011-08-20 14:30:17,904 nodes:DEBUG trying to link commlink 86.131.214.183 at 112,120
+2011-08-20 14:30:17,904 nodes:DEBUG gave up
+2011-08-20 14:30:17,904 nodes:DEBUG i: 146
+2011-08-20 14:30:17,904 nodes:DEBUG trying to link commlink 233.142.93.253 at 87,158
+2011-08-20 14:30:17,904 nodes:DEBUG gave up
+2011-08-20 14:30:17,904 nodes:DEBUG i: 147
+2011-08-20 14:30:17,904 nodes:DEBUG trying to link commlink 207.161.238.127 at 53,165
+2011-08-20 14:30:17,904 nodes:DEBUG gave up
+2011-08-20 14:30:17,904 nodes:DEBUG i: 148
+2011-08-20 14:30:17,904 nodes:DEBUG trying to link commlink 134.192.60.9 at 26,171
+2011-08-20 14:30:17,905 nodes:DEBUG gave up
+2011-08-20 14:30:17,905 nodes:DEBUG i: 149
+2011-08-20 14:30:17,905 nodes:DEBUG trying to link commlink 16.174.117.153 at 33,28
+2011-08-20 14:30:17,905 nodes:DEBUG gave up
+2011-08-20 14:30:17,905 nodes:DEBUG i: 150
+2011-08-20 14:30:17,905 nodes:DEBUG trying to link commlink 64.249.234.39 at 180,44
+2011-08-20 14:30:17,905 nodes:DEBUG found target 64.249.234.39 at 180,44
+2011-08-20 14:30:17,905 nodes:DEBUG linked target
+2011-08-20 14:30:17,905 nodes:DEBUG i: 151
+2011-08-20 14:30:17,905 nodes:DEBUG trying to link commlink 6.246.142.168 at 73,110
+2011-08-20 14:30:17,907 nodes:DEBUG gave up
+2011-08-20 14:30:17,907 nodes:DEBUG i: 152
+2011-08-20 14:30:17,907 nodes:DEBUG trying to link commlink 98.84.243.229 at 135,88
+2011-08-20 14:30:17,907 nodes:DEBUG found target 143.249.21.171 at 136,89
+2011-08-20 14:30:17,907 nodes:DEBUG linked target
+2011-08-20 14:30:17,907 nodes:DEBUG i: 153
+2011-08-20 14:30:17,907 nodes:DEBUG trying to link commlink 181.3.230.40 at 15,18
+2011-08-20 14:30:17,907 nodes:DEBUG found target 198.181.160.211 at 12,20
+2011-08-20 14:30:17,907 nodes:DEBUG linked target
+2011-08-20 14:30:17,907 nodes:DEBUG i: 154
+2011-08-20 14:30:17,907 nodes:DEBUG trying to link commlink 144.71.56.23 at 129,162
+2011-08-20 14:30:17,907 nodes:DEBUG gave up
+2011-08-20 14:30:17,907 nodes:DEBUG i: 155
+2011-08-20 14:30:17,907 nodes:DEBUG trying to link commlink 122.45.134.237 at 9,160
+2011-08-20 14:30:17,907 nodes:DEBUG gave up
+2011-08-20 14:30:17,907 nodes:DEBUG i: 156
+2011-08-20 14:30:17,907 nodes:DEBUG trying to link commlink 142.85.55.116 at 191,111
+2011-08-20 14:30:17,908 nodes:DEBUG gave up
+2011-08-20 14:30:17,908 nodes:DEBUG i: 157
+2011-08-20 14:30:17,908 nodes:DEBUG trying to link commlink 183.88.110.41 at 41,103
+2011-08-20 14:30:17,908 nodes:DEBUG found target 52.77.123.209 at 43,103
+2011-08-20 14:30:17,908 nodes:DEBUG linked target
+2011-08-20 14:30:17,908 nodes:DEBUG i: 158
+2011-08-20 14:30:17,908 nodes:DEBUG trying to link commlink 91.196.18.197 at 181,127
+2011-08-20 14:30:17,908 nodes:DEBUG gave up
+2011-08-20 14:30:17,908 nodes:DEBUG i: 159
+2011-08-20 14:30:17,910 nodes:DEBUG trying to link commlink 106.57.197.171 at 17,106
+2011-08-20 14:30:17,910 nodes:DEBUG gave up
+2011-08-20 14:30:17,910 nodes:DEBUG i: 160
+2011-08-20 14:30:17,910 nodes:DEBUG trying to link commlink 75.11.88.45 at 80,16
+2011-08-20 14:30:17,910 nodes:DEBUG gave up
+2011-08-20 14:30:17,910 nodes:DEBUG i: 161
+2011-08-20 14:30:17,910 nodes:DEBUG trying to link commlink 124.99.56.109 at 101,97
+2011-08-20 14:30:17,910 nodes:DEBUG found target 58.191.114.142 at 105,97
+2011-08-20 14:30:17,910 nodes:DEBUG linked target
+2011-08-20 14:30:17,911 nodes:DEBUG i: 162
+2011-08-20 14:30:17,911 nodes:DEBUG trying to link commlink 38.159.62.2 at 95,121
+2011-08-20 14:30:17,911 nodes:DEBUG found target 38.159.62.2 at 95,121
+2011-08-20 14:30:17,911 nodes:DEBUG linked target
+2011-08-20 14:30:17,911 nodes:DEBUG i: 163
+2011-08-20 14:30:17,911 nodes:DEBUG trying to link commlink 62.182.43.104 at 98,67
+2011-08-20 14:30:17,911 nodes:DEBUG gave up
+2011-08-20 14:30:17,911 nodes:DEBUG i: 164
+2011-08-20 14:30:17,911 nodes:DEBUG trying to link commlink 112.254.103.45 at 195,44
+2011-08-20 14:30:17,911 nodes:DEBUG found target 132.188.150.121 at 197,40
+2011-08-20 14:30:17,911 nodes:DEBUG linked target
+2011-08-20 14:30:17,911 nodes:DEBUG i: 165
+2011-08-20 14:30:17,911 nodes:DEBUG trying to link commlink 184.253.138.125 at 193,77
+2011-08-20 14:30:17,911 nodes:DEBUG gave up
+2011-08-20 14:30:17,911 nodes:DEBUG i: 166
+2011-08-20 14:30:17,911 nodes:DEBUG trying to link commlink 95.225.39.191 at 190,165
+2011-08-20 14:30:17,911 nodes:DEBUG gave up
+2011-08-20 14:30:17,911 nodes:DEBUG i: 167
+2011-08-20 14:30:17,913 nodes:DEBUG trying to link commlink 109.253.189.195 at 156,191
+2011-08-20 14:30:17,913 nodes:DEBUG found target 129.255.125.129 at 154,192
+2011-08-20 14:30:17,913 nodes:DEBUG linked target
+2011-08-20 14:30:17,913 nodes:WARNING relinking 109.253.189.195 and 129.255.125.129
+2011-08-20 14:30:17,913 nodes:DEBUG i: 168
+2011-08-20 14:30:17,913 nodes:DEBUG trying to link commlink 38.105.218.222 at 136,83
+2011-08-20 14:30:17,913 nodes:DEBUG gave up
+2011-08-20 14:30:17,913 nodes:DEBUG i: 169
+2011-08-20 14:30:17,913 nodes:DEBUG trying to link commlink 162.96.54.82 at 185,20
+2011-08-20 14:30:17,914 nodes:DEBUG gave up
+2011-08-20 14:30:17,914 nodes:DEBUG i: 170
+2011-08-20 14:30:17,914 nodes:DEBUG trying to link commlink 228.44.91.98 at 26,40
+2011-08-20 14:30:17,914 nodes:DEBUG gave up
+2011-08-20 14:30:17,914 nodes:DEBUG i: 171
+2011-08-20 14:30:17,914 nodes:DEBUG trying to link commlink 35.237.34.87 at 66,152
+2011-08-20 14:30:17,914 nodes:DEBUG gave up
+2011-08-20 14:30:17,914 nodes:DEBUG i: 172
+2011-08-20 14:30:17,914 nodes:DEBUG trying to link commlink 2.81.59.23 at 46,101
+2011-08-20 14:30:17,914 nodes:DEBUG found target 178.174.183.170 at 44,99
+2011-08-20 14:30:17,914 nodes:DEBUG linked target
+2011-08-20 14:30:17,914 nodes:DEBUG i: 173
+2011-08-20 14:30:17,914 nodes:DEBUG trying to link commlink 98.123.46.81 at 76,51
+2011-08-20 14:30:17,914 nodes:DEBUG gave up
+2011-08-20 14:30:17,914 nodes:DEBUG i: 174
+2011-08-20 14:30:17,914 nodes:DEBUG trying to link commlink 110.138.177.253 at 7,16
+2011-08-20 14:30:17,915 nodes:DEBUG gave up
+2011-08-20 14:30:17,915 nodes:DEBUG i: 175
+2011-08-20 14:30:17,915 nodes:DEBUG trying to link commlink 49.251.139.150 at 118,20
+2011-08-20 14:30:17,915 nodes:DEBUG gave up
+2011-08-20 14:30:17,915 nodes:DEBUG i: 176
+2011-08-20 14:30:17,915 nodes:DEBUG trying to link commlink 20.45.129.114 at 70,13
+2011-08-20 14:30:17,915 nodes:DEBUG gave up
+2011-08-20 14:30:17,915 nodes:DEBUG i: 177
+2011-08-20 14:30:17,915 nodes:DEBUG trying to link commlink 195.22.254.37 at 200,103
+2011-08-20 14:30:17,917 nodes:DEBUG gave up
+2011-08-20 14:30:17,917 nodes:DEBUG i: 178
+2011-08-20 14:30:17,917 nodes:DEBUG trying to link commlink 176.45.146.131 at 120,116
+2011-08-20 14:30:17,917 nodes:DEBUG found target 155.194.112.235 at 122,120
+2011-08-20 14:30:17,917 nodes:DEBUG linked target
+2011-08-20 14:30:17,917 nodes:DEBUG i: 179
+2011-08-20 14:30:17,917 nodes:DEBUG trying to link commlink 161.54.164.155 at 150,173
+2011-08-20 14:30:17,917 nodes:DEBUG found target 25.84.120.237 at 150,177
+2011-08-20 14:30:17,917 nodes:DEBUG linked target
+2011-08-20 14:30:17,917 nodes:DEBUG i: 180
+2011-08-20 14:30:17,917 nodes:DEBUG trying to link commlink 141.47.66.214 at 195,89
+2011-08-20 14:30:17,917 nodes:DEBUG gave up
+2011-08-20 14:30:17,917 nodes:DEBUG i: 181
+2011-08-20 14:30:17,917 nodes:DEBUG trying to link commlink 230.76.132.40 at 41,134
+2011-08-20 14:30:17,917 nodes:DEBUG gave up
+2011-08-20 14:30:17,917 nodes:DEBUG i: 182
+2011-08-20 14:30:17,918 nodes:DEBUG trying to link commlink 31.232.18.135 at 78,105
+2011-08-20 14:30:17,918 nodes:DEBUG gave up
+2011-08-20 14:30:17,918 nodes:DEBUG i: 183
+2011-08-20 14:30:17,918 nodes:DEBUG trying to link commlink 68.31.81.127 at 120,199
+2011-08-20 14:30:17,918 nodes:DEBUG found target 68.31.81.127 at 120,199
+2011-08-20 14:30:17,918 nodes:DEBUG linked target
+2011-08-20 14:30:17,918 nodes:DEBUG i: 184
+2011-08-20 14:30:17,918 nodes:DEBUG trying to link commlink 85.72.57.236 at 188,136
+2011-08-20 14:30:17,918 nodes:DEBUG found target 135.65.106.223 at 191,134
+2011-08-20 14:30:17,920 nodes:DEBUG linked target
+2011-08-20 14:30:17,920 nodes:DEBUG i: 185
+2011-08-20 14:30:17,920 nodes:DEBUG trying to link commlink 20.178.212.239 at 159,197
+2011-08-20 14:30:17,920 nodes:DEBUG found target 20.178.212.239 at 159,197
+2011-08-20 14:30:17,920 nodes:DEBUG linked target
+2011-08-20 14:30:17,920 nodes:DEBUG i: 186
+2011-08-20 14:30:17,920 nodes:DEBUG trying to link commlink 45.103.13.223 at 158,172
+2011-08-20 14:30:17,920 nodes:DEBUG found target 45.103.13.223 at 158,172
+2011-08-20 14:30:17,920 nodes:DEBUG linked target
+2011-08-20 14:30:17,920 nodes:DEBUG i: 187
+2011-08-20 14:30:17,920 nodes:DEBUG trying to link commlink 218.149.28.189 at 119,174
+2011-08-20 14:30:17,921 nodes:DEBUG gave up
+2011-08-20 14:30:17,921 nodes:DEBUG i: 188
+2011-08-20 14:30:17,921 nodes:DEBUG trying to link commlink 243.63.200.55 at 109,36
+2011-08-20 14:30:17,921 nodes:DEBUG found target 241.135.139.14 at 109,33
+2011-08-20 14:30:17,921 nodes:DEBUG linked target
+2011-08-20 14:30:17,921 nodes:DEBUG i: 189
+2011-08-20 14:30:17,921 nodes:DEBUG trying to link commlink 30.212.3.95 at 23,104
+2011-08-20 14:30:17,921 nodes:DEBUG gave up
+2011-08-20 14:30:17,921 nodes:DEBUG i: 190
+2011-08-20 14:30:17,921 nodes:DEBUG trying to link commlink 131.232.169.147 at 187,78
+2011-08-20 14:30:17,921 nodes:DEBUG gave up
+2011-08-20 14:30:17,921 nodes:DEBUG i: 191
+2011-08-20 14:30:17,921 nodes:DEBUG trying to link commlink 230.76.132.40 at 41,134
+2011-08-20 14:30:17,921 nodes:DEBUG gave up
+2011-08-20 14:30:17,921 nodes:DEBUG i: 192
+2011-08-20 14:30:17,923 nodes:DEBUG trying to link commlink 57.196.154.186 at 6,11
+2011-08-20 14:30:17,923 nodes:DEBUG found target 57.196.154.186 at 6,11
+2011-08-20 14:30:17,923 nodes:DEBUG linked target
+2011-08-20 14:30:17,923 nodes:DEBUG i: 193
+2011-08-20 14:30:17,923 nodes:DEBUG trying to link commlink 98.134.111.139 at 20,147
+2011-08-20 14:30:17,923 nodes:DEBUG gave up
+2011-08-20 14:30:17,923 nodes:DEBUG i: 194
+2011-08-20 14:30:17,923 nodes:DEBUG trying to link commlink 57.61.74.9 at 94,99
+2011-08-20 14:30:17,923 nodes:DEBUG found target 79.33.145.243 at 93,101
+2011-08-20 14:30:17,924 nodes:DEBUG linked target
+2011-08-20 14:30:17,924 nodes:DEBUG i: 195
+2011-08-20 14:30:17,924 nodes:DEBUG trying to link commlink 168.168.100.43 at 182,37
+2011-08-20 14:30:17,924 nodes:DEBUG found target 48.219.43.157 at 179,33
+2011-08-20 14:30:17,924 nodes:DEBUG linked target
+2011-08-20 14:30:17,924 nodes:DEBUG i: 196
+2011-08-20 14:30:17,924 nodes:DEBUG trying to link commlink 97.235.113.177 at 33,45
+2011-08-20 14:30:17,924 nodes:DEBUG gave up
+2011-08-20 14:30:17,924 nodes:DEBUG i: 197
+2011-08-20 14:30:17,924 nodes:DEBUG trying to link commlink 194.66.52.56 at 128,193
+2011-08-20 14:30:17,924 nodes:DEBUG gave up
+2011-08-20 14:30:17,924 nodes:DEBUG i: 198
+2011-08-20 14:30:17,924 nodes:DEBUG trying to link commlink 2.169.193.30 at 198,32
+2011-08-20 14:30:17,924 nodes:DEBUG gave up
+2011-08-20 14:30:17,924 nodes:DEBUG i: 199
+2011-08-20 14:30:17,924 nodes:DEBUG trying to link commlink 62.182.43.104 at 98,67
+2011-08-20 14:30:17,926 nodes:DEBUG gave up
+2011-08-20 14:30:17,926 nodes:DEBUG i: 200
+2011-08-20 14:30:17,926 nodes:DEBUG trying to link commlink 20.178.212.239 at 159,197
+2011-08-20 14:30:17,926 nodes:DEBUG found target 119.144.243.49 at 162,194
+2011-08-20 14:30:17,926 nodes:DEBUG linked target
+2011-08-20 14:30:17,926 nodes:DEBUG i: 201
+2011-08-20 14:30:17,926 nodes:DEBUG trying to link commlink 233.99.64.61 at 132,89
+2011-08-20 14:30:17,926 nodes:DEBUG found target 98.84.243.229 at 135,88
+2011-08-20 14:30:17,926 nodes:DEBUG linked target
+2011-08-20 14:30:17,927 nodes:DEBUG i: 202
+2011-08-20 14:30:17,927 nodes:DEBUG trying to link commlink 186.197.72.229 at 182,24
+2011-08-20 14:30:17,927 nodes:DEBUG found target 186.197.72.229 at 182,24
+2011-08-20 14:30:17,927 nodes:DEBUG linked target
+2011-08-20 14:30:17,927 nodes:DEBUG i: 203
+2011-08-20 14:30:17,927 nodes:DEBUG trying to link commlink 160.229.75.234 at 10,184
+2011-08-20 14:30:17,927 nodes:DEBUG found target 68.85.201.191 at 10,182
+2011-08-20 14:30:17,927 nodes:DEBUG linked target
+2011-08-20 14:30:17,927 nodes:DEBUG i: 204
+2011-08-20 14:30:17,927 nodes:DEBUG trying to link commlink 193.166.234.190 at 186,51
+2011-08-20 14:30:17,927 nodes:DEBUG gave up
+2011-08-20 14:30:17,927 nodes:DEBUG i: 205
+2011-08-20 14:30:17,927 nodes:DEBUG trying to link commlink 201.105.42.51 at 122,141
+2011-08-20 14:30:17,927 nodes:DEBUG found target 201.105.42.51 at 122,141
+2011-08-20 14:30:17,927 nodes:DEBUG linked target
+2011-08-20 14:30:17,927 nodes:DEBUG i: 206
+2011-08-20 14:30:17,927 nodes:DEBUG trying to link commlink 244.168.157.0 at 145,59
+2011-08-20 14:30:17,927 nodes:DEBUG gave up
+2011-08-20 14:30:17,928 nodes:DEBUG i: 207
+2011-08-20 14:30:17,928 nodes:DEBUG trying to link commlink 86.131.214.183 at 112,120
+2011-08-20 14:30:17,928 nodes:DEBUG found target 86.131.214.183 at 112,120
+2011-08-20 14:30:17,928 nodes:DEBUG linked target
+2011-08-20 14:30:17,928 nodes:DEBUG i: 208
+2011-08-20 14:30:17,928 nodes:DEBUG trying to link commlink 180.198.74.171 at 130,121
+2011-08-20 14:30:17,928 nodes:DEBUG gave up
+2011-08-20 14:30:17,928 nodes:DEBUG i: 209
+2011-08-20 14:30:17,928 nodes:DEBUG trying to link commlink 241.82.109.224 at 149,78
+2011-08-20 14:30:17,930 nodes:DEBUG found target 62.27.83.239 at 150,76
+2011-08-20 14:30:17,930 nodes:DEBUG linked target
+2011-08-20 14:30:17,930 nodes:DEBUG i: 210
+2011-08-20 14:30:17,930 nodes:DEBUG trying to link commlink 233.142.93.253 at 87,158
+2011-08-20 14:30:17,930 nodes:DEBUG gave up
+2011-08-20 14:30:17,930 nodes:DEBUG i: 211
+2011-08-20 14:30:17,930 nodes:DEBUG trying to link commlink 16.197.126.227 at 59,73
+2011-08-20 14:30:17,930 nodes:DEBUG gave up
+2011-08-20 14:30:17,930 nodes:DEBUG i: 212
+2011-08-20 14:30:17,930 nodes:DEBUG trying to link commlink 154.106.66.118 at 64,130
+2011-08-20 14:30:17,930 nodes:DEBUG gave up
+2011-08-20 14:30:17,930 nodes:DEBUG i: 213
+2011-08-20 14:30:17,930 nodes:DEBUG trying to link commlink 191.193.223.47 at 101,3
+2011-08-20 14:30:17,930 nodes:DEBUG gave up
+2011-08-20 14:30:17,930 nodes:DEBUG i: 214
+2011-08-20 14:30:17,930 nodes:DEBUG trying to link commlink 223.100.90.129 at 93,80
+2011-08-20 14:30:17,931 nodes:DEBUG gave up
+2011-08-20 14:30:17,931 nodes:DEBUG i: 215
+2011-08-20 14:30:17,931 nodes:DEBUG trying to link commlink 45.150.184.167 at 176,80
+2011-08-20 14:30:17,931 nodes:DEBUG found target 25.17.82.180 at 174,76
+2011-08-20 14:30:17,931 nodes:DEBUG linked target
+2011-08-20 14:30:17,931 nodes:DEBUG i: 216
+2011-08-20 14:30:17,931 nodes:DEBUG trying to link commlink 10.38.121.214 at 158,13
+2011-08-20 14:30:17,931 nodes:DEBUG found target 3.99.76.84 at 161,15
+2011-08-20 14:30:17,931 nodes:DEBUG linked target
+2011-08-20 14:30:17,931 nodes:WARNING relinking 10.38.121.214 and 3.99.76.84
+2011-08-20 14:30:17,931 nodes:DEBUG i: 217
+2011-08-20 14:30:17,933 nodes:DEBUG trying to link commlink 205.131.173.51 at 128,29
+2011-08-20 14:30:17,933 nodes:DEBUG gave up
+2011-08-20 14:30:17,933 nodes:DEBUG i: 218
+2011-08-20 14:30:17,933 nodes:DEBUG trying to link commlink 249.24.90.26 at 166,45
+2011-08-20 14:30:17,933 nodes:DEBUG found target 249.24.90.26 at 166,45
+2011-08-20 14:30:17,933 nodes:DEBUG linked target
+2011-08-20 14:30:17,933 nodes:DEBUG i: 219
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 22.116.16.60 at 173,57
+2011-08-20 14:30:17,934 nodes:DEBUG gave up
+2011-08-20 14:30:17,934 nodes:DEBUG i: 220
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 29.69.62.198 at 18,129
+2011-08-20 14:30:17,934 nodes:DEBUG found target 131.197.99.119 at 18,132
+2011-08-20 14:30:17,934 nodes:DEBUG linked target
+2011-08-20 14:30:17,934 nodes:DEBUG i: 221
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 18.132.83.226 at 64,160
+2011-08-20 14:30:17,934 nodes:DEBUG gave up
+2011-08-20 14:30:17,934 nodes:DEBUG i: 222
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 131.116.50.113 at 133,60
+2011-08-20 14:30:17,934 nodes:DEBUG gave up
+2011-08-20 14:30:17,934 nodes:DEBUG i: 223
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 180.198.74.171 at 130,121
+2011-08-20 14:30:17,934 nodes:DEBUG gave up
+2011-08-20 14:30:17,934 nodes:DEBUG i: 224
+2011-08-20 14:30:17,934 nodes:DEBUG trying to link commlink 17.236.153.119 at 83,123
+2011-08-20 14:30:17,936 nodes:DEBUG gave up
+2011-08-20 14:30:17,936 nodes:DEBUG i: 225
+2011-08-20 14:30:17,936 nodes:DEBUG trying to link commlink 207.161.238.127 at 53,165
+2011-08-20 14:30:17,936 nodes:DEBUG found target 207.161.238.127 at 53,165
+2011-08-20 14:30:17,936 nodes:DEBUG linked target
+2011-08-20 14:30:17,936 nodes:DEBUG i: 226
+2011-08-20 14:30:17,936 nodes:DEBUG trying to link commlink 106.47.52.56 at 159,60
+2011-08-20 14:30:17,937 nodes:DEBUG gave up
+2011-08-20 14:30:17,937 nodes:DEBUG i: 227
+2011-08-20 14:30:17,937 nodes:DEBUG trying to link commlink 121.207.252.51 at 193,58
+2011-08-20 14:30:17,937 nodes:DEBUG found target 104.229.199.70 at 192,56
+2011-08-20 14:30:17,937 nodes:DEBUG linked target
+2011-08-20 14:30:17,937 nodes:DEBUG i: 228
+2011-08-20 14:30:17,937 nodes:DEBUG trying to link commlink 7.254.240.217 at 55,160
+2011-08-20 14:30:17,937 nodes:DEBUG gave up
+2011-08-20 14:30:17,937 nodes:DEBUG i: 229
+2011-08-20 14:30:17,937 nodes:DEBUG trying to link commlink 218.149.28.189 at 119,174
+2011-08-20 14:30:17,937 nodes:DEBUG found target 218.149.28.189 at 119,174
+2011-08-20 14:30:17,937 nodes:DEBUG linked target
+2011-08-20 14:30:17,937 nodes:DEBUG i: 230
+2011-08-20 14:30:17,937 nodes:DEBUG trying to link commlink 64.20.159.250 at 190,127
+2011-08-20 14:30:17,937 nodes:DEBUG gave up
+2011-08-20 14:30:17,938 nodes:DEBUG i: 231
+2011-08-20 14:30:17,938 nodes:DEBUG trying to link commlink 12.201.125.145 at 33,187
+2011-08-20 14:30:17,938 nodes:DEBUG gave up
+2011-08-20 14:30:17,938 nodes:DEBUG i: 232
+2011-08-20 14:30:17,938 nodes:DEBUG trying to link commlink 187.170.109.74 at 134,142
+2011-08-20 14:30:17,938 nodes:DEBUG found target 187.170.109.74 at 134,142
+2011-08-20 14:30:17,938 nodes:DEBUG linked target
+2011-08-20 14:30:17,938 nodes:DEBUG i: 233
+2011-08-20 14:30:17,938 nodes:DEBUG trying to link commlink 2.81.59.23 at 46,101
+2011-08-20 14:30:17,938 nodes:DEBUG found target 58.43.4.116 at 46,99
+2011-08-20 14:30:17,940 nodes:DEBUG linked target
+2011-08-20 14:30:17,940 nodes:DEBUG i: 234
+2011-08-20 14:30:17,940 nodes:DEBUG trying to link commlink 152.85.209.236 at 12,65
+2011-08-20 14:30:17,940 nodes:DEBUG gave up
+2011-08-20 14:30:17,940 nodes:DEBUG i: 235
+2011-08-20 14:30:17,940 nodes:DEBUG trying to link commlink 121.207.252.51 at 193,58
+2011-08-20 14:30:17,940 nodes:DEBUG found target 121.207.252.51 at 193,58
+2011-08-20 14:30:17,940 nodes:DEBUG linked target
+2011-08-20 14:30:17,940 nodes:DEBUG i: 236
+2011-08-20 14:30:17,940 nodes:DEBUG trying to link commlink 74.235.182.40 at 18,163
+2011-08-20 14:30:17,940 nodes:DEBUG found target 74.235.182.40 at 18,163
+2011-08-20 14:30:17,940 nodes:DEBUG linked target
+2011-08-20 14:30:17,940 nodes:DEBUG i: 237
+2011-08-20 14:30:17,940 nodes:DEBUG trying to link commlink 3.24.157.56 at 21,130
+2011-08-20 14:30:17,940 nodes:DEBUG found target 29.69.62.198 at 18,129
+2011-08-20 14:30:17,940 nodes:DEBUG linked target
+2011-08-20 14:30:17,940 nodes:DEBUG i: 238
+2011-08-20 14:30:17,940 nodes:DEBUG trying to link commlink 90.209.6.55 at 155,152
+2011-08-20 14:30:17,940 nodes:DEBUG found target 90.209.6.55 at 155,152
+2011-08-20 14:30:17,941 nodes:DEBUG linked target
+2011-08-20 14:30:17,941 nodes:DEBUG i: 239
+2011-08-20 14:30:17,941 nodes:DEBUG trying to link commlink 229.201.67.212 at 138,39
+2011-08-20 14:30:17,941 nodes:DEBUG gave up
+2011-08-20 14:30:17,941 nodes:DEBUG i: 240
+2011-08-20 14:30:17,941 nodes:DEBUG trying to link commlink 210.72.155.59 at 80,186
+2011-08-20 14:30:17,941 nodes:DEBUG found target 151.190.83.210 at 77,187
+2011-08-20 14:30:17,941 nodes:DEBUG linked target
+2011-08-20 14:30:17,941 nodes:DEBUG i: 241
+2011-08-20 14:30:17,943 nodes:DEBUG trying to link commlink 139.121.50.152 at 11,187
+2011-08-20 14:30:17,943 nodes:DEBUG found target 160.229.75.234 at 10,184
+2011-08-20 14:30:17,943 nodes:DEBUG linked target
+2011-08-20 14:30:17,943 nodes:DEBUG i: 242
+2011-08-20 14:30:17,943 nodes:DEBUG trying to link commlink 106.47.52.56 at 159,60
+2011-08-20 14:30:17,943 nodes:DEBUG gave up
+2011-08-20 14:30:17,943 nodes:DEBUG i: 243
+2011-08-20 14:30:17,943 nodes:DEBUG trying to link commlink 208.199.163.29 at 58,146
+2011-08-20 14:30:17,943 nodes:DEBUG found target 208.199.163.29 at 58,146
+2011-08-20 14:30:17,944 nodes:DEBUG linked target
+2011-08-20 14:30:17,944 nodes:DEBUG i: 244
+2011-08-20 14:30:17,944 nodes:DEBUG trying to link commlink 131.159.205.226 at 105,178
+2011-08-20 14:30:17,944 nodes:DEBUG gave up
+2011-08-20 14:30:17,944 nodes:DEBUG i: 245
+2011-08-20 14:30:17,944 nodes:DEBUG trying to link commlink 186.197.72.229 at 182,24
+2011-08-20 14:30:17,944 nodes:DEBUG gave up
+2011-08-20 14:30:17,944 nodes:DEBUG i: 246
+2011-08-20 14:30:17,944 nodes:DEBUG trying to link commlink 60.43.130.51 at 59,93
+2011-08-20 14:30:17,944 nodes:DEBUG gave up
+2011-08-20 14:30:17,944 nodes:DEBUG i: 247
+2011-08-20 14:30:17,944 nodes:DEBUG trying to link commlink 70.103.10.27 at 72,92
+2011-08-20 14:30:17,944 nodes:DEBUG gave up
+2011-08-20 14:30:17,944 nodes:DEBUG i: 248
+2011-08-20 14:30:17,944 nodes:DEBUG trying to link commlink 179.53.230.211 at 28,135
+2011-08-20 14:30:17,944 nodes:DEBUG found target 179.53.230.211 at 28,135
+2011-08-20 14:30:17,944 nodes:DEBUG linked target
+2011-08-20 14:30:17,946 nodes:DEBUG i: 249
+2011-08-20 14:30:17,946 nodes:DEBUG trying to link commlink 104.132.230.35 at 185,183
+2011-08-20 14:30:17,946 nodes:DEBUG found target 169.183.36.18 at 185,181
+2011-08-20 14:30:17,946 nodes:DEBUG linked target
+2011-08-20 14:30:17,946 nodes:WARNING relinking 104.132.230.35 and 169.183.36.18
+2011-08-20 14:30:17,946 nodes:DEBUG i: 250
+2011-08-20 14:30:17,946 nodes:DEBUG trying to link commlink 153.137.154.207 at 30,141
+2011-08-20 14:30:17,946 nodes:DEBUG gave up
+2011-08-20 14:30:17,946 nodes:DEBUG i: 251
+2011-08-20 14:30:17,947 nodes:DEBUG trying to link commlink 126.170.224.68 at 13,192
+2011-08-20 14:30:17,947 nodes:DEBUG gave up
+2011-08-20 14:30:17,947 nodes:DEBUG i: 252
+2011-08-20 14:30:17,947 nodes:DEBUG trying to link commlink 55.234.126.232 at 106,186
+2011-08-20 14:30:17,947 nodes:DEBUG found target 55.234.126.232 at 106,186
+2011-08-20 14:30:17,947 nodes:DEBUG linked target
+2011-08-20 14:30:17,947 nodes:DEBUG i: 253
+2011-08-20 14:30:17,947 nodes:DEBUG trying to link commlink 106.91.195.251 at 93,130
+2011-08-20 14:30:17,947 nodes:DEBUG found target 106.91.195.251 at 93,130
+2011-08-20 14:30:17,947 nodes:DEBUG linked target
+2011-08-20 14:30:17,947 nodes:DEBUG i: 254
+2011-08-20 14:30:17,947 nodes:DEBUG trying to link commlink 115.3.197.70 at 6,37
+2011-08-20 14:30:17,947 nodes:DEBUG found target 115.3.197.70 at 6,37
+2011-08-20 14:30:17,947 nodes:DEBUG linked target
+2011-08-20 14:30:17,947 nodes:DEBUG i: 255
+2011-08-20 14:30:17,947 nodes:DEBUG trying to link commlink 37.114.196.61 at 134,114
+2011-08-20 14:30:17,947 nodes:DEBUG found target 250.30.119.66 at 137,111
+2011-08-20 14:30:17,947 nodes:DEBUG linked target
+2011-08-20 14:30:17,947 nodes:DEBUG i: 256
+2011-08-20 14:30:17,948 nodes:DEBUG trying to link commlink 60.204.186.194 at 34,84
+2011-08-20 14:30:17,948 nodes:DEBUG found target 142.92.231.134 at 34,88
+2011-08-20 14:30:17,948 nodes:DEBUG linked target
+2011-08-20 14:30:17,948 nodes:DEBUG i: 257
+2011-08-20 14:30:17,948 nodes:DEBUG trying to link commlink 241.117.119.180 at 68,104
+2011-08-20 14:30:17,948 nodes:DEBUG found target 241.117.119.180 at 68,104
+2011-08-20 14:30:17,948 nodes:DEBUG linked target
+2011-08-20 14:30:17,948 nodes:WARNING relinking 241.117.119.180 and 241.117.119.180
+2011-08-20 14:30:17,948 nodes:DEBUG gave up
+2011-08-20 14:30:17,948 nodes:DEBUG i: 258
+2011-08-20 14:30:17,950 nodes:DEBUG trying to link commlink 120.219.111.202 at 101,188
+2011-08-20 14:30:17,950 nodes:DEBUG gave up
+2011-08-20 14:30:17,950 nodes:DEBUG i: 259
+2011-08-20 14:30:17,950 nodes:DEBUG trying to link commlink 173.198.240.9 at 195,140
+2011-08-20 14:30:17,950 nodes:DEBUG found target 75.131.241.237 at 195,138
+2011-08-20 14:30:17,950 nodes:DEBUG linked target
+2011-08-20 14:30:17,950 nodes:DEBUG i: 260
+2011-08-20 14:30:17,950 nodes:DEBUG trying to link commlink 57.104.252.157 at 7,22
+2011-08-20 14:30:17,950 nodes:DEBUG gave up
+2011-08-20 14:30:17,950 nodes:DEBUG i: 261
+2011-08-20 14:30:17,950 nodes:DEBUG trying to link commlink 179.23.108.253 at 190,103
+2011-08-20 14:30:17,950 nodes:DEBUG found target 51.47.160.133 at 190,106
+2011-08-20 14:30:17,950 nodes:DEBUG linked target
+2011-08-20 14:30:17,950 nodes:DEBUG i: 262
+2011-08-20 14:30:17,950 nodes:DEBUG trying to link commlink 167.69.168.116 at 146,45
+2011-08-20 14:30:17,950 nodes:DEBUG gave up
+2011-08-20 14:30:17,951 nodes:DEBUG i: 263
+2011-08-20 14:30:17,951 nodes:DEBUG trying to link commlink 122.38.182.249 at 117,65
+2011-08-20 14:30:17,951 nodes:DEBUG found target 122.38.182.249 at 117,65
+2011-08-20 14:30:17,951 nodes:DEBUG linked target
+2011-08-20 14:30:17,951 nodes:DEBUG i: 264
+2011-08-20 14:30:17,951 nodes:DEBUG trying to link commlink 167.69.168.116 at 146,45
+2011-08-20 14:30:17,951 nodes:DEBUG found target 75.103.115.168 at 143,45
+2011-08-20 14:30:17,951 nodes:DEBUG linked target
+2011-08-20 14:30:17,951 nodes:DEBUG i: 265
+2011-08-20 14:30:17,951 nodes:DEBUG trying to link commlink 25.14.198.240 at 83,169
+2011-08-20 14:30:17,953 nodes:DEBUG gave up
+2011-08-20 14:30:17,953 nodes:DEBUG i: 266
+2011-08-20 14:30:17,953 nodes:DEBUG trying to link commlink 250.169.186.155 at 171,53
+2011-08-20 14:30:17,953 nodes:DEBUG found target 250.169.186.155 at 171,53
+2011-08-20 14:30:17,953 nodes:DEBUG linked target
+2011-08-20 14:30:17,953 nodes:DEBUG i: 267
+2011-08-20 14:30:17,953 nodes:DEBUG trying to link commlink 113.81.30.103 at 48,138
+2011-08-20 14:30:17,953 nodes:DEBUG gave up
+2011-08-20 14:30:17,953 nodes:DEBUG i: 268
+2011-08-20 14:30:17,953 nodes:DEBUG trying to link commlink 173.144.197.214 at 45,24
+2011-08-20 14:30:17,953 nodes:DEBUG found target 173.144.197.214 at 45,24
+2011-08-20 14:30:17,953 nodes:DEBUG linked target
+2011-08-20 14:30:17,953 nodes:DEBUG i: 269
+2011-08-20 14:30:17,953 nodes:DEBUG trying to link commlink 128.248.47.161 at 172,40
+2011-08-20 14:30:17,953 nodes:DEBUG found target 148.244.197.72 at 173,40
+2011-08-20 14:30:17,953 nodes:DEBUG linked target
+2011-08-20 14:30:17,954 nodes:DEBUG i: 270
+2011-08-20 14:30:17,954 nodes:DEBUG trying to link commlink 96.104.227.117 at 74,29
+2011-08-20 14:30:17,954 nodes:DEBUG found target 25.140.28.92 at 73,32
+2011-08-20 14:30:17,954 nodes:DEBUG linked target
+2011-08-20 14:30:17,954 nodes:DEBUG i: 271
+2011-08-20 14:30:17,954 nodes:DEBUG trying to link commlink 157.140.132.132 at 62,175
+2011-08-20 14:30:17,954 nodes:DEBUG found target 23.119.13.218 at 61,173
+2011-08-20 14:30:17,954 nodes:DEBUG linked target
+2011-08-20 14:30:17,954 nodes:DEBUG i: 272
+2011-08-20 14:30:17,954 nodes:DEBUG trying to link commlink 205.156.1.156 at 125,86
+2011-08-20 14:30:17,956 nodes:DEBUG found target 205.156.1.156 at 125,86
+2011-08-20 14:30:17,956 nodes:DEBUG linked target
+2011-08-20 14:30:17,956 nodes:DEBUG gave up
+2011-08-20 14:30:17,956 nodes:DEBUG i: 273
+2011-08-20 14:30:17,956 nodes:DEBUG trying to link commlink 78.118.51.117 at 183,109
+2011-08-20 14:30:17,956 nodes:DEBUG found target 205.145.216.126 at 181,113
+2011-08-20 14:30:17,956 nodes:DEBUG linked target
+2011-08-20 14:30:17,956 nodes:WARNING relinking 78.118.51.117 and 205.145.216.126
+2011-08-20 14:30:17,956 nodes:DEBUG i: 274
+2011-08-20 14:30:17,956 nodes:DEBUG trying to link commlink 138.222.233.28 at 89,42
+2011-08-20 14:30:17,957 nodes:DEBUG found target 119.36.203.166 at 90,39
+2011-08-20 14:30:17,957 nodes:DEBUG linked target
+2011-08-20 14:30:17,957 nodes:DEBUG i: 275
+2011-08-20 14:30:17,957 nodes:DEBUG trying to link commlink 121.207.252.51 at 193,58
+2011-08-20 14:30:17,957 nodes:DEBUG found target 104.229.199.70 at 192,56
+2011-08-20 14:30:17,957 nodes:DEBUG linked target
+2011-08-20 14:30:17,957 nodes:WARNING relinking 121.207.252.51 and 104.229.199.70
+2011-08-20 14:30:17,957 nodes:DEBUG i: 276
+2011-08-20 14:30:17,957 nodes:DEBUG trying to link commlink 164.81.91.246 at 180,198
+2011-08-20 14:30:17,957 nodes:DEBUG found target 164.81.91.246 at 180,198
+2011-08-20 14:30:17,957 nodes:DEBUG linked target
+2011-08-20 14:30:17,957 nodes:DEBUG i: 277
+2011-08-20 14:30:17,957 nodes:DEBUG trying to link commlink 70.103.10.27 at 72,92
+2011-08-20 14:30:17,957 nodes:DEBUG found target 70.103.10.27 at 72,92
+2011-08-20 14:30:17,957 nodes:DEBUG linked target
+2011-08-20 14:30:17,957 nodes:DEBUG i: 278
+2011-08-20 14:30:17,957 nodes:DEBUG trying to link commlink 57.61.74.9 at 94,99
+2011-08-20 14:30:17,957 nodes:DEBUG found target 79.33.145.243 at 93,101
+2011-08-20 14:30:17,957 nodes:DEBUG linked target
+2011-08-20 14:30:17,957 nodes:WARNING relinking 57.61.74.9 and 79.33.145.243
+2011-08-20 14:30:17,959 nodes:DEBUG i: 279
+2011-08-20 14:30:17,959 nodes:DEBUG trying to link commlink 36.164.39.29 at 73,1
+2011-08-20 14:30:17,959 nodes:DEBUG gave up
+2011-08-20 14:30:17,959 nodes:DEBUG i: 280
+2011-08-20 14:30:17,959 nodes:DEBUG trying to link commlink 70.103.10.27 at 72,92
+2011-08-20 14:30:17,959 nodes:DEBUG found target 70.103.10.27 at 72,92
+2011-08-20 14:30:17,959 nodes:DEBUG linked target
+2011-08-20 14:30:17,959 nodes:WARNING relinking 70.103.10.27 and 70.103.10.27
+2011-08-20 14:30:17,959 nodes:DEBUG i: 281
+2011-08-20 14:30:17,959 nodes:DEBUG trying to link commlink 22.116.16.60 at 173,57
+2011-08-20 14:30:17,960 nodes:DEBUG gave up
+2011-08-20 14:30:17,960 nodes:DEBUG i: 282
+2011-08-20 14:30:17,960 nodes:DEBUG trying to link commlink 82.251.170.155 at 135,191
+2011-08-20 14:30:17,960 nodes:DEBUG gave up
+2011-08-20 14:30:17,960 nodes:DEBUG i: 283
+2011-08-20 14:30:17,960 nodes:DEBUG trying to link commlink 168.183.22.23 at 10,29
+2011-08-20 14:30:17,960 nodes:DEBUG gave up
+2011-08-20 14:30:17,960 nodes:DEBUG i: 284
+2011-08-20 14:30:17,960 nodes:DEBUG trying to link commlink 43.51.240.118 at 78,187
+2011-08-20 14:30:17,960 nodes:DEBUG found target 210.72.155.59 at 80,186
+2011-08-20 14:30:17,960 nodes:DEBUG linked target
+2011-08-20 14:30:17,960 nodes:DEBUG i: 285
+2011-08-20 14:30:17,960 nodes:DEBUG trying to link commlink 216.98.64.246 at 173,133
+2011-08-20 14:30:17,960 nodes:DEBUG found target 133.248.120.166 at 177,136
+2011-08-20 14:30:17,960 nodes:DEBUG linked target
+2011-08-20 14:30:17,960 nodes:DEBUG i: 286
+2011-08-20 14:30:17,960 nodes:DEBUG trying to link commlink 88.4.57.56 at 47,151
+2011-08-20 14:30:17,961 nodes:DEBUG gave up
+2011-08-20 14:30:17,961 nodes:DEBUG i: 287
+2011-08-20 14:30:17,961 nodes:DEBUG trying to link commlink 233.215.57.254 at 89,54
+2011-08-20 14:30:17,961 nodes:DEBUG gave up
+2011-08-20 14:30:17,961 nodes:DEBUG i: 288
+2011-08-20 14:30:17,961 nodes:DEBUG trying to link commlink 173.198.240.9 at 195,140
+2011-08-20 14:30:17,961 nodes:DEBUG found target 130.131.1.170 at 195,144
+2011-08-20 14:30:17,961 nodes:DEBUG linked target
+2011-08-20 14:30:17,961 nodes:DEBUG i: 289
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 243.175.188.195 at 41,89
+2011-08-20 14:30:17,963 nodes:DEBUG found target 172.243.114.177 at 37,85
+2011-08-20 14:30:17,963 nodes:DEBUG linked target
+2011-08-20 14:30:17,963 nodes:DEBUG i: 290
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 30.48.149.114 at 183,139
+2011-08-20 14:30:17,963 nodes:DEBUG found target 30.48.149.114 at 183,139
+2011-08-20 14:30:17,963 nodes:DEBUG linked target
+2011-08-20 14:30:17,963 nodes:DEBUG i: 291
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 85.90.129.25 at 130,198
+2011-08-20 14:30:17,963 nodes:DEBUG gave up
+2011-08-20 14:30:17,963 nodes:DEBUG i: 292
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 243.71.109.90 at 79,51
+2011-08-20 14:30:17,963 nodes:DEBUG gave up
+2011-08-20 14:30:17,963 nodes:DEBUG i: 293
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 139.121.50.152 at 11,187
+2011-08-20 14:30:17,963 nodes:DEBUG gave up
+2011-08-20 14:30:17,963 nodes:DEBUG i: 294
+2011-08-20 14:30:17,963 nodes:DEBUG trying to link commlink 104.229.199.70 at 192,56
+2011-08-20 14:30:17,964 nodes:DEBUG found target 58.160.26.79 at 196,60
+2011-08-20 14:30:17,964 nodes:DEBUG linked target
+2011-08-20 14:30:17,964 nodes:DEBUG i: 295
+2011-08-20 14:30:17,964 nodes:DEBUG trying to link commlink 99.186.81.152 at 133,143
+2011-08-20 14:30:17,964 nodes:DEBUG gave up
+2011-08-20 14:30:17,964 nodes:DEBUG i: 296
+2011-08-20 14:30:17,964 nodes:DEBUG trying to link commlink 250.106.173.12 at 75,127
+2011-08-20 14:30:17,964 nodes:DEBUG found target 250.106.173.12 at 75,127
+2011-08-20 14:30:17,966 nodes:DEBUG linked target
+2011-08-20 14:30:17,966 nodes:DEBUG i: 297
+2011-08-20 14:30:17,966 nodes:DEBUG trying to link commlink 3.67.46.121 at 36,101
+2011-08-20 14:30:17,966 nodes:DEBUG found target 8.11.95.50 at 38,105
+2011-08-20 14:30:17,966 nodes:DEBUG linked target
+2011-08-20 14:30:17,966 nodes:DEBUG i: 298
+2011-08-20 14:30:17,966 nodes:DEBUG trying to link commlink 229.226.63.102 at 183,22
+2011-08-20 14:30:17,966 nodes:DEBUG found target 162.96.54.82 at 185,20
+2011-08-20 14:30:17,966 nodes:DEBUG linked target
+2011-08-20 14:30:17,966 nodes:DEBUG i: 299
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 101.185.53.155 at 143,158
+2011-08-20 14:30:17,967 nodes:DEBUG found target 101.185.53.155 at 143,158
+2011-08-20 14:30:17,967 nodes:DEBUG linked target
+2011-08-20 14:30:17,967 nodes:DEBUG i: 300
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 203.144.2.67 at 165,154
+2011-08-20 14:30:17,967 nodes:DEBUG gave up
+2011-08-20 14:30:17,967 nodes:DEBUG i: 301
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 167.219.33.113 at 96,86
+2011-08-20 14:30:17,967 nodes:DEBUG found target 167.219.33.113 at 96,86
+2011-08-20 14:30:17,967 nodes:DEBUG linked target
+2011-08-20 14:30:17,967 nodes:DEBUG i: 302
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 215.148.130.203 at 38,186
+2011-08-20 14:30:17,967 nodes:DEBUG gave up
+2011-08-20 14:30:17,967 nodes:DEBUG i: 303
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 111.229.226.229 at 139,125
+2011-08-20 14:30:17,967 nodes:DEBUG found target 238.15.4.145 at 141,121
+2011-08-20 14:30:17,967 nodes:DEBUG linked target
+2011-08-20 14:30:17,967 nodes:DEBUG i: 304
+2011-08-20 14:30:17,967 nodes:DEBUG trying to link commlink 82.251.170.155 at 135,191
+2011-08-20 14:30:17,969 nodes:DEBUG gave up
+2011-08-20 14:30:17,969 nodes:DEBUG i: 305
+2011-08-20 14:30:17,969 nodes:DEBUG trying to link commlink 233.99.64.61 at 132,89
+2011-08-20 14:30:17,969 nodes:DEBUG found target 98.84.243.229 at 135,88
+2011-08-20 14:30:17,969 nodes:DEBUG linked target
+2011-08-20 14:30:17,969 nodes:WARNING relinking 233.99.64.61 and 98.84.243.229
+2011-08-20 14:30:17,969 nodes:DEBUG i: 306
+2011-08-20 14:30:17,969 nodes:DEBUG trying to link commlink 240.90.146.70 at 79,29
+2011-08-20 14:30:17,970 nodes:DEBUG gave up
+2011-08-20 14:30:17,970 nodes:DEBUG i: 307
+2011-08-20 14:30:17,970 nodes:DEBUG trying to link commlink 58.160.26.79 at 196,60
+2011-08-20 14:30:17,970 nodes:DEBUG gave up
+2011-08-20 14:30:17,970 nodes:DEBUG i: 308
+2011-08-20 14:30:17,970 nodes:DEBUG trying to link commlink 245.92.239.166 at 160,141
+2011-08-20 14:30:17,970 nodes:DEBUG gave up
+2011-08-20 14:30:17,970 nodes:DEBUG i: 309
+2011-08-20 14:30:17,970 nodes:DEBUG trying to link commlink 180.198.74.171 at 130,121
+2011-08-20 14:30:17,970 nodes:DEBUG gave up
+2011-08-20 14:30:17,970 nodes:DEBUG i: 310
+2011-08-20 14:30:17,970 nodes:DEBUG trying to link commlink 129.255.125.129 at 154,192
+2011-08-20 14:30:17,970 nodes:DEBUG found target 129.255.125.129 at 154,192
+2011-08-20 14:30:17,970 nodes:DEBUG linked target
+2011-08-20 14:30:17,970 nodes:DEBUG i: 311
+2011-08-20 14:30:17,970 nodes:DEBUG trying to link commlink 246.41.8.107 at 24,158
+2011-08-20 14:30:17,971 nodes:DEBUG gave up
+2011-08-20 14:30:17,971 nodes:DEBUG i: 312
+2011-08-20 14:30:17,971 nodes:DEBUG trying to link commlink 225.24.13.12 at 111,139
+2011-08-20 14:30:17,971 nodes:DEBUG found target 225.24.13.12 at 111,139
+2011-08-20 14:30:17,971 nodes:DEBUG linked target
+2011-08-20 14:30:17,971 nodes:DEBUG i: 313
+2011-08-20 14:30:17,971 nodes:DEBUG trying to link commlink 53.41.248.168 at 119,184
+2011-08-20 14:30:17,971 nodes:DEBUG gave up
+2011-08-20 14:30:17,971 nodes:DEBUG i: 314
+2011-08-20 14:30:17,971 nodes:DEBUG trying to link commlink 127.106.183.70 at 124,4
+2011-08-20 14:30:17,973 nodes:DEBUG gave up
+2011-08-20 14:30:17,973 nodes:DEBUG i: 315
+2011-08-20 14:30:17,973 nodes:DEBUG trying to link commlink 54.229.91.6 at 87,112
+2011-08-20 14:30:17,973 nodes:DEBUG gave up
+2011-08-20 14:30:17,973 nodes:DEBUG i: 316
+2011-08-20 14:30:17,973 nodes:DEBUG trying to link commlink 253.121.3.221 at 176,177
+2011-08-20 14:30:17,973 nodes:DEBUG gave up
+2011-08-20 14:30:17,973 nodes:DEBUG i: 317
+2011-08-20 14:30:17,973 nodes:DEBUG trying to link commlink 65.5.248.46 at 35,92
+2011-08-20 14:30:17,973 nodes:DEBUG found target 65.5.248.46 at 35,92
+2011-08-20 14:30:17,973 nodes:DEBUG linked target
+2011-08-20 14:30:17,973 nodes:DEBUG i: 318
+2011-08-20 14:30:17,973 nodes:DEBUG trying to link commlink 107.30.109.49 at 88,0
+2011-08-20 14:30:17,973 nodes:DEBUG gave up
+2011-08-20 14:30:17,973 nodes:DEBUG i: 319
+2011-08-20 14:30:17,973 nodes:DEBUG trying to link commlink 145.234.177.160 at 169,83
+2011-08-20 14:30:17,974 nodes:DEBUG gave up
+2011-08-20 14:30:17,974 nodes:DEBUG i: 320
+2011-08-20 14:30:17,974 nodes:DEBUG trying to link commlink 212.104.154.58 at 96,145
+2011-08-20 14:30:17,974 nodes:DEBUG found target 87.182.38.207 at 96,142
+2011-08-20 14:30:17,974 nodes:DEBUG linked target
+2011-08-20 14:30:17,974 nodes:WARNING relinking 212.104.154.58 and 87.182.38.207
+2011-08-20 14:30:17,974 nodes:DEBUG i: 321
+2011-08-20 14:30:17,974 nodes:DEBUG trying to link commlink 112.254.103.45 at 195,44
+2011-08-20 14:30:17,974 nodes:DEBUG gave up
+2011-08-20 14:30:17,974 nodes:DEBUG i: 322
+2011-08-20 14:30:17,976 nodes:DEBUG trying to link commlink 106.57.197.171 at 17,106
+2011-08-20 14:30:17,976 nodes:DEBUG found target 106.57.197.171 at 17,106
+2011-08-20 14:30:17,976 nodes:DEBUG linked target
+2011-08-20 14:30:17,976 nodes:DEBUG i: 323
+2011-08-20 14:30:17,976 nodes:DEBUG trying to link commlink 2.124.59.118 at 97,17
+2011-08-20 14:30:17,976 nodes:DEBUG found target 134.89.188.41 at 93,13
+2011-08-20 14:30:17,976 nodes:DEBUG linked target
+2011-08-20 14:30:17,976 nodes:DEBUG i: 324
+2011-08-20 14:30:17,976 nodes:DEBUG trying to link commlink 96.91.200.24 at 8,131
+2011-08-20 14:30:17,976 nodes:DEBUG found target 82.134.213.106 at 11,131
+2011-08-20 14:30:17,976 nodes:DEBUG linked target
+2011-08-20 14:30:17,976 nodes:DEBUG i: 325
+2011-08-20 14:30:17,976 nodes:DEBUG trying to link commlink 134.192.60.9 at 26,171
+2011-08-20 14:30:17,976 nodes:DEBUG gave up
+2011-08-20 14:30:17,976 nodes:DEBUG i: 326
+2011-08-20 14:30:17,976 nodes:DEBUG trying to link commlink 187.1.108.183 at 167,198
+2011-08-20 14:30:17,976 nodes:DEBUG found target 188.210.198.214 at 167,196
+2011-08-20 14:30:17,976 nodes:DEBUG linked target
+2011-08-20 14:30:17,976 nodes:WARNING relinking 187.1.108.183 and 188.210.198.214
+2011-08-20 14:30:17,976 nodes:DEBUG i: 327
+2011-08-20 14:30:17,977 nodes:DEBUG trying to link commlink 98.123.46.81 at 76,51
+2011-08-20 14:30:17,977 nodes:DEBUG found target 243.71.109.90 at 79,51
+2011-08-20 14:30:17,977 nodes:DEBUG linked target
+2011-08-20 14:30:17,977 nodes:DEBUG i: 328
+2011-08-20 14:30:17,977 nodes:DEBUG trying to link commlink 38.159.62.2 at 95,121
+2011-08-20 14:30:17,977 nodes:DEBUG found target 81.162.51.255 at 96,119
+2011-08-20 14:30:17,977 nodes:DEBUG linked target
+2011-08-20 14:30:17,977 nodes:DEBUG i: 329
+2011-08-20 14:30:17,977 nodes:DEBUG trying to link commlink 222.221.18.208 at 107,61
+2011-08-20 14:30:17,979 nodes:DEBUG gave up
+2011-08-20 14:30:17,979 nodes:DEBUG i: 330
+2011-08-20 14:30:17,979 nodes:DEBUG trying to link commlink 184.254.24.186 at 18,143
+2011-08-20 14:30:17,979 nodes:DEBUG gave up
+2011-08-20 14:30:17,979 nodes:DEBUG i: 331
+2011-08-20 14:30:17,979 nodes:DEBUG trying to link commlink 148.78.42.152 at 164,32
+2011-08-20 14:30:17,979 nodes:DEBUG found target 148.78.42.152 at 164,32
+2011-08-20 14:30:17,979 nodes:DEBUG linked target
+2011-08-20 14:30:17,979 nodes:DEBUG i: 332
+2011-08-20 14:30:17,979 nodes:DEBUG trying to link commlink 22.116.16.60 at 173,57
+2011-08-20 14:30:17,980 nodes:DEBUG found target 250.169.186.155 at 171,53
+2011-08-20 14:30:17,980 nodes:DEBUG linked target
+2011-08-20 14:30:17,980 nodes:DEBUG i: 333
+2011-08-20 14:30:17,980 nodes:DEBUG trying to link commlink 190.11.71.227 at 186,192
+2011-08-20 14:30:17,980 nodes:DEBUG gave up
+2011-08-20 14:30:17,980 nodes:DEBUG i: 334
+2011-08-20 14:30:17,980 nodes:DEBUG trying to link commlink 161.54.164.155 at 150,173
+2011-08-20 14:30:17,980 nodes:DEBUG gave up
+2011-08-20 14:30:17,980 nodes:DEBUG i: 335
+2011-08-20 14:30:17,980 nodes:DEBUG trying to link commlink 200.64.179.254 at 53,47
+2011-08-20 14:30:17,980 nodes:DEBUG found target 200.64.179.254 at 53,47
+2011-08-20 14:30:17,980 nodes:DEBUG linked target
+2011-08-20 14:30:17,980 nodes:DEBUG i: 336
+2011-08-20 14:30:17,980 nodes:DEBUG trying to link commlink 43.51.240.118 at 78,187
+2011-08-20 14:30:17,980 nodes:DEBUG found target 84.99.94.143 at 75,183
+2011-08-20 14:30:17,980 nodes:DEBUG linked target
+2011-08-20 14:30:17,980 nodes:DEBUG i: 337
+2011-08-20 14:30:17,980 nodes:DEBUG trying to link commlink 51.47.160.133 at 190,106
+2011-08-20 14:30:17,982 nodes:DEBUG gave up
+2011-08-20 14:30:17,982 nodes:DEBUG i: 338
+2011-08-20 14:30:17,982 nodes:DEBUG trying to link commlink 204.81.79.169 at 95,115
+2011-08-20 14:30:17,982 nodes:DEBUG found target 204.81.79.169 at 95,115
+2011-08-20 14:30:17,982 nodes:DEBUG linked target
+2011-08-20 14:30:17,982 nodes:DEBUG i: 339
+2011-08-20 14:30:17,982 nodes:DEBUG trying to link commlink 167.219.33.113 at 96,86
+2011-08-20 14:30:17,982 nodes:DEBUG gave up
+2011-08-20 14:30:17,982 nodes:DEBUG i: 340
+2011-08-20 14:30:17,983 nodes:DEBUG trying to link commlink 33.122.55.56 at 139,26
+2011-08-20 14:30:17,983 nodes:DEBUG found target 33.122.55.56 at 139,26
+2011-08-20 14:30:17,983 nodes:DEBUG linked target
+2011-08-20 14:30:17,983 nodes:WARNING relinking 33.122.55.56 and 33.122.55.56
+2011-08-20 14:30:17,983 nodes:DEBUG i: 341
+2011-08-20 14:30:17,983 nodes:DEBUG trying to link commlink 92.106.26.66 at 111,15
+2011-08-20 14:30:17,983 nodes:DEBUG gave up
+2011-08-20 14:30:17,983 nodes:DEBUG i: 342
+2011-08-20 14:30:17,983 nodes:DEBUG trying to link commlink 67.125.60.82 at 179,67
+2011-08-20 14:30:17,983 nodes:DEBUG found target 67.125.60.82 at 179,67
+2011-08-20 14:30:17,983 nodes:DEBUG linked target
+2011-08-20 14:30:17,983 nodes:DEBUG i: 343
+2011-08-20 14:30:17,983 nodes:DEBUG trying to link commlink 148.78.42.152 at 164,32
+2011-08-20 14:30:17,983 nodes:DEBUG gave up
+2011-08-20 14:30:17,983 nodes:DEBUG i: 344
+2011-08-20 14:30:17,983 nodes:DEBUG trying to link commlink 251.45.33.205 at 123,120
+2011-08-20 14:30:17,983 nodes:DEBUG found target 251.45.33.205 at 123,120
+2011-08-20 14:30:17,983 nodes:DEBUG linked target
+2011-08-20 14:30:17,984 nodes:DEBUG i: 345
+2011-08-20 14:30:17,984 nodes:DEBUG trying to link commlink 142.187.248.134 at 115,159
+2011-08-20 14:30:17,984 nodes:DEBUG found target 142.187.248.134 at 115,159
+2011-08-20 14:30:17,984 nodes:DEBUG linked target
+2011-08-20 14:30:17,984 nodes:DEBUG i: 346
+2011-08-20 14:30:17,984 nodes:DEBUG trying to link commlink 167.219.33.113 at 96,86
+2011-08-20 14:30:17,984 nodes:DEBUG found target 167.219.33.113 at 96,86
+2011-08-20 14:30:17,984 nodes:DEBUG linked target
+2011-08-20 14:30:17,984 nodes:WARNING relinking 167.219.33.113 and 167.219.33.113
+2011-08-20 14:30:17,984 nodes:DEBUG i: 347
+2011-08-20 14:30:17,986 nodes:DEBUG trying to link commlink 98.61.86.144 at 50,159
+2011-08-20 14:30:17,986 nodes:DEBUG gave up
+2011-08-20 14:30:17,986 nodes:DEBUG i: 348
+2011-08-20 14:30:17,986 nodes:DEBUG trying to link commlink 239.113.95.102 at 197,20
+2011-08-20 14:30:17,986 nodes:DEBUG found target 90.84.10.44 at 193,19
+2011-08-20 14:30:17,986 nodes:DEBUG linked target
+2011-08-20 14:30:17,986 nodes:DEBUG i: 349
+2011-08-20 14:30:17,986 nodes:DEBUG trying to link commlink 27.188.16.121 at 49,160
+2011-08-20 14:30:17,986 nodes:DEBUG found target 27.188.16.121 at 49,160
+2011-08-20 14:30:17,986 nodes:DEBUG linked target
+2011-08-20 14:30:17,986 nodes:DEBUG i: 350
+2011-08-20 14:30:17,986 nodes:DEBUG trying to link commlink 233.196.173.246 at 99,22
+2011-08-20 14:30:17,986 nodes:DEBUG gave up
+2011-08-20 14:30:17,986 nodes:DEBUG i: 351
+2011-08-20 14:30:17,986 nodes:DEBUG trying to link commlink 225.23.249.179 at 161,27
+2011-08-20 14:30:17,986 nodes:DEBUG gave up
+2011-08-20 14:30:17,986 nodes:DEBUG i: 352
+2011-08-20 14:30:17,987 nodes:DEBUG trying to link commlink 85.90.129.25 at 130,198
+2011-08-20 14:30:17,987 nodes:DEBUG gave up
+2011-08-20 14:30:17,987 nodes:DEBUG i: 353
+2011-08-20 14:30:17,987 nodes:DEBUG trying to link commlink 31.232.18.135 at 78,105
+2011-08-20 14:30:17,987 nodes:DEBUG gave up
+2011-08-20 14:30:17,987 nodes:DEBUG i: 354
+2011-08-20 14:30:17,987 nodes:DEBUG trying to link commlink 248.211.32.251 at 126,138
+2011-08-20 14:30:17,987 nodes:DEBUG found target 248.211.32.251 at 126,138
+2011-08-20 14:30:17,989 nodes:DEBUG linked target
+2011-08-20 14:30:17,989 nodes:WARNING relinking 248.211.32.251 and 248.211.32.251
+2011-08-20 14:30:17,989 nodes:DEBUG i: 355
+2011-08-20 14:30:17,989 nodes:DEBUG trying to link commlink 178.132.241.73 at 110,142
+2011-08-20 14:30:17,989 nodes:DEBUG found target 225.24.13.12 at 111,139
+2011-08-20 14:30:17,989 nodes:DEBUG linked target
+2011-08-20 14:30:17,989 nodes:DEBUG i: 356
+2011-08-20 14:30:17,989 nodes:DEBUG trying to link commlink 58.43.4.116 at 46,99
+2011-08-20 14:30:17,989 nodes:DEBUG found target 207.56.69.99 at 48,95
+2011-08-20 14:30:17,989 nodes:DEBUG linked target
+2011-08-20 14:30:17,990 nodes:DEBUG i: 357
+2011-08-20 14:30:17,990 nodes:DEBUG trying to link commlink 181.3.230.40 at 15,18
+2011-08-20 14:30:17,990 nodes:DEBUG found target 198.181.160.211 at 12,20
+2011-08-20 14:30:17,990 nodes:DEBUG linked target
+2011-08-20 14:30:17,990 nodes:WARNING relinking 181.3.230.40 and 198.181.160.211
+2011-08-20 14:30:17,990 nodes:DEBUG i: 358
+2011-08-20 14:30:17,990 nodes:DEBUG trying to link commlink 199.7.224.245 at 42,4
+2011-08-20 14:30:17,990 nodes:DEBUG gave up
+2011-08-20 14:30:17,990 nodes:DEBUG i: 359
+2011-08-20 14:30:17,990 nodes:DEBUG trying to link commlink 94.78.38.120 at 64,59
+2011-08-20 14:30:17,990 nodes:DEBUG found target 148.91.225.73 at 60,61
+2011-08-20 14:30:17,990 nodes:DEBUG linked target
+2011-08-20 14:30:17,990 nodes:DEBUG i: 360
+2011-08-20 14:30:17,990 nodes:DEBUG trying to link commlink 68.85.201.191 at 10,182
+2011-08-20 14:30:17,990 nodes:DEBUG gave up
+2011-08-20 14:30:17,990 nodes:DEBUG i: 361
+2011-08-20 14:30:17,990 nodes:DEBUG trying to link commlink 49.153.71.87 at 175,187
+2011-08-20 14:30:17,990 nodes:DEBUG found target 49.153.71.87 at 175,187
+2011-08-20 14:30:17,990 nodes:DEBUG linked target
+2011-08-20 14:30:17,992 nodes:DEBUG i: 362
+2011-08-20 14:30:17,992 nodes:DEBUG trying to link commlink 121.183.149.194 at 12,184
+2011-08-20 14:30:17,992 nodes:DEBUG found target 160.229.75.234 at 10,184
+2011-08-20 14:30:17,992 nodes:DEBUG linked target
+2011-08-20 14:30:17,992 nodes:WARNING relinking 121.183.149.194 and 160.229.75.234
+2011-08-20 14:30:17,992 nodes:DEBUG i: 363
+2011-08-20 14:30:17,992 nodes:DEBUG trying to link commlink 239.214.0.62 at 193,70
+2011-08-20 14:30:17,992 nodes:DEBUG found target 58.55.167.217 at 192,67
+2011-08-20 14:30:17,992 nodes:DEBUG linked target
+2011-08-20 14:30:17,992 nodes:DEBUG i: 364
+2011-08-20 14:30:17,993 nodes:DEBUG trying to link commlink 2.124.59.118 at 97,17
+2011-08-20 14:30:17,993 nodes:DEBUG gave up
+2011-08-20 14:30:17,993 nodes:DEBUG i: 365
+2011-08-20 14:30:17,993 nodes:DEBUG trying to link commlink 151.190.83.210 at 77,187
+2011-08-20 14:30:17,993 nodes:DEBUG found target 43.51.240.118 at 78,187
+2011-08-20 14:30:17,993 nodes:DEBUG linked target
+2011-08-20 14:30:17,993 nodes:DEBUG i: 366
+2011-08-20 14:30:17,993 nodes:DEBUG trying to link commlink 31.232.18.135 at 78,105
+2011-08-20 14:30:17,993 nodes:DEBUG gave up
+2011-08-20 14:30:17,993 nodes:DEBUG i: 367
+2011-08-20 14:30:17,993 nodes:DEBUG trying to link commlink 143.249.21.171 at 136,89
+2011-08-20 14:30:17,993 nodes:DEBUG gave up
+2011-08-20 14:30:17,993 nodes:DEBUG i: 368
+2011-08-20 14:30:17,993 nodes:DEBUG trying to link commlink 193.243.6.32 at 89,126
+2011-08-20 14:30:17,993 nodes:DEBUG found target 106.91.195.251 at 93,130
+2011-08-20 14:30:17,993 nodes:DEBUG linked target
+2011-08-20 14:30:17,993 nodes:DEBUG i: 369
+2011-08-20 14:30:17,994 nodes:DEBUG trying to link commlink 173.198.240.9 at 195,140
+2011-08-20 14:30:17,994 nodes:DEBUG gave up
+2011-08-20 14:30:17,994 nodes:DEBUG i: 370
+2011-08-20 14:30:17,994 nodes:DEBUG trying to link commlink 22.116.16.60 at 173,57
+2011-08-20 14:30:17,994 nodes:DEBUG found target 22.116.16.60 at 173,57
+2011-08-20 14:30:17,994 nodes:DEBUG linked target
+2011-08-20 14:30:17,994 nodes:DEBUG gave up
+2011-08-20 14:30:17,994 nodes:DEBUG i: 371
+2011-08-20 14:30:17,994 nodes:DEBUG trying to link commlink 239.11.236.171 at 37,82
+2011-08-20 14:30:17,996 nodes:DEBUG found target 172.243.114.177 at 37,85
+2011-08-20 14:30:17,996 nodes:DEBUG linked target
+2011-08-20 14:30:17,996 nodes:DEBUG i: 372
+2011-08-20 14:30:17,996 nodes:DEBUG trying to link commlink 2.19.250.66 at 44,48
+2011-08-20 14:30:17,996 nodes:DEBUG gave up
+2011-08-20 14:30:17,996 nodes:DEBUG i: 373
+2011-08-20 14:30:17,996 nodes:DEBUG trying to link commlink 17.236.153.119 at 83,123
+2011-08-20 14:30:17,996 nodes:DEBUG found target 17.236.153.119 at 83,123
+2011-08-20 14:30:17,996 nodes:DEBUG linked target
+2011-08-20 14:30:17,996 nodes:DEBUG i: 374
+2011-08-20 14:30:17,996 nodes:DEBUG trying to link commlink 241.135.139.14 at 109,33
+2011-08-20 14:30:17,996 nodes:DEBUG found target 241.135.139.14 at 109,33
+2011-08-20 14:30:17,996 nodes:DEBUG linked target
+2011-08-20 14:30:17,996 nodes:DEBUG i: 375
+2011-08-20 14:30:17,996 nodes:DEBUG trying to link commlink 238.124.53.96 at 98,16
+2011-08-20 14:30:17,996 nodes:DEBUG found target 2.124.59.118 at 97,17
+2011-08-20 14:30:17,996 nodes:DEBUG linked target
+2011-08-20 14:30:17,996 nodes:DEBUG i: 376
+2011-08-20 14:30:17,996 nodes:DEBUG trying to link commlink 122.45.134.237 at 9,160
+2011-08-20 14:30:17,997 nodes:DEBUG gave up
+2011-08-20 14:30:17,997 nodes:DEBUG i: 377
+2011-08-20 14:30:17,997 nodes:DEBUG trying to link commlink 155.99.218.89 at 153,157
+2011-08-20 14:30:17,997 nodes:DEBUG found target 155.99.218.89 at 153,157
+2011-08-20 14:30:17,997 nodes:DEBUG linked target
+2011-08-20 14:30:17,997 nodes:DEBUG i: 378
+2011-08-20 14:30:17,997 nodes:DEBUG trying to link commlink 1.111.88.110 at 4,7
+2011-08-20 14:30:17,997 nodes:DEBUG gave up
+2011-08-20 14:30:17,997 nodes:DEBUG i: 379
+2011-08-20 14:30:17,997 nodes:DEBUG trying to link commlink 233.196.173.246 at 99,22
+2011-08-20 14:30:17,999 nodes:DEBUG gave up
+2011-08-20 14:30:17,999 nodes:DEBUG i: 380
+2011-08-20 14:30:17,999 nodes:DEBUG trying to link commlink 72.137.101.107 at 93,174
+2011-08-20 14:30:17,999 nodes:DEBUG found target 2.93.25.54 at 95,170
+2011-08-20 14:30:17,999 nodes:DEBUG linked target
+2011-08-20 14:30:17,999 nodes:DEBUG i: 381
+2011-08-20 14:30:17,999 nodes:DEBUG trying to link commlink 52.77.123.209 at 43,103
+2011-08-20 14:30:17,999 nodes:DEBUG found target 2.81.59.23 at 46,101
+2011-08-20 14:30:17,999 nodes:DEBUG linked target
+2011-08-20 14:30:17,999 nodes:DEBUG i: 382
+2011-08-20 14:30:18,000 nodes:DEBUG trying to link commlink 134.89.188.41 at 93,13
+2011-08-20 14:30:18,000 nodes:DEBUG found target 2.124.59.118 at 97,17
+2011-08-20 14:30:18,000 nodes:DEBUG linked target
+2011-08-20 14:30:18,000 nodes:WARNING relinking 134.89.188.41 and 2.124.59.118
+2011-08-20 14:30:18,000 nodes:DEBUG i: 383
+2011-08-20 14:30:18,000 nodes:DEBUG trying to link commlink 22.67.185.161 at 154,53
+2011-08-20 14:30:18,000 nodes:DEBUG gave up
+2011-08-20 14:30:18,000 nodes:DEBUG i: 384
+2011-08-20 14:30:18,000 nodes:DEBUG trying to link commlink 104.41.246.131 at 52,169
+2011-08-20 14:30:18,000 nodes:DEBUG gave up
+2011-08-20 14:30:18,000 nodes:DEBUG i: 385
+2011-08-20 14:30:18,000 nodes:DEBUG trying to link commlink 3.57.154.108 at 190,168
+2011-08-20 14:30:18,000 nodes:DEBUG found target 175.167.110.196 at 187,170
+2011-08-20 14:30:18,000 nodes:DEBUG linked target
+2011-08-20 14:30:18,000 nodes:DEBUG i: 386
+2011-08-20 14:30:18,000 nodes:DEBUG trying to link commlink 127.106.183.70 at 124,4
+2011-08-20 14:30:18,000 nodes:DEBUG gave up
+2011-08-20 14:30:18,002 nodes:DEBUG i: 387
+2011-08-20 14:30:18,002 nodes:DEBUG trying to link commlink 124.99.56.109 at 101,97
+2011-08-20 14:30:18,002 nodes:DEBUG gave up
+2011-08-20 14:30:18,002 nodes:DEBUG i: 388
+2011-08-20 14:30:18,002 nodes:DEBUG trying to link commlink 62.182.43.104 at 98,67
+2011-08-20 14:30:18,002 nodes:DEBUG gave up
+2011-08-20 14:30:18,002 nodes:DEBUG i: 389
+2011-08-20 14:30:18,002 nodes:DEBUG trying to link commlink 239.116.227.92 at 18,55
+2011-08-20 14:30:18,003 nodes:DEBUG gave up
+2011-08-20 14:30:18,003 nodes:DEBUG i: 390
+2011-08-20 14:30:18,003 nodes:DEBUG trying to link commlink 160.212.77.169 at 186,118
+2011-08-20 14:30:18,003 nodes:DEBUG found target 252.155.168.121 at 188,117
+2011-08-20 14:30:18,003 nodes:DEBUG linked target
+2011-08-20 14:30:18,003 nodes:WARNING relinking 160.212.77.169 and 252.155.168.121
+2011-08-20 14:30:18,003 nodes:DEBUG i: 391
+2011-08-20 14:30:18,003 nodes:DEBUG trying to link commlink 206.33.240.87 at 25,62
+2011-08-20 14:30:18,003 nodes:DEBUG gave up
+2011-08-20 14:30:18,003 nodes:DEBUG i: 392
+2011-08-20 14:30:18,003 nodes:DEBUG trying to link commlink 189.105.133.223 at 38,49
+2011-08-20 14:30:18,003 nodes:DEBUG gave up
+2011-08-20 14:30:18,003 nodes:DEBUG i: 393
+2011-08-20 14:30:18,003 nodes:DEBUG trying to link commlink 107.30.109.49 at 88,0
+2011-08-20 14:30:18,003 nodes:DEBUG gave up
+2011-08-20 14:30:18,003 nodes:DEBUG i: 394
+2011-08-20 14:30:18,003 nodes:DEBUG trying to link commlink 150.68.16.15 at 90,117
+2011-08-20 14:30:18,003 nodes:DEBUG found target 150.68.16.15 at 90,117
+2011-08-20 14:30:18,005 nodes:DEBUG linked target
+2011-08-20 14:30:18,005 nodes:DEBUG i: 395
+2011-08-20 14:30:18,005 nodes:DEBUG trying to link commlink 82.185.191.100 at 175,41
+2011-08-20 14:30:18,005 nodes:DEBUG found target 148.244.197.72 at 173,40
+2011-08-20 14:30:18,005 nodes:DEBUG linked target
+2011-08-20 14:30:18,005 nodes:DEBUG i: 396
+2011-08-20 14:30:18,005 nodes:DEBUG trying to link commlink 196.104.144.184 at 111,181
+2011-08-20 14:30:18,005 nodes:DEBUG gave up
+2011-08-20 14:30:18,005 nodes:DEBUG i: 397
+2011-08-20 14:30:18,005 nodes:DEBUG trying to link commlink 143.249.21.171 at 136,89
+2011-08-20 14:30:18,006 nodes:DEBUG found target 233.99.64.61 at 132,89
+2011-08-20 14:30:18,006 nodes:DEBUG linked target
+2011-08-20 14:30:18,006 nodes:DEBUG i: 398
+2011-08-20 14:30:18,006 nodes:DEBUG trying to link commlink 96.91.200.24 at 8,131
+2011-08-20 14:30:18,006 nodes:DEBUG found target 96.91.200.24 at 8,131
+2011-08-20 14:30:18,006 nodes:DEBUG linked target
+2011-08-20 14:30:18,006 nodes:DEBUG i: 399
+2011-08-20 14:30:18,006 nodes:DEBUG trying to link commlink 90.84.10.44 at 193,19
+2011-08-20 14:30:18,006 nodes:DEBUG found target 239.113.95.102 at 197,20
+2011-08-20 14:30:18,006 nodes:DEBUG linked target
+2011-08-20 14:30:18,006 nodes:WARNING relinking 90.84.10.44 and 239.113.95.102
+2011-08-20 14:30:18,006 nodes:DEBUG i: 400
+2011-08-20 14:30:18,006 nodes:DEBUG trying to link commlink 207.161.238.127 at 53,165
+2011-08-20 14:30:18,006 nodes:DEBUG gave up
+2011-08-20 14:30:18,006 nodes:DEBUG i: 401
+2011-08-20 14:30:18,006 nodes:DEBUG trying to link commlink 84.121.14.73 at 125,12
+2011-08-20 14:30:18,006 nodes:DEBUG gave up
+2011-08-20 14:30:18,006 nodes:DEBUG i: 402
+2011-08-20 14:30:18,006 nodes:DEBUG trying to link commlink 33.45.223.81 at 155,85
+2011-08-20 14:30:18,007 nodes:DEBUG gave up
+2011-08-20 14:30:18,007 nodes:DEBUG i: 403
+2011-08-20 14:30:18,007 nodes:DEBUG trying to link commlink 253.121.3.221 at 176,177
+2011-08-20 14:30:18,007 nodes:DEBUG gave up
+2011-08-20 14:30:18,007 nodes:DEBUG i: 404
+2011-08-20 14:30:18,007 nodes:DEBUG trying to link commlink 142.85.55.116 at 191,111
+2011-08-20 14:30:18,007 nodes:DEBUG gave up
+2011-08-20 14:30:18,007 nodes:DEBUG i: 405
+2011-08-20 14:30:18,009 nodes:DEBUG trying to link commlink 127.19.104.144 at 65,54
+2011-08-20 14:30:18,009 nodes:DEBUG gave up
+2011-08-20 14:30:18,009 nodes:DEBUG i: 406
+2011-08-20 14:30:18,009 nodes:DEBUG trying to link commlink 57.104.252.157 at 7,22
+2011-08-20 14:30:18,009 nodes:DEBUG gave up
+2011-08-20 14:30:18,009 nodes:DEBUG i: 407
+2011-08-20 14:30:18,009 nodes:DEBUG trying to link commlink 157.140.132.132 at 62,175
+2011-08-20 14:30:18,009 nodes:DEBUG found target 18.86.183.37 at 64,179
+2011-08-20 14:30:18,009 nodes:DEBUG linked target
+2011-08-20 14:30:18,009 nodes:DEBUG i: 408
+2011-08-20 14:30:18,009 nodes:DEBUG trying to link commlink 62.225.40.113 at 148,43
+2011-08-20 14:30:18,009 nodes:DEBUG gave up
+2011-08-20 14:30:18,009 nodes:DEBUG i: 409
+2011-08-20 14:30:18,009 nodes:DEBUG trying to link commlink 104.132.230.35 at 185,183
+2011-08-20 14:30:18,009 nodes:DEBUG gave up
+2011-08-20 14:30:18,009 nodes:DEBUG i: 410
+2011-08-20 14:30:18,010 nodes:DEBUG trying to link commlink 241.82.109.224 at 149,78
+2011-08-20 14:30:18,010 nodes:DEBUG found target 62.27.83.239 at 150,76
+2011-08-20 14:30:18,010 nodes:DEBUG linked target
+2011-08-20 14:30:18,010 nodes:WARNING relinking 241.82.109.224 and 62.27.83.239
+2011-08-20 14:30:18,010 nodes:DEBUG i: 411
+2011-08-20 14:30:18,010 nodes:DEBUG trying to link commlink 58.191.114.142 at 105,97
+2011-08-20 14:30:18,010 nodes:DEBUG found target 181.231.210.37 at 106,97
+2011-08-20 14:30:18,010 nodes:DEBUG linked target
+2011-08-20 14:30:18,010 nodes:DEBUG i: 412
+2011-08-20 14:30:18,010 nodes:DEBUG trying to link commlink 129.255.125.129 at 154,192
+2011-08-20 14:30:18,012 nodes:DEBUG found target 249.243.235.68 at 150,195
+2011-08-20 14:30:18,012 nodes:DEBUG linked target
+2011-08-20 14:30:18,012 nodes:DEBUG i: 413
+2011-08-20 14:30:18,012 nodes:DEBUG trying to link commlink 196.160.81.226 at 168,173
+2011-08-20 14:30:18,012 nodes:DEBUG gave up
+2011-08-20 14:30:18,012 nodes:DEBUG i: 414
+2011-08-20 14:30:18,012 nodes:DEBUG trying to link commlink 104.132.230.35 at 185,183
+2011-08-20 14:30:18,012 nodes:DEBUG gave up
+2011-08-20 14:30:18,012 nodes:DEBUG i: 415
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 94.78.38.120 at 64,59
+2011-08-20 14:30:18,013 nodes:DEBUG found target 94.78.38.120 at 64,59
+2011-08-20 14:30:18,013 nodes:DEBUG linked target
+2011-08-20 14:30:18,013 nodes:DEBUG i: 416
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 121.183.149.194 at 12,184
+2011-08-20 14:30:18,013 nodes:DEBUG found target 68.85.201.191 at 10,182
+2011-08-20 14:30:18,013 nodes:DEBUG linked target
+2011-08-20 14:30:18,013 nodes:DEBUG i: 417
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 114.26.193.29 at 192,82
+2011-08-20 14:30:18,013 nodes:DEBUG found target 114.26.193.29 at 192,82
+2011-08-20 14:30:18,013 nodes:DEBUG linked target
+2011-08-20 14:30:18,013 nodes:DEBUG i: 418
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 148.223.193.115 at 159,138
+2011-08-20 14:30:18,013 nodes:DEBUG found target 245.92.239.166 at 160,141
+2011-08-20 14:30:18,013 nodes:DEBUG linked target
+2011-08-20 14:30:18,013 nodes:DEBUG i: 419
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 150.68.16.15 at 90,117
+2011-08-20 14:30:18,013 nodes:DEBUG gave up
+2011-08-20 14:30:18,013 nodes:DEBUG i: 420
+2011-08-20 14:30:18,013 nodes:DEBUG trying to link commlink 38.105.218.222 at 136,83
+2011-08-20 14:30:18,015 nodes:DEBUG found target 243.79.42.53 at 134,79
+2011-08-20 14:30:18,015 nodes:DEBUG linked target
+2011-08-20 14:30:18,015 nodes:DEBUG i: 421
+2011-08-20 14:30:18,015 nodes:DEBUG trying to link commlink 243.71.109.90 at 79,51
+2011-08-20 14:30:18,015 nodes:DEBUG found target 98.123.46.81 at 76,51
+2011-08-20 14:30:18,015 nodes:DEBUG linked target
+2011-08-20 14:30:18,015 nodes:WARNING relinking 243.71.109.90 and 98.123.46.81
+2011-08-20 14:30:18,015 nodes:DEBUG gave up
+2011-08-20 14:30:18,015 nodes:DEBUG i: 422
+2011-08-20 14:30:18,016 nodes:DEBUG trying to link commlink 45.103.13.223 at 158,172
+2011-08-20 14:30:18,016 nodes:DEBUG gave up
+2011-08-20 14:30:18,016 nodes:DEBUG i: 423
+2011-08-20 14:30:18,016 nodes:DEBUG trying to link commlink 196.160.81.226 at 168,173
+2011-08-20 14:30:18,016 nodes:DEBUG found target 8.172.153.127 at 171,176
+2011-08-20 14:30:18,016 nodes:DEBUG linked target
+2011-08-20 14:30:18,016 nodes:DEBUG i: 424
+2011-08-20 14:30:18,016 nodes:DEBUG trying to link commlink 63.169.177.76 at 5,65
+2011-08-20 14:30:18,016 nodes:DEBUG gave up
+2011-08-20 14:30:18,016 nodes:DEBUG i: 425
+2011-08-20 14:30:18,016 nodes:DEBUG trying to link commlink 0.56.137.238 at 135,44
+2011-08-20 14:30:18,016 nodes:DEBUG gave up
+2011-08-20 14:30:18,016 nodes:DEBUG i: 426
+2011-08-20 14:30:18,016 nodes:DEBUG trying to link commlink 142.85.55.116 at 191,111
+2011-08-20 14:30:18,016 nodes:DEBUG found target 142.85.55.116 at 191,111
+2011-08-20 14:30:18,016 nodes:DEBUG linked target
+2011-08-20 14:30:18,016 nodes:DEBUG i: 427
+2011-08-20 14:30:18,017 nodes:DEBUG trying to link commlink 16.211.60.115 at 82,149
+2011-08-20 14:30:18,017 nodes:DEBUG gave up
+2011-08-20 14:30:18,017 nodes:DEBUG i: 428
+2011-08-20 14:30:18,017 nodes:DEBUG trying to link commlink 16.162.65.195 at 188,32
+2011-08-20 14:30:18,017 nodes:DEBUG found target 16.162.65.195 at 188,32
+2011-08-20 14:30:18,017 nodes:DEBUG linked target
+2011-08-20 14:30:18,017 nodes:DEBUG i: 429
+2011-08-20 14:30:18,017 nodes:DEBUG trying to link commlink 189.70.169.123 at 33,30
+2011-08-20 14:30:18,019 nodes:DEBUG gave up
+2011-08-20 14:30:18,019 nodes:DEBUG i: 430
+2011-08-20 14:30:18,019 nodes:DEBUG trying to link commlink 6.201.42.201 at 90,196
+2011-08-20 14:30:18,019 nodes:DEBUG gave up
+2011-08-20 14:30:18,019 nodes:DEBUG creating corp datacenter Saeder-Krupp
+2011-08-20 14:30:18,019 nodes:DEBUG linking datacenter node 227.156.198.208
+2011-08-20 14:30:18,019 nodes:DEBUG linking datacenter node 249.230.235.238
+2011-08-20 14:30:18,019 nodes:WARNING relinking 172.243.114.177 and 249.230.235.238
+2011-08-20 14:30:18,019 nodes:DEBUG linking datacenter node 17.234.66.163
+2011-08-20 14:30:18,019 nodes:DEBUG linking datacenter node 207.231.100.39
+2011-08-20 14:30:18,019 nodes:WARNING relinking 120.210.28.127 and 207.231.100.39
+2011-08-20 14:30:18,019 nodes:DEBUG linking datacenter node 40.82.142.4
+2011-08-20 14:30:18,020 nodes:DEBUG creating corp datacenter Aztechnology
+2011-08-20 14:30:18,020 nodes:DEBUG linking datacenter node 200.148.159.213
+2011-08-20 14:30:18,020 nodes:DEBUG linking datacenter node 98.238.127.55
+2011-08-20 14:30:18,020 nodes:DEBUG linking datacenter node 129.14.69.153
+2011-08-20 14:30:18,022 nodes:DEBUG linking datacenter node 186.168.144.186
+2011-08-20 14:30:18,022 nodes:DEBUG creating corp datacenter EVO Corp
+2011-08-20 14:30:18,022 nodes:DEBUG linking datacenter node 40.196.174.64
+2011-08-20 14:30:18,022 nodes:DEBUG linking datacenter node 71.74.205.38
+2011-08-20 14:30:18,023 nodes:WARNING relinking 118.140.190.127 and 71.74.205.38
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 105.22.84.30
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 124.148.142.132
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 186.126.109.250
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 148.54.87.189
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 206.60.240.140
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 245.108.169.197
+2011-08-20 14:30:18,023 nodes:DEBUG creating corp datacenter Ares Macrotechnology
+2011-08-20 14:30:18,023 nodes:DEBUG linking datacenter node 16.142.68.88
+2011-08-20 14:30:18,025 nodes:DEBUG linking datacenter node 188.68.4.106
+2011-08-20 14:30:18,025 nodes:WARNING relinking 68.31.81.127 and 188.68.4.106
+2011-08-20 14:30:18,025 nodes:DEBUG linking datacenter node 91.151.15.240
+2011-08-20 14:30:18,025 nodes:DEBUG commlink 129.255.125.129 is full
+2011-08-20 14:30:18,025 nodes:WARNING relinking 167.219.33.113 and 91.151.15.240
+2011-08-20 14:30:18,025 nodes:DEBUG linking datacenter node 193.225.239.14
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 92.88.38.190
+2011-08-20 14:30:18,026 nodes:DEBUG creating corp datacenter Horizon Entertainment
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 228.20.163.60
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 50.158.44.78
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 16.170.58.160
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 14.82.159.167
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 35.107.61.111
+2011-08-20 14:30:18,026 nodes:DEBUG linking datacenter node 203.244.224.30
+2011-08-20 14:30:18,028 nodes:DEBUG linking datacenter node 36.27.152.232
+2011-08-20 14:30:18,028 nodes:DEBUG creating corp datacenter NeoNET
+2011-08-20 14:30:18,028 nodes:DEBUG linking datacenter node 226.163.82.119
+2011-08-20 14:30:18,028 nodes:DEBUG linking datacenter node 223.74.188.83
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 79.75.120.183
+2011-08-20 14:30:18,029 nodes:DEBUG creating corp datacenter Renraku Computer Systems
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 177.90.110.233
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 193.220.186.8
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 41.64.212.7
+2011-08-20 14:30:18,029 nodes:DEBUG commlink 2.81.59.23 is full
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 4.237.98.26
+2011-08-20 14:30:18,029 nodes:DEBUG creating corp datacenter Wuxing Inc
+2011-08-20 14:30:18,029 nodes:DEBUG linking datacenter node 124.235.162.202
+2011-08-20 14:30:18,030 nodes:DEBUG linking datacenter node 93.67.181.27
+2011-08-20 14:30:18,030 nodes:DEBUG linking datacenter node 41.230.159.31
+2011-08-20 14:30:18,030 nodes:DEBUG linking datacenter node 216.98.189.82
+2011-08-20 14:30:18,030 nodes:DEBUG linking datacenter node 176.92.185.203
+2011-08-20 14:30:18,032 nodes:DEBUG linking datacenter node 101.252.188.85
+2011-08-20 14:30:18,032 nodes:DEBUG linking datacenter node 233.123.250.169
+2011-08-20 14:30:18,032 nodes:DEBUG commlink 225.24.13.12 is full
+2011-08-20 14:30:18,032 nodes:DEBUG linking datacenter node 170.13.190.193
+2011-08-20 14:30:18,032 hud:DEBUG draw_hud
+2011-08-20 14:30:18,045 hud:DEBUG hud_tick
+2011-08-20 14:30:19,996 gameprompt:DEBUG took a ctrl-c
+2011-08-20 14:30:19,997 game:DEBUG shutting down
+2011-08-20 14:30:19,997 root:DEBUG Shutting down
