@@ -33,6 +33,9 @@ class Node:
         self.exposure = exposure
 
         self.links = []
+        self.connected_to = False
+        self.links_known = False
+        self.stats_known = False
         ip_mapping[ip_addr] = self
 
         self.user = 'root'
@@ -42,6 +45,11 @@ class Node:
             'messages',
             'junk'
             ]
+    def scan_stats(self):
+        self.stats_known = True
+
+    def travel_to(self):
+        game.state.current_node = self
 
     @classmethod
     def create(cls, name=None, octet=None):
@@ -58,6 +66,7 @@ class Node:
         )
 
 class Commlink(Node):
+    type_name='Commlink'
     name_range = C.commlink_names
     processor_range = range(1,2)
     storage_range = range(1,2)
@@ -67,6 +76,7 @@ class Commlink(Node):
     max_links = 4
 
 class PC(Node):
+    type_name='PC'
     name_range = ['PC']
     processor_range = range(1,3)
     storage_range = range(2,4)
@@ -76,6 +86,7 @@ class PC(Node):
     max_links = 3
 
 class Office(Node):
+    type_name='Office'
     name_range = C.company_names
     processor_range = range(2,4)
     storage_range = range(2,4)
@@ -85,6 +96,7 @@ class Office(Node):
     max_links = 3 #LAN not included
 
 class Server(Node):
+    type_name='Server'
     name_range = ['Server']
     processor_range = range(3,5)
     storage_range = range(2,6)
@@ -94,6 +106,7 @@ class Server(Node):
     max_links = 3
 
 class Laboratory(Node):
+    type_name='Lab'
     name_range = ['Test Lab']
     processor_range = range(3,6)
     storage_range = range(2,4)
@@ -103,6 +116,7 @@ class Laboratory(Node):
     max_links = 1
           
 class Datacenter(Node):
+    type_name='Datacenter'
     name_range = ['Saeder-Krupp', 'Aztechnology', 'EVO Corp', 'Ares Macrotechnology',
                     'Horizon Entertainment', 'NeoNET', 'Renraku Computer Systems', 'Wuxing Inc']
     processor_range = range(4,5)
@@ -113,6 +127,7 @@ class Datacenter(Node):
     max_links = 10
 
 class Military(Node):
+    type_name='Military'
     name_range = ['NORAD', 'NATO', 'CSTO', 'EURASEC']
     processor_range = range(7,14)
     storage_range = range(7,14)
@@ -122,6 +137,7 @@ class Military(Node):
     max_links = 5
 
 class MilitaryServer(Node):
+    type_name='MilServer'
     name_range = ['Military-Grade Server']
     processor_range = range(6,12)
     storage_range = range(6,12)
@@ -139,8 +155,10 @@ def setup_nodes():
         if target in source.links:
             log.warn('relinking %s and %s',source.ip_addr,target.ip_addr)
             return
-        target.links.append(source)
         source.links.append(target)
+        target.links.append(source)
+        source.exposure = source.exposure_mod + (len(source.links) / 3)
+        target.exposure = target.exposure_mod + (len(target.links) / 3)
     
     def full(node):
         return len(node.links) > node.max_links
@@ -283,6 +301,7 @@ def setup_nodes():
     #Staticize that lab's stats
     start_node.name = "Home Node"
     start_node.user = "self"
+    start_node.connected_to = True
     start_node.command_prompt = '%s@"%s"' % (start_node.user, start_node.name)
     start_node.processor = 3
     start_node.storage = 3

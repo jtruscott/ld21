@@ -115,20 +115,73 @@ class NeighborsCommand(Command):
     command = "neighbors"
     arguments = "[-s]"
     description = """Scan the networks attached to the current node and display a list of neighboring connected nodes"""
-    time = 30
+    time = 15
     time_variable = True
     def add_options(self, p):
-        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 5s per neighbor)')
+        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 15s per unscanned neighbor)')
     
     def action(self, args, command_line):
+        def format_stat(stat, width=5):
+            color = '<DARKGREY>'
+            if stat != '?':
+                if stat >= 2: color = '<LIGHTGREY>'
+                if stat >= 4: color = '<WHITE>'
+                if stat >= 6: color = '<GREEN>'
+            return color + str(stat).center(width)
+
         (options, args) = self.parse(args)
         base = game.state.current_node
         t = self.time
-        if options.stats:
-            t += 5
-        terminal.add_line('Not implemented yet')
+        terminal.add_line('<LIGHTGREY># Processor Storage Security Bandwidth Exposure     Type          IPAddr          Name')
+        i = -1
+        for neighbor in base.links:
+            i += 1
+            if options.stats and not neighbor.stats_known:
+                neighbor.scan_stats()
+                t += 15
+
+            if neighbor.stats_known:
+                processor, storage, bandwidth, security, exposure = (
+                    neighbor.processor, neighbor.storage, neighbor.bandwidth, neighbor.security, neighbor.exposure)
+            else:
+                processor, storage, bandwidth, security, exposure = ['?']*5
+
+            stat_block = ''.join([
+                ('%i)' % i).ljust(3),
+                format_stat(processor, 8),' ',
+                format_stat(storage, 7),' ',
+                format_stat(security, 8),' ',
+                format_stat(bandwidth, 9),' ',
+                str(exposure).center(8),' ',
+                neighbor.type_name.center(12),' ',
+                neighbor.ip_addr.center(16),' ',
+                neighbor.name
+            ])
+            terminal.add_line(stat_block)
         return t
 
+class TravelCommand(Command):
+    command = "travel"
+    arguments = "id"
+    description = """Move to an adjacent node"""
+    time = 15
+    time_variable = True
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        if not args or not len(args) == 1:
+            raise HelpError()
+        try:
+            neighborIndex = int(args[0])
+        except ValueError:
+            self.parser.error("A numeric neighbor ID is required")
+        base = game.state.current_node
+        try:
+            neighbor = base.links[neighborIndex]
+        except IndexError:
+            self.parser.error("The Neighbor ID must be in the list of neighbors")
+        
+        terminal.add_line("<LIGHTGREY>Traveling to <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
+        neighbor.travel_to()
 
 '''
     Parser bits
@@ -173,6 +226,7 @@ commands = dict(
     ls=LSCommand('ls'),
     dir=LSCommand('dir'),
     neighbors=NeighborsCommand(),
+    travel=TravelCommand(),
     
     things=Command('things', '', 10),
     other=Command('other things', '', 100),
