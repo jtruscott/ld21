@@ -5,39 +5,69 @@ import game
 import logging
 log = logging.getLogger('hud')
 
-boxes = {}
+class boxes:
+    #container
+    pass
 
 def setup():
-    topbar = draw.create_box(C.width, 3,
+    boxes.topbar = draw.create_box(C.width, 3,
                             left = 0, top = 0,
                             interior_background_color = W.BLACK, draw_top=False)
-    topbar.text.extend([
-        draw.Text(W.WHITE, 5, 0, "Time: Day 0 + 1400"),
-        draw.Text(W.WHITE, 5, 0, "Mission: 0", right_justify=True),
-        ])
-    boxes['topbar'] = topbar
+    @game.on('tick')
+    def topbar_tick():
+        bar = boxes.topbar
+        if not bar.text:
+            bar.text.extend([
+                draw.Text(W.WHITE, 5, 0, "Time: "),
+                draw.Text(W.WHITE, 5, 0, "Mission: ", right_justify=True),
+                ])
+        timeText, missionText = bar.text
+        timeText.text = "Time: Day %i %02i:%02i" % (game.state.time / 2400, game.state.time % 2400 / 100, game.state.time % 100)
+        missionText.text = "Mission: %i" % (game.state.mission)
+        
+        draw.draw_box_text(bar)
 
-    currentnode = draw.create_box(20, 10,
+
+    boxes.current_node = draw.create_box(20, 12,
                             left = C.width - 20, top = 1,
                             interior_background_color = W.BLACK,
                             corners = {'tl': 'teedown', 'tr': 'teeleft'})
-    currentnode.text.extend([
-        draw.Text(W.MAGENTA, 2, 1, "CURRENT NODE:"),
-        draw.Text(W.LIGHTMAGENTA, 2, 2, "[ Linksys 8829 ]"),
-        draw.Text(W.MAGENTA, 3, 4,  "PROCESSOR: 1"),
-        draw.Text(W.MAGENTA, 3, 5,  "STORAGE:   3"),
-        draw.Text(W.MAGENTA, 3, 6,  "BANDWIDTH: 2"),
-        draw.Text(W.MAGENTA, 3, 7,  "EXPOSURE: 1"),
-        ])
-    boxes['currentnode'] = currentnode
+    @game.on('tick')
+    def nodebar_tick():
+        bar = boxes.current_node
+        data = game.state.current_node
+        if not bar.text:
+            bar.text.extend([
+                draw.Text(W.MAGENTA, 2, 1, "CURRENT NODE:"),
+                draw.Text(W.LIGHTMAGENTA, 2, 3, "[ name ]"),
+                draw.Text(W.LIGHTMAGENTA, 2, 4, "ip"),
+                draw.Text(W.MAGENTA, 3, 6,  "PROCESSOR:"),
+                draw.Text(W.MAGENTA, 3, 7,  "STORAGE:"),
+                draw.Text(W.MAGENTA, 3, 8,  "BANDWIDTH:"),
+                draw.Text(W.MAGENTA, 3, 9,  "EXPOSURE:"),
+                draw.Text(W.LIGHTMAGENTA, 3, 6, "", right_justify=True),
+                draw.Text(W.LIGHTMAGENTA, 3, 7, "", right_justify=True),
+                draw.Text(W.LIGHTMAGENTA, 3, 8, "", right_justify=True),
+                draw.Text(W.LIGHTMAGENTA, 3, 9, "", right_justify=True),
+                ])
+            _, nameText, ipText, _, _, _, _, pText, sText, bText, xText = bar.text
+            nameText.text = data.name.center(bar.width-4)
+            ipText.text = data.ip_addr.center(bar.width-4)
 
+            pText.text = ' %i' % data.processor
+            sText.text = ' %i' % data.storage
+            bText.text = ' %i' % data.bandwidth
+            xText.text = ' %i' % data.exposure
+        
+        draw.draw_box_text(bar)   
+
+@game.on('clear')
 def draw_hud():
     log.debug('draw_hud')
-    for box in (boxes['topbar'], boxes['currentnode']):
+    for box in (boxes.topbar, boxes.current_node):
         draw.draw_box(box=box)
-        draw.draw_box_text(box)
     
 @game.on('tick')
 def hud_tick():
     log.debug('hud_tick')
-    draw_hud()
+    #draw_hud()
