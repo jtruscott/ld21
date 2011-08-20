@@ -1,29 +1,25 @@
-2011-08-20 12:38:02,157 game:DEBUG on setup: setup_state
-2011-08-20 12:38:02,158 game:DEBUG on shutdown: shutdown
-2011-08-20 12:38:02,158 game:DEBUG Starting up
-2011-08-20 12:38:02,160 game:DEBUG on setup: setup
-2011-08-20 12:38:02,161 game:DEBUG on setup: setup
-2011-08-20 12:38:02,161 game:DEBUG on tick: topbar_tick
-2011-08-20 12:38:02,161 game:DEBUG on tick: nodebar_tick
-2011-08-20 12:38:02,161 game:DEBUG on clear: draw_hud
-2011-08-20 12:38:02,161 game:DEBUG on tick: hud_tick
-2011-08-20 12:38:02,161 game:DEBUG on clear: prompt_hbar
-2011-08-20 12:38:02,161 game:DEBUG on prompt: do_prompt
-2011-08-20 12:38:02,165 game:DEBUG on setup: setup_terminal
-2011-08-20 12:38:02,167 game:DEBUG on specialkey: on_specialkey
-2011-08-20 12:38:02,167 game:DEBUG on clear: on_clear
-2011-08-20 12:38:02,176 game:DEBUG on setup: setup_nodes
-2011-08-20 12:38:02,183 game:DEBUG on command: parse_command
-2011-08-20 12:38:02,183 game:DEBUG on specialkey: on_specialkey
-2011-08-20 12:38:02,184 draw:DEBUG setting up screen
-2011-08-20 12:38:02,233 hud:DEBUG draw_hud
-2011-08-20 12:38:02,246 hud:DEBUG hud_tick
-2011-08-20 12:38:05,516 hud:DEBUG hud_tick
-2011-08-20 12:38:07,503 hud:DEBUG hud_tick
-2011-08-20 12:38:08,663 hud:DEBUG hud_tick
-2011-08-20 12:40:13,608 hud:DEBUG hud_tick
-2011-08-20 12:40:14,121 hud:DEBUG hud_tick
-2011-08-20 12:40:15,433 hud:DEBUG hud_tick
-2011-08-20 12:40:15,648 gameprompt:DEBUG took a ctrl-c
-2011-08-20 12:40:15,648 game:DEBUG shutting down
-2011-08-20 12:40:15,648 root:DEBUG Shutting down
+2011-08-20 12:47:52,740 game:DEBUG on setup: setup_state
+2011-08-20 12:47:52,740 game:DEBUG on shutdown: shutdown
+2011-08-20 12:47:52,740 game:DEBUG Starting up
+2011-08-20 12:47:52,742 game:DEBUG on setup: setup
+2011-08-20 12:47:52,742 game:DEBUG on setup: setup
+2011-08-20 12:47:52,742 game:DEBUG on tick: topbar_tick
+2011-08-20 12:47:52,742 game:DEBUG on tick: nodebar_tick
+2011-08-20 12:47:52,742 game:DEBUG on clear: draw_hud
+2011-08-20 12:47:52,743 game:DEBUG on tick: hud_tick
+2011-08-20 12:47:52,743 game:DEBUG on clear: prompt_hbar
+2011-08-20 12:47:52,743 game:DEBUG on prompt: do_prompt
+2011-08-20 12:47:52,744 game:DEBUG on setup: setup_terminal
+2011-08-20 12:47:52,744 game:DEBUG on specialkey: on_specialkey
+2011-08-20 12:47:52,744 game:DEBUG on clear: on_clear
+2011-08-20 12:47:52,753 game:DEBUG on setup: setup_nodes
+2011-08-20 12:47:52,765 game:DEBUG on command: parse_command
+2011-08-20 12:47:52,765 game:DEBUG on specialkey: on_specialkey
+2011-08-20 12:47:52,765 draw:DEBUG setting up screen
+2011-08-20 12:47:52,812 hud:DEBUG draw_hud
+2011-08-20 12:47:52,825 hud:DEBUG hud_tick
+2011-08-20 12:47:53,801 hud:DEBUG hud_tick
+2011-08-20 12:49:40,381 hud:DEBUG hud_tick
+2011-08-20 12:49:41,782 gameprompt:DEBUG took a ctrl-c
+2011-08-20 12:49:41,783 game:DEBUG shutting down
+2011-08-20 12:49:41,783 root:DEBUG Shutting down

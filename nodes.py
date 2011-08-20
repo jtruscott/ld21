@@ -13,6 +13,11 @@ class Node:
 
         self.user = 'root'
         self.command_prompt = '%s@"%s"' % (self.user, self.name)
+        self.files = [
+            'secure',
+            'messages',
+            'junk'
+            ]
 @game.on('setup')
 def setup_nodes():
     game.state.current_node = Node('Test Node', '10.0.0.1', *[random.randint(1,6) for _ in range(5)])
