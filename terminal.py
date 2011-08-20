@@ -16,7 +16,13 @@ class Line:
 
     @classmethod
     def parse(self, raw_msg):
-        items = filter(None, self.colorRE.split(raw_msg))
+        try:
+            raw_msg = raw_msg.rstrip('\n')
+            items = filter(None, self.colorRE.split(raw_msg))
+        except TypeError:
+            print raw_msg
+            raise
+
         lines = []
         color = [draw.color_char(W.LIGHTGREY)]
         xpos = [0]
@@ -53,6 +59,15 @@ class Line:
 
         return lines
 
+def add_line(msg=' '):
+    if isinstance(msg, list):
+        for line in msg:
+            add_line(line)
+    else:
+        if not msg:
+            msg = ' '
+        Terminal.buffer.extend(Line.parse(msg))
+    
 class Terminal:
     top = 3
     left = 1
@@ -72,71 +87,8 @@ You can use up/down/home/end to scroll about.
 
 There's a line over here, and it's incredibly long! whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh
 There's a line over here too, and it's incredibly long<MAGENTA>! whee-ooh-whee-ooh-whee-ooh-<BLUE>whee-ooh-whee-ooh-whee-ooh-whee-ooh
-additionally
 
-there
-are
-many
-many
-lines
-and
-you
-can
-keep
-adding
-more
-and
-see
-what
-happens
 
-there
-are
-many
-many
-lines
-and
-you
-can
-keep
-adding
-more
-and
-see
-what
-happens
-
-there
-are
-many
-many
-lines
-and
-you
-can
-keep
-adding
-more
-and
-see
-what
-happens
-
-there
-are
-many
-many
-lines
-and
-you
-can
-keep
-adding
-more
-and
-see
-what
-happens
 """
 
 class Scrollbar:
@@ -173,15 +125,19 @@ def update_scrollbar():
     Scrollbar.pos = new_pos
     draw_scrollbar()
 
+def scroll_to_end():
+    Terminal.scroll_offset = len(Terminal.buffer) - Terminal.height
+    Terminal.scroll_offset = max(0, min(len(Terminal.buffer)-1, Terminal.scroll_offset))
+    update_scrollbar()
+    draw_terminal()
+
 @game.on('setup')
 def setup_terminal():
     initial = Terminal.initial_msg.splitlines()
-    lines = []
+    Terminal.buffer = []
     for line in initial:
-        lines.extend(Line.parse(line))
-    
-    log.info(len(lines))
-    Terminal.buffer = lines
+        add_line(line)
+
     Terminal.clear_buffer = ''.join([' %s' % draw.color_char(W.BLACK)]*Terminal.height*Terminal.width)
 
     Scrollbar.arr = [[C.Characters.scrollbar.vert, draw.color_char(W.DARKGREY)]] * Terminal.height
@@ -201,7 +157,7 @@ def on_specialkey(key):
     elif 'end' in key:
         scrolled = True
         Terminal.scroll_offset = len(Terminal.buffer)
-        
+
     if scrolled:
         Terminal.scroll_offset = max(0, min(len(Terminal.buffer)-1, Terminal.scroll_offset))
         update_scrollbar()

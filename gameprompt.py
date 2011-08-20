@@ -6,18 +6,8 @@ from winsound import MessageBeep
 import string
 import logging
 log = logging.getLogger('gameprompt')
-log.debug("asf")
-class Command:
-    def __init__(self, command, arguments, time, action):
-        (self.command, self.arguments, self.time, self.action) = (command, arguments, time, action)
-commands = [
-    Command('ls', '[target_directory]', 1, None),
-    Command('dir', '[target_directory]', 1, None),
-    Command('things', '', 10, None),
-    Command('other things', '', 100, None),
-    Command('hats', '[style]', 1000, None),
-    Command('hack', '[the] [gibson]', 10000, None),
-]
+
+commands = []
 old_matches = ''
 def format_time(t):
     if t < 60:
@@ -39,7 +29,7 @@ def display_suggestion(msg):
         return
     msg = msg.split()[0]
     for command in commands:
-        if command.command.startswith(msg):
+        if command.command.startswith(msg) and not command.hide:
             matches.append(command)
     if matches:
         #limit our match count
@@ -64,7 +54,7 @@ def get_input():
         W.gotoxy(0, C.height - 1)
         W.clreol()
         W.textcolor(W.GREEN)
-        W.cputs('root@linksys$ '),
+        W.cputs(game.state.current_node.command_prompt + '$ '),
         W.textcolor(W.LIGHTGREEN)
         W.cputs(msg)
 
@@ -78,7 +68,8 @@ def get_input():
             W.cputs('  ' + ' '.join(splitted))
             W.textcolor(W.LIGHTGREEN)
             W.gotoxy(x, C.height - 1)
-
+        else:
+            match = None
         
         #Read input
         W.setcursortype(1)
@@ -97,6 +88,11 @@ def get_input():
             else:
                 MessageBeep()
             continue
+        if chn == 3:
+            log.debug('took a ctrl-c')
+            game.fire('specialkey', 'ctrlc')
+            break
+
         if chn == 0 or chn == 224:
             #special keys come in two parts
             (chn2, _) = W.getch()
@@ -113,7 +109,7 @@ def get_input():
             continue
 
         buf.append(chs)
-    return buf
+    return buf, match
 
 @game.on('clear')
 def prompt_hbar():
@@ -123,6 +119,6 @@ def prompt_hbar():
 
 @game.on('prompt')
 def do_prompt():
-    command = get_input()
-
+    command_line, match = get_input()
+    game.fire('command', command_line, match)
    

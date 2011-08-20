@@ -8,6 +8,8 @@ log = logging.getLogger('hud')
 class boxes:
     #container
     pass
+def format_time(t):
+     return 'Day %i, %02i:%02i' % (t / 2400, t % 2400 / 100, t % 100)
 
 @game.on('setup')
 def setup():
@@ -29,7 +31,7 @@ def topbar_tick():
             draw.Text(W.WHITE, 5, 0, "Mission: ", right_justify=True),
             ])
     timeText, missionText = bar.text
-    timeText.text = "Time: Day %i %02i:%02i" % (game.state.time / 2400, game.state.time % 2400 / 100, game.state.time % 100)
+    timeText.text = "Time: %s" % format_time(game.state.time)
     missionText.text = "Mission: %i" % (game.state.mission)
     
     draw.draw_box_text(bar)

@@ -17,6 +17,8 @@ defaultcolor = W.gettextinfo()[4]
 import game
 try:
     game.start()
+except game.GameShutdown:
+    pass
 except:
     #WConio.textmode()
     raise
@@ -25,4 +27,4 @@ finally:
     logging.shutdown()
     W.clreol()
     W.textattr(defaultcolor)
-
+    W.setcursortype(1)

@@ -25,3 +25,4 @@ class Characters:
         cross = chr(0xD8)
         top = chr(0xD1)
         bottom = chr(0xCF)
+    bullet = chr(0xF9)

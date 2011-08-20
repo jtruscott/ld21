@@ -1,6 +1,8 @@
 import logging
 log = logging.getLogger('game')
 
+class GameShutdown(Exception): pass
+
 class state:
     pass
 
@@ -25,14 +27,26 @@ def fire(event, *args):
 def setup_state():
     state.mission = 1
     state.time = 2500
+    state.running = True
+
+@on('shutdown')
+def shutdown():
+    log.debug('shutting down')
+    state.running = False
+    raise GameShutdown()
+
+def take_time(time_taken):
+    if time_taken is None:
+        return
+    state.time += time_taken
+    fire('time_taken', time_taken)
 
 def start():
     log.debug("Starting up")
-    import draw, hud, gameprompt, terminal, nodes
+    import draw, hud, gameprompt, terminal, nodes, commands
 
     fire('setup')
     fire('clear')
-    fire('tick')
-    fire('prompt')
-
-    logging.shutdown()
+    while state.running:
+        fire('tick')
+        fire('prompt')
