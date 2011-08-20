@@ -26,6 +26,16 @@ class Characters:
         top = chr(0xD1)
         bottom = chr(0xCF)
     bullet = chr(0xF9)
+    
+commlink_names = """Meta Link
+CMT Clip
+Sony Emperor
+Renraku Sensei
+Novatech Airware
+Erika Elite
+Hermes Ikon
+Fairlight Caliban
+Transys Avalon""".splitlines()
 
 company_names = [n.capitalize() for n in """zugia
 fakia

@@ -1,6 +1,7 @@
 import game
 import random
 import logging
+import constants as C
 log = logging.getLogger('nodes')
 
 random_ids = range(1000)
@@ -57,7 +58,7 @@ class Node:
         )
 
 class Commlink(Node):
-    name_range = ['Commlink']
+    name_range = C.commlink_names
     processor_range = range(1,2)
     storage_range = range(1,2)
     security_range = range(1,3)
@@ -80,6 +81,7 @@ class Office(Node):
     storage_range = range(2,4)
     security_range = range(3,5)
     bandwidth_range = range(2,4)
+    exposure_mod = 1
     max_links = 3 #LAN not included
 
 class Server(Node):
@@ -90,6 +92,15 @@ class Server(Node):
     bandwidth_range = range(2,4)
     exposure_mod = 1
     max_links = 3
+
+class Laboratory(Node):
+    name_range = ['Test Lab']
+    processor_range = range(3,6)
+    storage_range = range(2,4)
+    security_range = range(2,4)
+    bandwidth_range = range(1,3)
+    exposure_mod = 0
+    max_links = 1
           
 class Datacenter(Node):
     name_range = ['Saeder-Krupp', 'Aztechnology', 'EVO Corp', 'Ares Macrotechnology',
@@ -134,7 +145,6 @@ def setup_nodes():
     def full(node):
         return len(node.links) > node.max_links
 
-    nodes = []
     #Create commlinks on a grid
     commlinks = {}
     for i in range(600):
@@ -197,14 +207,22 @@ def setup_nodes():
 
     #Create home PCs 
     #Randomly link home PCs to single commlinks
-    homes = {}
-    for 
+    homes = []
+    for i in range(random.randint(150,250)):
+        node = PC.create()
+        commlink = random.choice(commlinks.values())
+        if not full(commlink):
+            log.debug('adding pc connection from %s to %s',node.ip_addr,commlink.ip_addr)
+            link(node, commlink)
+        homes.append(node)
+
     #Create office LANs
     offices = {}
+    laboratories = []
     for company in Office.name_range:
         log.debug('creating office: %s', company)
-        node = Office.create(name = company)
         octet = random.randint(0,255)
+        node = Office.create(name = company, octet=octet)
         #Create PCs behind offices
         for i in range(random.randint(2,16)):
             pc = PC.create(name = "%s - Workstation %i" % (company, i), octet=octet)
@@ -213,17 +231,62 @@ def setup_nodes():
             if random.randint(0,5) == 0:
                 commlink = random.choice(commlinks.values())
                 if not full(commlink):
-                    log.debug('adding pc connection from %s to %s',pc.ip_addr,commlink.ip_addr)
+                    log.debug('adding officepc-commlink connection from %s to %s',pc.ip_addr,commlink.ip_addr)
                     link(pc, commlink)
+            #and some to home PCs
+            if random.randint(0,3) == 0:
+                homepc = random.choice(homes)
+                if not full(homepc):
+                    log.debug('adding pc-pc connection from %s to %s',pc.ip_addr,homepc.ip_addr)
+                    link(pc, homepc)
         
         #create Servers behind larger offices
         for j in range(i / 4):
             server = Server.create(name = "%s - Server %i" % (company, j), octet = octet)
+        
+        #create Labs in the big ones
+        for k in range(i / 7):
+            lab = Laboratory.create(name = "%s - Test Lab %i" % (company, k), octet = octet)
+            link(node, lab)
+            laboratories.append(lab)
 
         offices[company] = node            
 
+    sparse_commlinks = sorted([(len(n.links),n) for n in commlinks.values()])
+    sparse_homes = sorted([(len(n.links),n) for n in homes])
+    sparse_offices = sorted([(len(n.links),n) for n in offices.values()])
     #add some militaries
-    #link them to the 3 sparsest commlinks each
-    game.state.nodes = nodes
+    militaries = {}
+    for mil in Military.name_range:
+        log.debug('creating military: %s', mil)
+        octet = random.randint(0,255)
+        node = Military.create(name = mil, octet=octet)
 
-    game.state.current_node = Node('Test Node', '10.0.0.1', *[random.randint(1,6) for _ in range(5)])
+        #create military servers
+        for i in range(random.randint(8, 32)):
+            server = MilitaryServer.create(name = "%s - Server %i" % (mil, i), octet=octet)
+            link(server, node)
+        militaries[mil] = node
+        #link them to some of the sparsest commlinks and pcs each
+        for i in range(random.randint(0,6)):
+            commlink = sparse_commlinks.pop()[1]
+            link(node, commlink)
+        for i in range(random.randint(0,6)):
+            pc = sparse_homes.pop()[1]
+            link(node, pc)
+        for i in range(random.randint(0,2)):
+            office = sparse_offices.pop()[1]
+            link(node, office)
+
+    #Start the player in a random laboratory            
+    start_node = random.choice(laboratories)
+    #Staticize that lab's stats
+    start_node.name = "Home Node"
+    start_node.user = "self"
+    start_node.command_prompt = '%s@"%s"' % (start_node.user, start_node.name)
+    start_node.processor = 3
+    start_node.storage = 3
+    start_node.bandwidth = 3
+    start_node.security = 2
+
+    game.state.current_node = start_node
