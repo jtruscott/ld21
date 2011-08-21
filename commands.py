@@ -18,6 +18,7 @@ class Command:
     hide = False
     description = None
     time_variable = False
+    arguments = ""
     def __init__(self, command=None, arguments=None, time=None):
         if command:
             self.command = command
@@ -35,9 +36,12 @@ class Command:
                 self.errors.extend(s.get_usage().splitlines())
                 self.errors.append("<RED>ERROR: %s\n" % msg)
                 raise ArgumentError(msg=self.errors)
-            def exit(s, status=None, msg=None):
+            def exit(s, status=None, msg=None, help=False):
                 if msg:
                     self.errors.append(msg)
+                if help:
+                    self.errors.extend(s.format_help().splitlines())
+                    status = True
                 if status:
                     raise ArgumentError(msg=self.errors)
                 else:
@@ -160,29 +164,82 @@ class NeighborsCommand(Command):
             terminal.add_line(stat_block)
         return t
 
-class TravelCommand(Command):
-    command = "travel"
+
+class NeighborCommand(Command):
     arguments = "id"
-    description = """Move to an adjacent node"""
-    time = 15
-    time_variable = True
     def action(self, args, command_line):
         (options, args) = self.parse(args)
         if not args or not len(args) == 1:
-            raise HelpError()
+            self.parser.exit(help=True)
         try:
             neighborIndex = int(args[0])
-        except ValueError:
-            self.parser.error("A numeric neighbor ID is required")
+        except:
+            self.parser.error(msg="A numeric neighbor ID is required")
         base = game.state.current_node
         try:
             neighbor = base.links[neighborIndex]
         except IndexError:
-            self.parser.error("The Neighbor ID must be in the list of neighbors")
+            self.parser.error(msg="The Neighbor ID must be in the list of neighbors")
         
-        terminal.add_line("<LIGHTGREY>Traveling to <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
-        neighbor.travel_to()
+        return self.do_action(neighbor)
 
+class TunnelCommand(NeighborCommand):
+    command = "tunnel"
+    description = """Tunnel to an adjacent node as a guest user"""
+    time = 15
+    time_variable = True
+    def do_action(self, neighbor):
+        terminal.add_line("<LIGHTGREY>Traveling to <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
+        neighbor.proxy()
+        return self.time
+
+class HackCommand(NeighborCommand):
+    command = "hack"
+    description = """Hack into an adjacent node as root"""
+    time = 60
+    time_variable = True
+    def do_action(self, neighbor):
+        terminal.add_line("<LIGHTGREY>Hacking into <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
+        neighbor.hack()
+        return self.time
+
+class BackCommand(Command):
+    command = "back"
+    description = """Exit the current node"""
+    time = 5
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        base = game.state.current_node
+        if base == game.state.home_node:
+            self.parser.error(msg="Cannot disconnect from your home node without moving - you'd die!")
+        base.back()
+
+class ReHomeCommand(Command):
+    command = "rehome"
+    description = """Move your consciousness to a new home node. This is a dangerous process - you are extremely vulnerable while it resolves"""
+    time = 60*12
+    time_variable = True
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        base = game.state.current_node
+        if base == game.state.home_node:
+            self.parser.error("This node is already your home.")
+        if base.user != "root":
+            self.parser.error("You must have root access to change homes")
+
+        aggregate_bandwidth = game.state.aggregate_bandwidth
+        calculated_time = self.time * 2 / aggregate_bandwidth
+        confirmation = gameprompt.show_confirmation("Are you <WHITE>sure<LIGHTGREY> you want to transfer your consciousness to this node?",
+                                    'Transferring to <YELLOW>%s<LIGHTGREY> "<YELLOW>%s<LIGHTGREY>" while take %s at Bandwidth %i' % (
+                                base.ip_addr, base.name, gameprompt.format_time(calculated_time), aggregate_bandwidth)
+                        )
+        if not confirmation:
+            self.parser.error("Action Canceled")
+        game.fire('rehome', base)    
+        base.rehome()
+
+        return calculated_time
+     
 '''
     Parser bits
 '''
@@ -222,16 +279,16 @@ def parse_command(command_line, match):
 def on_specialkey(key):
     if key == 'ctrlc':
         game.fire('shutdown')
+
 commands = dict(
     ls=LSCommand('ls'),
     dir=LSCommand('dir'),
     neighbors=NeighborsCommand(),
-    travel=TravelCommand(),
-    
-    things=Command('things', '', 10),
-    other=Command('other things', '', 100),
-    hats=Command('hats', '[style]', 1000),
-    hack=Command('hack', '[the] [gibson]', 10000),
+    tunnel=TunnelCommand(),
+    hack=HackCommand(),
+    back=BackCommand(),
+    rehome=ReHomeCommand(),
+
 
     _unknown=UnknownCommand(),
     _error=ErrorCommand(),

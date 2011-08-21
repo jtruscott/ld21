@@ -5,6 +5,7 @@ import WConio as W
 from winsound import MessageBeep
 import string
 import logging
+import terminal
 log = logging.getLogger('gameprompt')
 
 commands = []
@@ -15,12 +16,11 @@ def format_time(t, tv=False):
     else:
         tv = ''
     if t < 60:
-        return '%i%ss' % (t, tv)
+        return '%im %s' % (t, tv)
     if t < 3600:
-        return '%im %i%ss' % (t / 60, t % 60, tv)
+        return '%ih %im %s' % (t / 60, t % 60, tv)
     if t < 86400:
-        return '%ih %im %i%ss' % (t / 3600, t / 60 % 60, t % 60, tv)
-    return '%id %ih %im %i%ss' % (t / 86400, t / 3600 % 60, t / 60 % 60, t % 60, tv)
+        return '%id %ih %im %s' % (t / 3600, t / 60 % 60, t % 60, tv)
 
 def display_suggestion(msg):
     global old_matches
@@ -114,6 +114,74 @@ def get_input():
 
         buf.append(chs)
     return buf, match
+
+def show_confirmation(line1=' ', line2=' '):
+    line1 = terminal.Line.parse(line1)[0]
+    line2 = terminal.Line.parse(line2)[0]
+    width = max(14, max(line1.width, line2.width) + 2)
+    height = 8
+    left = (C.width - width) / 2
+    top = (C.height - height) / 2
+    previous_buf = W.gettext(left, top, left + width, top + height)
+    btn_width = 7
+    btn_height = 4
+    btn_offset = 3
+    try:
+        container = draw.draw_box(left, top, width, height,
+                                    border_color=W.LIGHTBLUE, border_background_color = W.BLUE)
+        W.puttext(left+1, top + 1, left + line1.width, top + 1, line1.buf)
+        W.puttext(left+1, top + 2, left + line2.width, top + 2, line2.buf)
+
+        yes_button = draw.draw_box(left + btn_offset, top + height - btn_height, btn_width, btn_height,
+                                    border_color=W.LIGHTBLUE, border_background_color = W.BLUE,
+                                    corners = {'bl': 'teeup', 'br': 'teeup'})
+
+        no_button = draw.draw_box(left + width - btn_offset - btn_width, top + height - btn_height, btn_width, btn_height,
+                                    border_color=W.LIGHTBLUE, border_background_color = W.BLUE,
+                                    corners = {'bl': 'teeup', 'br': 'teeup'})
+
+        yes_text = draw.Text(W.DARKGREY, 1, 1, "YES".center(btn_width -2 ))
+        no_text = draw.Text(W.WHITE, 1, 1, "NO".center(btn_width -2 ))
+        yes_button.text.append(yes_text)
+        no_button.text.append(no_text)
+        selected_button = no_button
+
+        while True:
+            if selected_button == yes_button:
+                yes_text.color = W.WHITE
+                no_text.color = W.DARKGREY
+            else:
+                no_text.color = W.WHITE
+                yes_text.color = W.DARKGREY
+            draw.draw_box_text(yes_button)
+            draw.draw_box_text(no_button)
+            (chn, chs) = W.getch()
+            #figure out if we're done
+            if chs == '\r':
+                #enter, exit
+                break
+            if chs == 'y':
+                selected_button = yes_button
+                break
+
+            if chs == 'n':
+                selected_button = no_button
+                break
+
+            if chn == 0 or chn == 224:
+                #special keys come in two parts
+                (chn2, _) = W.getch()
+                if chn2 in W.__keydict:
+                    name = W.__keydict[chn2]
+                    if 'left' in name or 'right' in name:
+                        selected_button = (selected_button == yes_button and no_button or yes_button)
+
+        return (selected_button == yes_button and True or False)
+
+    finally:
+        #Restore what we scribbled on
+        W.puttext(left, top, left + width, top + height, previous_buf)
+
 
 @game.on('clear')
 def prompt_hbar():

@@ -6,6 +6,8 @@ class GameShutdown(Exception): pass
 class state:
     pass
 
+class player:
+    pass
 
 listeners = {}
 
@@ -26,10 +28,14 @@ def fire(event, *args):
 @on('setup')
 def setup_state():
     state.mission = 1
-    state.time = 2500
+    state.time = 2400
     state.running = True
-    state.hp = state.max_hp = 12
     state.tunnels = []
+    state.aggregate_bandwidth = 0
+
+    player.hp = player.max_hp = 12
+    player.vulnerable = False
+
 
 @on('shutdown')
 def shutdown():

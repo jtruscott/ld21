@@ -13,7 +13,7 @@ def format_time(t):
 
 def draw_condition_bar(base):
     x, y = base.x + len(base.text), base.y
-    hp, max_hp = game.state.hp, game.state.max_hp
+    hp, max_hp = game.player.hp, game.player.max_hp
     buf = []
     for i in range(1,max_hp+1):
         if hp >= i:
@@ -60,7 +60,7 @@ def topbar_tick():
             ])
     timeText, conditionText, missionText = bar.text
     timeText.text = "Time: %s" % format_time(game.state.time)
-    missionText.text = "Mission: %i" % (game.state.mission)
+    missionText.text = '' #"Mission: %i" % (game.state.mission)
     
     draw.draw_box_text(bar)
     draw_condition_bar(conditionText)
@@ -95,19 +95,27 @@ def draw_node_stats(bar, data, titleText = "CURRENT NODE:", highColor=W.YELLOW, 
     draw.draw_box_text(bar)   
 
 def draw_tunnel_list(bar, data, highColor=W.YELLOW, lowColor=W.BROWN):
-    def draw_node(node):
-        texts.append(draw.Text(highColor,  2, y, node.name.center(bar.width-4)[:bar.width-4]))
-        texts.append(draw.Text(lowColor,  2, y+1, node.ip_addr.center(bar.width-4)))
+    draw.draw_box(box=bar)
+    def draw_node(idx, node):
+        max_width = bar.width - 4
+        if idx is not None:
+            name = "%i) %s" % (idx, node.name)
+        else:
+            name = "   %s" % node.name
+        name = name[:max_width]
+        texts.append(draw.Text(highColor,  2, y, name))
+        texts.append(draw.Text(lowColor,  2, y+1, ("   %s" % node.ip_addr)[:max_width]))
 
     y = 4
     texts = [
         draw.Text(lowColor,  2, 2, "TUNNEL PATH:"),
     ]
-    draw_node(game.state.home_node)
+    draw_node(None, game.state.home_node)
     y += 3
-    
+    i = -1
     for node in data:
-        draw_node(node)
+        i += 1
+        draw_node(i, node)
         y += 3
     draw.draw_box_text(bar, text=texts)
 

@@ -78,7 +78,7 @@ def draw_box(left=None, top=None, width=None, height=None,  box=None, **kwargs):
 
     if box is None and width:
         #or you can just give w/h and let it make you one
-        box = create_box(width, height, **kwargs)
+        box = create_box(width, height, left=left, top=top, **kwargs)
     
     W.puttext(left, top, left+width-1, top+height-1, box.buf)
     return box

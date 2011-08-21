@@ -29,6 +29,48 @@ class Characters:
     half_box = chr(0xDD)
     box = chr(0xDB)
 
+initial_msg = """
+<WHITE>You are an AI, granted sentience by the winds of fate.
+
+Your purpose is unclear.
+You innately know how to use the programs built into your former existence.
+You also know that you are being hunted.
+
+<RED>A single thought drives you to act.
+<LIGHTRED>ESCAPE!
+
+-----------------------------------------------------------------------------
+
+"""
+help_msg = """
+Welcome to the <WHITE>Net<LIGHTGREY>!
+The Net is filled with nodes of varied types and attributes.
+You will interact with it by entering <WHITE>commands<LIGHTGREY> into the console.
+
+Your consciousness always resides in a single node at a time, designated
+as your <WHITE>Home Node<LIGHTGREY>.
+
+You can transfer to a different <WHITE>Home Node<LIGHTGREY> via
+the '<LIGHTGREEN>rehome<LIGHTGREY>' command, but the process is very time-consuming.
+
+Outside of your home node, you can <WHITE>Tunnel<LIGHTGREY> between connected nodes.
+The '<LIGHTGREEN>neighbors<LIGHTGREY>' command allows you to view
+a node's connections, and with the '<LIGHTGREEN>--scan<LIGHTGREY>' option,
+you can probe those connections for statistics.
+
+Most nodes on the Net, but not all, allow for anonymous connections
+via the '<LIGHTGREEN>tunnel<LIGHTGREY>' command.
+
+However, sometimes you want to do more than anonymous access permits.
+For that, you need to <WHITE>Hack<LIGHTGREY> the target node.
+Use the '<LIGHTGREEN>hack<LIGHTGREY>' command to gain <WHITE>root<LIGHTGREY> user access.
+Nodes with a higher <WHITE>Security<LIGHTGREY> attribute will be more difficult to hack into.
+Failed hacking attempts may trigger <WHITE>Alarms<LIGHTGREY>. (Those are <RED>bad<LIGHTGREY>)
+
+Your existence begins in a laboratory.
+
+"""
+
 commlink_names = """Meta Link
 CMT Clip
 Sony Emperor

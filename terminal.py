@@ -77,19 +77,6 @@ class Terminal:
     scroll_offset = 0
     buffer = []
     clearBuffer = ''
-    initial_msg = """
-Welcome to the game!
-There will be some kind of <RED>DRAMATIC<LIGHTGREY> and possibly even <YELLOW>OMINOUS<LIGHTGREY> introduction here
-before this is released. Hopefully. Maybe not.
-
-Anywho, commands you run will find their output displayed here.
-You can use up/down/home/end to scroll about.
-
-There's a line over here, and it's incredibly long! whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh-whee-ooh
-There's a line over here too, and it's incredibly long<MAGENTA>! whee-ooh-whee-ooh-whee-ooh-<BLUE>whee-ooh-whee-ooh-whee-ooh-whee-ooh
-
-
-"""
 
 class Scrollbar:
     arr = []
@@ -133,14 +120,26 @@ def scroll_to_end():
 
 @game.on('setup')
 def setup_terminal():
-    initial = Terminal.initial_msg.splitlines()
     Terminal.buffer = []
-    for line in initial:
-        add_line(line)
-
     Terminal.clear_buffer = ''.join([' %s' % draw.color_char(W.BLACK)]*Terminal.height*Terminal.width)
-
     Scrollbar.arr = [[C.Characters.scrollbar.vert, draw.color_char(W.DARKGREY)]] * Terminal.height
+
+    initial = C.initial_msg.splitlines()
+    for line in initial:
+        if line:
+            #this is kinda terrible
+            line_width = Line.parse(line)[0].width
+            space = Terminal.width - line_width
+            pad = space / 2
+            #log.debug("cw %i lw %i s %i  p %i", C.width, line_width, space, pad)
+            add_line(' '*pad + line)
+        else:
+            add_line(line)
+    help = C.help_msg.splitlines()
+    for line in help:
+        add_line(line)
+        
+
 
 @game.on('specialkey')
 def on_specialkey(key):

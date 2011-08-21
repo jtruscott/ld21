@@ -2,6 +2,8 @@ import game
 import random
 import logging
 import constants as C
+class ForbiddenError(Exception): pass
+
 log = logging.getLogger('nodes')
 
 random_ids = range(1000)
@@ -22,7 +24,7 @@ def random_ip(octet=None):
 
 class Node:
     name_range = ["Test Node"]
-
+    guest_allowed = True
     def __init__(self, name, ip_addr, processor, storage, bandwidth, security, exposure):
         self.name = name
         self.ip_addr = ip_addr
@@ -34,11 +36,11 @@ class Node:
 
         self.links = []
         self.connected_to = False
-        self.links_known = False
+        self.been_hacked = False
         self.stats_known = False
         ip_mapping[ip_addr] = self
 
-        self.user = 'root'
+        self.user = None
         self.command_prompt = '%s@"%s"' % (self.user, self.name)
         self.files = [
             'secure',
@@ -49,8 +51,51 @@ class Node:
         self.stats_known = True
 
     def travel_to(self):
+        self.connected_to = True
+        self.stats_known = True
         game.state.current_node = self
         game.state.tunnels.append(self)
+        game.state.aggregate_bandwidth = min(game.state.home_node.bandwidth, min([n.bandwidth for n in game.state.tunnels]))
+
+    def proxy(self):
+        if not self.guest_allowed:
+            raise ForbiddenError()
+        self.user = 'guest'
+        self.travel_to()
+
+    def hack(self):
+        self.been_hacked = True
+        self.user = 'root'
+        self.travel_to()
+    
+    def disconnect(self):
+        self.user = None
+        if self in game.state.tunnels:
+            game.state.tunnels.remove(self)
+
+    def back(self):
+        if self == game.state.home_node or self not in game.state.tunnels:
+            raise ValueError()
+        
+        self.disconnect()
+
+        if len(game.state.tunnels):
+            game.state.current_node = game.state.tunnels[-1]
+        else:
+            game.state.current_node = game.state.home_node
+    
+    def rehome(self):
+        old_home = game.state.home_node
+        old_home.disconnect()
+        
+        for hop in game.state.tunnels:
+            hop.disconnect()
+
+        game.state.tunnels = []
+        game.state.home_node = self
+        game.state.current_node = self
+        game.state.aggregate_bandwidth = self.bandwidth
+    
 
     @classmethod
     def create(cls, name=None, octet=None):
@@ -324,4 +369,5 @@ def setup_nodes():
     link(start_office, random.choice(offices.values()))
     link(start_office, random.choice(offices.values()))
 
+    game.state.aggregate_bandwidth = start_node.bandwidth
     game.state.current_node = game.state.home_node = start_node
