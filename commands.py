@@ -244,6 +244,15 @@ class BackCommand(Command):
             self.parser.error(msg="Cannot disconnect from your home node without moving - you'd die!")
         base.back()
 
+class HealCommand(Command):
+    command = "heal"
+    description = """Repair one damage to your condition monitor. """
+    time = 60
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        game.player.hp = min(game.player.max_hp, game.player.hp + 1)
+        return self.time
+
 class ReHomeCommand(Command):
     command = "rehome"
     description = """Move your consciousness to a new home node. This is a dangerous process - you are extremely vulnerable while it resolves"""
@@ -336,6 +345,7 @@ commands = dict(
     neighbors=NeighborsCommand(),
     tunnel=TunnelCommand(),
     hack=HackCommand(),
+    heal=HealCommand(),
     back=BackCommand(),
     rehome=ReHomeCommand(),
     exit=ExitCommand(),

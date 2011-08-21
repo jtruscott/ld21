@@ -28,6 +28,7 @@ def dice(num):
     return sum([(random.randint(1,6) >= 5) for _ in range(num)])
 
 corp_nodes = {}
+alarm_nodes = []
 class Node:
     name_range = ["Test Node"]
     guest_allowed = True
@@ -107,23 +108,41 @@ class Node:
             return True
 
     def purge(self, npc):
-        terminal.add_line("<YELLOW>PURGED.")
-        game.state.killer = npc.name
-        gameprompt.death_screen()
-
+        terminal.add_line("<YELLOW>PURGED<LIGHTGREY> from %s (%s) by %s." % (self.name, self.ip_addr, npc.name))
+        
+        if self == game.state.home_node:
+            game.player.lose_hp(game.player.hp, npc.name)
+        else:
+            idx = game.state.tunnels.index(self)
+            lost = len(game.state.tunnels)- idx
+            game.state.tunnels = game.state.tunnels[:idx]
+            dumpshock = 1 + (lost/2)
+            game.player.lose_hp(dumpshock, npc.name)
+            terminal.add_line("You suffer <LIGHTRED>%i<LIGHTGREY> condition damage from dumpshock." % (self.name, self.ip_addr, npc.name))
+            if idx == 0:
+                game.state.current_node = game.state.home_node
+            else:
+                game.state.current_node = game.state.tunnels[-1]
 
     #---
     def alarm(self):
         self.alarmed = True
+        self.alarm_delay = 60
+        if self not in alarm_nodes:
+            alarm_nodes.append(self)
 
     def npc_disarm(self, npc):
         self.warn_root("Alarm disabled by %s" % npc.name)
         self.alarmed = True
+        if self in alarm_nodes:
+            alarm_nodes.remove(self)
 
     def disarm(self):
         if self.user != 'root':
             raise ForbiddenError()
         self.alarmed = False
+        if self in alarm_nodes:
+            alarm_nodes.remove(self)
 
     def proxy(self):
         if not self.guest_allowed:
@@ -461,3 +480,11 @@ def setup_nodes():
     game.state.aggregate_bandwidth = start_node.bandwidth
     game.state.current_node = game.state.home_node = start_node
     log.setLevel(logging.DEBUG)
+
+@game.on('time_taken')
+def nodes_time(t):
+    for node in alarm_nodes:
+        node.alarm_delay -= t
+        while node.alarm_delay < 0:
+            node.interest += 0.1
+            node.alarm_delay += 60

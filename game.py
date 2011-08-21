@@ -7,7 +7,13 @@ class state:
     pass
 
 class player:
-    pass
+    @staticmethod
+    def lose_hp(amt, source):
+        player.hp = max(0, player.hp - amt)
+        if not player.hp:
+            state.killer = source
+            import gameprompt
+            gameprompt.death_screen()
 
 listeners = {}
 
