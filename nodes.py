@@ -3,6 +3,7 @@ import random
 import logging
 import terminal
 import constants as C
+import gameprompt
 class ForbiddenError(Exception): pass
 class AlreadyThere(Exception): pass
 
@@ -96,17 +97,20 @@ class Node:
             self.warn_root("'%s' has logged out of this node" % npc.name)
     
     def start_npc_hack(self, npc):
-        self.warn_root("'%s' is trying to hack into this node!'" % npc.name)
+        self.warn_root("'%s' is trying to hack into this node!" % npc.name)
     
     def npc_hack(self, npc, power):
-        self.warn_root("'%s' is hacking into this node!'" % npc.name)
+        self.warn_root("'%s' is hacking into this node!" % npc.name)
         npc_roll = dice(power)
         defense_roll = dice(self.security * 2)
         if npc_roll > defense_roll:
             return True
 
-    def purge(self, npc, power):
-        terminal.add_line("<YELLOW>PURGED")
+    def purge(self, npc):
+        terminal.add_line("<YELLOW>PURGED.")
+        game.state.killer = npc.name
+        gameprompt.death_screen()
+
 
     #---
     def alarm(self):

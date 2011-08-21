@@ -1,211 +1,105 @@
-2011-08-21 15:18:18,042 game:DEBUG on setup: game.setup_state
-2011-08-21 15:18:18,042 game:DEBUG on shutdown: game.shutdown
-2011-08-21 15:18:18,042 game:DEBUG Starting up
-2011-08-21 15:18:18,043 game:DEBUG on setup: draw.setup
-2011-08-21 15:18:18,045 game:DEBUG on setup: hud.setup
-2011-08-21 15:18:18,045 game:DEBUG on tick: hud.topbar_tick
-2011-08-21 15:18:18,045 game:DEBUG on tick: hud.nodebar_tick
-2011-08-21 15:18:18,045 game:DEBUG on clear: hud.draw_hud
-2011-08-21 15:18:18,045 game:DEBUG on tick: hud.hud_tick
-2011-08-21 15:18:18,046 game:DEBUG on setup: terminal.setup_terminal
-2011-08-21 15:18:18,046 game:DEBUG on specialkey: terminal.on_specialkey
-2011-08-21 15:18:18,046 game:DEBUG on clear: terminal.on_clear
-2011-08-21 15:18:18,046 game:DEBUG on clear: gameprompt.prompt_hbar
-2011-08-21 15:18:18,048 game:DEBUG on prompt: gameprompt.do_prompt
-2011-08-21 15:18:18,065 game:DEBUG on setup: nodes.setup_nodes
-2011-08-21 15:18:18,079 game:DEBUG on command: commands.parse_command
-2011-08-21 15:18:18,079 game:DEBUG on specialkey: commands.on_specialkey
-2011-08-21 15:18:18,082 game:DEBUG on setup: npc.npc_setup
-2011-08-21 15:18:18,082 game:DEBUG on tick: npc.npc_tick
-2011-08-21 15:18:18,082 game:DEBUG on time_taken: npc.npc_time
-2011-08-21 15:18:18,082 draw:DEBUG setting up screen
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 129.7.232.83
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 223.190.157.78
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 223.47.210.215
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 84.144.196.198
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 40.188.117.30
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 233.24.245.125
-2011-08-21 15:18:18,338 nodes:DEBUG adding NPC EVO Corp Security to 37.148.16.126
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 176.40.14.113
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 174.65.65.248
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 247.206.216.254
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Ares Macrotechnology Security to 76.203.132.178
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Ares Macrotechnology Security to 2.231.34.13
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 68.128.75.244
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 84.4.185.244
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 52.230.220.74
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC NeoNET Security to 25.89.220.203
-2011-08-21 15:18:18,339 nodes:DEBUG adding NPC NeoNET Security to 174.140.238.164
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC NeoNET Security to 25.19.81.1
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 128.105.166.214
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.129.95.211
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.155.152.191
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.155.152.191
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 156.122.130.38
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 103.96.86.231
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 135.190.182.231
-2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 103.89.26.206
-2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 102.65.3.143
-2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
-2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
-2011-08-21 15:18:18,342 hud:DEBUG draw_hud
-2011-08-21 15:18:18,368 hud:DEBUG hud_tick
-2011-08-21 15:18:20,835 hud:DEBUG hud_tick
-2011-08-21 15:18:21,423 hud:DEBUG hud_tick
-2011-08-21 15:18:22,292 commands:WARNING err Cannot travel to a node you are already connected to
-2011-08-21 15:18:22,364 hud:DEBUG hud_tick
-2011-08-21 15:18:27,890 hud:DEBUG hud_tick
-2011-08-21 15:19:06,766 hud:DEBUG hud_tick
-2011-08-21 15:19:08,309 corps:DEBUG state: idle
-2011-08-21 15:19:08,460 hud:DEBUG hud_tick
-2011-08-21 15:19:11,575 hud:DEBUG hud_tick
-2011-08-21 15:19:12,496 corps:DEBUG state: idle
-2011-08-21 15:19:12,611 corps:DEBUG state: hacking
-2011-08-21 15:19:12,611 corps:DEBUG state: hacking
-2011-08-21 15:19:12,611 nodes:DEBUG adding NPC Shadow Team to 246.152.17.81
-2011-08-21 15:19:12,611 corps:DEBUG state: idle
-2011-08-21 15:19:12,717 corps:DEBUG state: idle
-2011-08-21 15:19:12,822 corps:DEBUG state: hacking
-2011-08-21 15:19:12,849 hud:DEBUG hud_tick
-2011-08-21 15:19:13,927 corps:DEBUG state: hacking
-2011-08-21 15:19:13,928 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
-2011-08-21 15:19:13,928 corps:DEBUG state: scan
-2011-08-21 15:19:13,928 corps:DEBUG state: idle
-2011-08-21 15:19:14,052 corps:DEBUG state: hacking
-2011-08-21 15:19:14,052 corps:DEBUG state: hacking
-2011-08-21 15:19:14,052 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
-2011-08-21 15:19:14,052 corps:DEBUG state: hacking
-2011-08-21 15:19:14,053 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
-2011-08-21 15:19:14,082 hud:DEBUG hud_tick
-2011-08-21 15:19:14,835 corps:DEBUG state: scan
-2011-08-21 15:19:14,835 corps:DEBUG state: idle
-2011-08-21 15:19:14,967 corps:DEBUG state: hacking
-2011-08-21 15:19:14,967 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
-2011-08-21 15:19:14,967 corps:DEBUG state: scan
-2011-08-21 15:19:14,967 corps:DEBUG state: idle
-2011-08-21 15:19:15,073 corps:DEBUG state: hacking
-2011-08-21 15:19:15,073 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:19:15,073 corps:DEBUG state: scan
-2011-08-21 15:19:15,073 corps:DEBUG state: idle
-2011-08-21 15:19:15,180 corps:DEBUG state: hacking
-2011-08-21 15:19:15,180 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
-2011-08-21 15:19:15,209 hud:DEBUG hud_tick
-2011-08-21 15:19:17,887 hud:DEBUG hud_tick
-2011-08-21 15:19:18,644 corps:DEBUG state: hacking
-2011-08-21 15:19:18,644 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
-2011-08-21 15:19:18,644 corps:DEBUG state: scan
-2011-08-21 15:19:18,644 corps:DEBUG state: idle
-2011-08-21 15:19:18,759 corps:DEBUG state: scan
-2011-08-21 15:19:18,759 corps:DEBUG state: idle
-2011-08-21 15:19:18,865 corps:DEBUG state: hacking
-2011-08-21 15:19:18,865 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
-2011-08-21 15:19:18,865 corps:DEBUG state: scan
-2011-08-21 15:19:18,865 corps:DEBUG state: idle
-2011-08-21 15:19:19,002 hud:DEBUG hud_tick
-2011-08-21 15:19:20,755 corps:DEBUG state: scan
-2011-08-21 15:19:20,755 corps:DEBUG state: idle
-2011-08-21 15:19:20,878 corps:DEBUG state: hacking
-2011-08-21 15:19:20,878 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
-2011-08-21 15:19:20,878 corps:DEBUG state: hacking
-2011-08-21 15:19:20,878 corps:DEBUG state: scan
-2011-08-21 15:19:20,878 corps:DEBUG state: hacking
-2011-08-21 15:19:20,878 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
-2011-08-21 15:19:20,910 hud:DEBUG hud_tick
-2011-08-21 15:19:21,430 corps:DEBUG state: scan
-2011-08-21 15:19:21,430 corps:DEBUG state: idle
-2011-08-21 15:19:21,548 corps:DEBUG state: hacking
-2011-08-21 15:19:21,549 corps:DEBUG state: hacking
-2011-08-21 15:19:21,549 nodes:DEBUG adding NPC Shadow Team to 246.152.17.81
-2011-08-21 15:19:21,549 corps:DEBUG state: idle
-2011-08-21 15:19:21,654 corps:DEBUG state: hacking
-2011-08-21 15:19:21,654 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:19:21,654 corps:DEBUG state: scan
-2011-08-21 15:19:21,654 corps:DEBUG state: idle
-2011-08-21 15:19:21,759 corps:DEBUG state: hacking
-2011-08-21 15:19:21,759 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
-2011-08-21 15:19:21,788 hud:DEBUG hud_tick
-2011-08-21 15:19:23,390 hud:DEBUG hud_tick
-2011-08-21 15:19:25,029 commands:WARNING err You must have root access to change homes
-2011-08-21 15:19:25,085 hud:DEBUG hud_tick
-2011-08-21 15:19:29,707 hud:DEBUG hud_tick
-2011-08-21 15:19:31,721 corps:DEBUG state: hacking
-2011-08-21 15:19:31,721 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
-2011-08-21 15:19:31,721 corps:DEBUG state: scan
-2011-08-21 15:19:31,721 corps:DEBUG state: idle
-2011-08-21 15:19:31,838 corps:DEBUG state: hacking
-2011-08-21 15:19:31,838 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
-2011-08-21 15:19:31,838 corps:DEBUG state: scan
-2011-08-21 15:19:31,838 corps:DEBUG state: idle
-2011-08-21 15:19:31,944 corps:DEBUG state: hacking
-2011-08-21 15:19:31,944 corps:DEBUG state: scan
-2011-08-21 15:19:31,944 corps:DEBUG state: idle
-2011-08-21 15:19:32,049 corps:DEBUG state: hacking
-2011-08-21 15:19:32,049 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
-2011-08-21 15:19:32,073 hud:DEBUG hud_tick
-2011-08-21 15:19:36,730 game:WARNING fired event rehome and nobody cared
-2011-08-21 15:19:36,730 corps:DEBUG state: scan
-2011-08-21 15:19:36,730 corps:DEBUG state: idle
-2011-08-21 15:19:36,845 corps:DEBUG state: hacking
-2011-08-21 15:19:36,845 corps:DEBUG state: hacking
-2011-08-21 15:19:36,845 corps:DEBUG state: hacking
-2011-08-21 15:19:36,846 corps:DEBUG state: hacking
-2011-08-21 15:19:36,846 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
-2011-08-21 15:19:36,846 corps:DEBUG state: scan
-2011-08-21 15:19:36,846 corps:DEBUG state: idle
-2011-08-21 15:19:36,951 corps:DEBUG state: hacking
-2011-08-21 15:19:36,951 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
-2011-08-21 15:19:36,951 corps:DEBUG state: scan
-2011-08-21 15:19:36,951 corps:DEBUG state: idle
-2011-08-21 15:19:37,056 corps:DEBUG state: hacking
-2011-08-21 15:19:37,058 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
-2011-08-21 15:19:37,058 corps:DEBUG state: scan
-2011-08-21 15:19:37,058 corps:DEBUG state: idle
-2011-08-21 15:19:37,170 corps:DEBUG state: hacking
-2011-08-21 15:19:37,170 corps:DEBUG state: hacking
-2011-08-21 15:19:37,170 corps:DEBUG state: hacking
-2011-08-21 15:19:37,170 corps:DEBUG state: hacking
-2011-08-21 15:19:37,170 corps:DEBUG state: hacking
-2011-08-21 15:19:37,170 corps:DEBUG state: idle
-2011-08-21 15:19:37,275 corps:DEBUG state: hacking
-2011-08-21 15:19:37,275 corps:DEBUG state: hacking
-2011-08-21 15:19:37,275 corps:DEBUG state: hacking
-2011-08-21 15:19:37,275 corps:DEBUG state: hacking
-2011-08-21 15:19:37,275 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
-2011-08-21 15:19:37,275 corps:DEBUG state: scan
-2011-08-21 15:19:37,275 corps:DEBUG state: idle
-2011-08-21 15:19:37,378 corps:DEBUG state: hacking
-2011-08-21 15:19:37,378 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:19:37,378 corps:DEBUG state: scan
-2011-08-21 15:19:37,378 corps:DEBUG state: idle
-2011-08-21 15:19:37,483 corps:DEBUG state: hacking
-2011-08-21 15:19:37,483 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
-2011-08-21 15:19:37,483 corps:DEBUG state: scan
-2011-08-21 15:19:37,484 corps:DEBUG state: idle
-2011-08-21 15:19:37,588 corps:DEBUG state: hacking
-2011-08-21 15:19:37,588 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:19:37,588 corps:DEBUG state: scan
-2011-08-21 15:19:37,588 corps:DEBUG state: idle
-2011-08-21 15:19:37,694 corps:DEBUG state: hacking
-2011-08-21 15:19:37,694 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
-2011-08-21 15:19:37,694 corps:DEBUG state: scan
-2011-08-21 15:19:37,694 corps:DEBUG state: idle
-2011-08-21 15:19:37,799 corps:DEBUG state: hacking
-2011-08-21 15:19:37,799 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
-2011-08-21 15:19:37,799 corps:DEBUG state: scan
-2011-08-21 15:19:37,799 corps:DEBUG state: idle
-2011-08-21 15:19:37,904 corps:DEBUG state: hacking
-2011-08-21 15:19:37,904 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
-2011-08-21 15:19:37,904 corps:DEBUG state: scan
-2011-08-21 15:19:37,904 corps:DEBUG state: idle
-2011-08-21 15:19:38,007 corps:DEBUG state: hacking
-2011-08-21 15:19:38,007 corps:DEBUG state: hacking
-2011-08-21 15:19:38,007 corps:DEBUG state: hacking
-2011-08-21 15:19:38,007 corps:DEBUG state: hacking
-2011-08-21 15:19:38,007 corps:DEBUG state: hacking
-2011-08-21 15:19:38,007 corps:DEBUG state: idle
-2011-08-21 15:19:38,111 corps:DEBUG state: hacking
-2011-08-21 15:19:38,135 hud:DEBUG hud_tick
-2011-08-21 15:20:22,030 gameprompt:DEBUG took a ctrl-c
-2011-08-21 15:20:22,581 game:DEBUG shutting down
-2011-08-21 15:20:22,586 root:DEBUG Shutting down
+2011-08-21 15:49:20,369 game:DEBUG on setup: game.setup_state
+2011-08-21 15:49:20,369 game:DEBUG on shutdown: game.shutdown
+2011-08-21 15:49:20,369 game:DEBUG Starting up
+2011-08-21 15:49:20,371 game:DEBUG on setup: draw.setup
+2011-08-21 15:49:20,371 game:DEBUG on setup: hud.setup
+2011-08-21 15:49:20,371 game:DEBUG on tick: hud.topbar_tick
+2011-08-21 15:49:20,371 game:DEBUG on tick: hud.nodebar_tick
+2011-08-21 15:49:20,372 game:DEBUG on clear: hud.draw_hud
+2011-08-21 15:49:20,372 game:DEBUG on tick: hud.hud_tick
+2011-08-21 15:49:20,375 game:DEBUG on setup: terminal.setup_terminal
+2011-08-21 15:49:20,375 game:DEBUG on specialkey: terminal.on_specialkey
+2011-08-21 15:49:20,375 game:DEBUG on clear: terminal.on_clear
+2011-08-21 15:49:20,375 game:DEBUG on clear: gameprompt.prompt_hbar
+2011-08-21 15:49:20,375 game:DEBUG on prompt: gameprompt.do_prompt
+2011-08-21 15:49:20,391 game:DEBUG on setup: nodes.setup_nodes
+2011-08-21 15:49:20,407 game:DEBUG on command: commands.parse_command
+2011-08-21 15:49:20,407 game:DEBUG on specialkey: commands.on_specialkey
+2011-08-21 15:49:20,410 game:DEBUG on setup: npc.npc_setup
+2011-08-21 15:49:20,410 game:DEBUG on tick: npc.npc_tick
+2011-08-21 15:49:20,410 game:DEBUG on time_taken: npc.npc_time
+2011-08-21 15:49:20,410 draw:DEBUG setting up screen
+2011-08-21 15:49:20,684 nodes:DEBUG adding NPC Saeder-Krupp Security to 138.90.198.203
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC Saeder-Krupp Security to 170.26.137.246
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC Saeder-Krupp Security to 138.67.183.199
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC Aztechnology Security to 159.220.192.91
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC Aztechnology Security to 4.156.226.241
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC Aztechnology Security to 32.214.165.233
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC EVO Corp Security to 192.187.242.167
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC EVO Corp Security to 246.190.231.56
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC EVO Corp Security to 70.31.112.81
+2011-08-21 15:49:20,686 nodes:DEBUG adding NPC EVO Corp Security to 128.183.68.26
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Ares Macrotechnology Security to 206.243.224.62
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Ares Macrotechnology Security to 206.148.242.175
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Horizon Entertainment Security to 223.62.161.57
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Horizon Entertainment Security to 223.80.253.162
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Horizon Entertainment Security to 183.119.66.111
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC NeoNET Security to 144.250.132.238
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC NeoNET Security to 44.247.209.247
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Renraku Computer Systems Security to 96.138.0.111
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Renraku Computer Systems Security to 159.126.210.73
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Renraku Computer Systems Security to 159.126.210.73
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Renraku Computer Systems Security to 126.32.13.245
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Wuxing Inc Security to 252.17.68.152
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Wuxing Inc Security to 195.63.98.59
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Wuxing Inc Security to 248.224.53.215
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Wuxing Inc Security to 68.53.181.62
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Shadow Team to 164.93.139.218
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Shadow Team to 244.178.87.37
+2011-08-21 15:49:20,687 nodes:DEBUG adding NPC Shadow Team to 44.120.125.122
+2011-08-21 15:49:20,688 nodes:DEBUG adding NPC Shadow Team to 252.173.195.214
+2011-08-21 15:49:20,688 hud:DEBUG draw_hud
+2011-08-21 15:49:20,714 hud:DEBUG hud_tick
+2011-08-21 15:49:36,525 hud:DEBUG hud_tick
+2011-08-21 15:49:37,249 corps:DEBUG state: idle
+2011-08-21 15:49:37,374 hud:DEBUG hud_tick
+2011-08-21 15:49:38,138 hud:DEBUG hud_tick
+2011-08-21 15:49:38,910 corps:DEBUG state: idle
+2011-08-21 15:49:39,028 corps:DEBUG state: idle
+2011-08-21 15:49:39,125 corps:DEBUG state: hacking
+2011-08-21 15:49:39,125 corps:DEBUG state: hacking
+2011-08-21 15:49:39,125 corps:DEBUG state: idle
+2011-08-21 15:49:39,249 hud:DEBUG hud_tick
+2011-08-21 15:49:40,095 corps:DEBUG state: hacking
+2011-08-21 15:49:40,096 corps:DEBUG state: hacking
+2011-08-21 15:49:40,096 corps:DEBUG state: hacking
+2011-08-21 15:49:40,096 corps:DEBUG state: hacking
+2011-08-21 15:49:40,148 hud:DEBUG hud_tick
+2011-08-21 15:49:41,082 corps:DEBUG state: hacking
+2011-08-21 15:49:41,082 corps:DEBUG state: hacking
+2011-08-21 15:49:41,082 corps:DEBUG state: hacking
+2011-08-21 15:49:41,084 corps:DEBUG state: hacking
+2011-08-21 15:49:41,141 hud:DEBUG hud_tick
+2011-08-21 15:49:42,973 corps:DEBUG state: hacking
+2011-08-21 15:49:42,973 corps:DEBUG state: hacking
+2011-08-21 15:49:42,973 corps:DEBUG state: hacking
+2011-08-21 15:49:43,038 hud:DEBUG hud_tick
+2011-08-21 15:49:47,118 corps:DEBUG state: hacking
+2011-08-21 15:49:47,118 corps:DEBUG state: hacking
+2011-08-21 15:49:47,118 corps:DEBUG state: hacking
+2011-08-21 15:49:47,118 corps:DEBUG state: idle
+2011-08-21 15:49:47,224 corps:DEBUG state: hacking
+2011-08-21 15:49:47,256 hud:DEBUG hud_tick
+2011-08-21 15:49:48,160 corps:DEBUG state: hacking
+2011-08-21 15:49:48,160 corps:DEBUG state: idle
+2011-08-21 15:49:48,160 corps:DEBUG state: hacking
+2011-08-21 15:49:48,160 corps:DEBUG state: idle
+2011-08-21 15:49:48,270 corps:DEBUG state: hacking
+2011-08-21 15:49:48,270 nodes:DEBUG adding NPC Shadow Team to 109.97.179.52
+2011-08-21 15:49:48,270 corps:DEBUG state: hacking
+2011-08-21 15:49:48,270 corps:DEBUG state: hacking
+2011-08-21 15:49:48,270 corps:DEBUG state: idle
+2011-08-21 15:49:48,398 hud:DEBUG hud_tick
+2011-08-21 15:50:15,233 hud:DEBUG hud_tick
+2011-08-21 15:50:21,970 commands:WARNING err The Neighbor ID must be in the list of neighbors
+2011-08-21 15:50:22,032 hud:DEBUG hud_tick
+2011-08-21 15:50:31,543 corps:DEBUG state: hacking
+2011-08-21 15:50:31,545 nodes:DEBUG adding NPC Shadow Team to 164.124.145.246
+2011-08-21 15:50:31,546 corps:DEBUG state: scan
+2011-08-21 15:50:31,546 corps:DEBUG state: idle
+2011-08-21 15:50:31,668 corps:DEBUG state: hacking
+2011-08-21 15:50:31,668 corps:DEBUG state: hacking
+2011-08-21 15:50:31,668 corps:DEBUG state: hacking
+2011-08-21 15:50:31,697 hud:DEBUG hud_tick
+2011-08-21 15:50:38,914 corps:DEBUG state: scan
+2011-08-21 15:51:29,318 root:DEBUG Shutting down

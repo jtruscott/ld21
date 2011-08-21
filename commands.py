@@ -275,6 +275,7 @@ class ExitCommand(Command):
     description = """Exit the game."""
     time = 0
     def action(self, args, command_line):
+        #game.state.killer = "Shadow Team"; gameprompt.death_screen();
         gameprompt.confirm_exit()
 
 class HelpCommand(Command):

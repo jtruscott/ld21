@@ -1,5 +1,6 @@
 import game
 import draw
+import hud
 import constants as C
 import WConio as W
 from winsound import MessageBeep
@@ -119,6 +120,32 @@ def confirm_exit():
     return show_confirmation(
         "Are you sure you want to exit the game?"
     )
+
+def death_screen():
+    left = C.width / 4
+    width = C.width / 2
+    height = 12
+    top = C.height / 2 - height /2
+    
+    time = game.state.time - (24*60)
+    survived = "%i days, %i hours, and %i minutes" % ((time / 60) / 24, (time / 60) % 60, time % 60)
+
+    death_box = draw.draw_box(left, top, width, height,
+                                border_color=W.LIGHTRED, border_background_color=W.RED,
+                                interior_background_color=W.RED)
+    death_box.text.extend([
+        draw.Text(W.WHITE, 1, 3, "UNHANDLED EXCEPTION:".center(width - 2)),
+        draw.Text(W.LIGHTRED, 1, 4, ("Killed by %s." % game.state.killer).center(width - 2)),
+        draw.Text(W.LIGHTRED, 1, 7, ("You lasted %s. " % survived).center(width - 2)),
+        draw.Text(W.WHITE, 1, 10, "Press <ENTER> to quit.".center(width - 2)),
+        ])
+    draw.draw_box_text(death_box)
+    while True:
+        (chn, chs) = W.getch()
+        #figure out if we're done
+        if chs == '\r':
+            #enter, exit
+            raise game.GameShutdown()
 
 def show_confirmation(line1=' ', line2=' '):
     line1 = terminal.Line.parse(line1)[0]

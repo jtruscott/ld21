@@ -27,9 +27,9 @@ class NPC:
         def start_hack(target):
             self.state = 'hacking'
             self.delay += 15
-            self.target = neighbor
+            self.target = target
             self.tries = 0
-            neighbor.start_npc_hack(self)
+            target.start_npc_hack(self)
 
         if self.state == 'idle':
             #scan nearby nodes for interesting things
@@ -66,7 +66,7 @@ class NPC:
         if self.state == 'scan':
             if self.node.user:
                 #found 'em!
-                self.node.purge()
+                self.node.purge(self)
             self.delay += random.randint(5,15)
             self.state = 'idle'
             return

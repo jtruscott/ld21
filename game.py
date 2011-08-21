@@ -28,7 +28,7 @@ def fire(event, *args):
 @on('setup')
 def setup_state():
     state.mission = 1
-    state.time = 2400
+    state.time = 24*60
     state.running = True
     state.tunnels = []
     state.aggregate_bandwidth = 0

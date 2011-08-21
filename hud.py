@@ -9,7 +9,7 @@ class boxes:
     #container
     pass
 def format_time(t):
-     return 'Day %i, %02i:%02i' % (t / 2400, t % 2400 / 100, t % 100)
+     return 'Day %i, %02i:%02i' % (t / 60 / 24, (t / 60) % 24, t % 60)
 
 def draw_condition_bar(base):
     x, y = base.x + len(base.text), base.y
