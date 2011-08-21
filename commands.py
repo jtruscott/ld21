@@ -1,6 +1,7 @@
 import game
 import gameprompt
 import terminal
+import nodes
 import hud
 
 import optparse
@@ -13,6 +14,8 @@ class CommandError(Exception):
 class ArgumentError(CommandError): pass
 class HelpError(CommandError): pass
 class NoDefault: pass
+ForbiddenError = nodes.ForbiddenError
+AlreadyThere = nodes.AlreadyThere
 
 class Command:
     hide = False
@@ -114,6 +117,24 @@ class LSCommand(Command):
             ))
         return self.time
 
+class DisarmCommand(Command):
+    command = "disarm"
+    description = "Disable any alarms on the current node"
+    time = 5
+
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        base = game.state.current_node
+        try:
+            if base.alarmed:
+                base.disarm()
+                terminal.add_line('Alarms disabled.')
+            else:
+                terminal.add_line('No alarms active on this node.')
+
+        except ForbiddenError:
+            terminal.add_line('<RED>ERROR:<LIGHTGREY> You must be root to disarm any alarms!')
+        return self.time
 
 class NeighborsCommand(Command):
     command = "neighbors"
@@ -181,7 +202,10 @@ class NeighborCommand(Command):
         except IndexError:
             self.parser.error(msg="The Neighbor ID must be in the list of neighbors")
         
-        return self.do_action(neighbor)
+        try:
+            return self.do_action(neighbor)
+        except AlreadyThere:
+            self.parser.error(msg="Cannot travel to a node you are already connected to")
 
 class TunnelCommand(NeighborCommand):
     command = "tunnel"
@@ -190,7 +214,10 @@ class TunnelCommand(NeighborCommand):
     time_variable = True
     def do_action(self, neighbor):
         terminal.add_line("<LIGHTGREY>Traveling to <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
-        neighbor.proxy()
+        try:
+            neighbor.proxy()
+        except ForbiddenError:
+            terminal.add_line('<RED>ERROR:<LIGHTGREY> This node does not allow guest access.')
         return self.time
 
 class HackCommand(NeighborCommand):
@@ -200,7 +227,10 @@ class HackCommand(NeighborCommand):
     time_variable = True
     def do_action(self, neighbor):
         terminal.add_line("<LIGHTGREY>Hacking into <WHITE>%s<LIGHTGREY>..." % neighbor.ip_addr)
-        neighbor.hack()
+        try:
+            neighbor.hack()
+        except ForbiddenError:
+            terminal.add_line('<RED>ERROR:<LIGHTGREY> Hack failed!')
         return self.time
 
 class BackCommand(Command):
@@ -239,7 +269,25 @@ class ReHomeCommand(Command):
         base.rehome()
 
         return calculated_time
-     
+
+class ExitCommand(Command):
+    command = "exit"
+    description = """Exit the game."""
+    time = 0
+    def action(self, args, command_line):
+        gameprompt.confirm_exit()
+
+class HelpCommand(Command):
+    command = "help"
+    description = """Print some help text"""
+    time = 0
+    def action(self, args, command_line):
+        terminal.add_line("Commands:")
+        for cmd in gameprompt.commands:
+            if cmd.hide:
+                continue
+            terminal.add_line("    <WHITE>%s" % cmd.command)
+        terminal.add_line('use "command --help" for more info')
 '''
     Parser bits
 '''
@@ -278,7 +326,8 @@ def parse_command(command_line, match):
 @game.on('specialkey')
 def on_specialkey(key):
     if key == 'ctrlc':
-        game.fire('shutdown')
+        if gameprompt.confirm_exit():
+            game.fire('shutdown')
 
 commands = dict(
     ls=LSCommand('ls'),
@@ -288,7 +337,9 @@ commands = dict(
     hack=HackCommand(),
     back=BackCommand(),
     rehome=ReHomeCommand(),
-
+    exit=ExitCommand(),
+    help=HelpCommand(),
+    disarm=DisarmCommand(),
 
     _unknown=UnknownCommand(),
     _error=ErrorCommand(),

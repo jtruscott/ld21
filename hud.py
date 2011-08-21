@@ -112,8 +112,9 @@ def draw_tunnel_list(bar, data, highColor=W.YELLOW, lowColor=W.BROWN):
     ]
     draw_node(None, game.state.home_node)
     y += 3
-    i = -1
-    for node in data:
+    start = max(0, len(data) - 7)
+    i = start
+    for node in data[start:]:
         i += 1
         draw_node(i, node)
         y += 3

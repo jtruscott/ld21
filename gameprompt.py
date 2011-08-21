@@ -115,6 +115,11 @@ def get_input():
         buf.append(chs)
     return buf, match
 
+def confirm_exit():
+    return show_confirmation(
+        "Are you sure you want to exit the game?"
+    )
+
 def show_confirmation(line1=' ', line2=' '):
     line1 = terminal.Line.parse(line1)[0]
     line2 = terminal.Line.parse(line2)[0]

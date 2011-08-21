@@ -18,9 +18,12 @@ import game
 try:
     game.start()
 except game.GameShutdown:
+    W.textmode()
     pass
+except KeyboardInterrupt:
+    W.textmode()
+    raise
 except:
-    #WConio.textmode()
     raise
 finally:
     logger.debug("Shutting down")

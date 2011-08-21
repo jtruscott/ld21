@@ -13,7 +13,7 @@ listeners = {}
 
 def on(event):
     def wrapper(fn):
-        log.debug('on %s: %s', event, fn.__name__)
+        log.debug('on %s: %s.%s', event, fn.__module__, fn.__name__)
         listeners.setdefault(event, [])
         listeners[event].append(fn)
         return fn
@@ -35,7 +35,8 @@ def setup_state():
 
     player.hp = player.max_hp = 12
     player.vulnerable = False
-
+    player.hacking = 2
+    player.stealth = 2
 
 @on('shutdown')
 def shutdown():
@@ -51,7 +52,7 @@ def take_time(time_taken):
 
 def start():
     log.debug("Starting up")
-    import draw, hud, gameprompt, terminal, nodes, commands
+    import draw, hud, gameprompt, terminal, nodes, commands, npc
 
     fire('setup')
     fire('clear')

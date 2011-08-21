@@ -1,143 +1,211 @@
-2011-08-21 12:21:29,457 game:DEBUG on setup: setup_state
-2011-08-21 12:21:29,457 game:DEBUG on shutdown: shutdown
-2011-08-21 12:21:29,457 game:DEBUG Starting up
-2011-08-21 12:21:29,460 game:DEBUG on setup: setup
-2011-08-21 12:21:29,460 game:DEBUG on setup: setup
-2011-08-21 12:21:29,460 game:DEBUG on tick: topbar_tick
-2011-08-21 12:21:29,460 game:DEBUG on tick: nodebar_tick
-2011-08-21 12:21:29,460 game:DEBUG on clear: draw_hud
-2011-08-21 12:21:29,460 game:DEBUG on tick: hud_tick
-2011-08-21 12:21:29,463 game:DEBUG on setup: setup_terminal
-2011-08-21 12:21:29,463 game:DEBUG on specialkey: on_specialkey
-2011-08-21 12:21:29,463 game:DEBUG on clear: on_clear
-2011-08-21 12:21:29,463 game:DEBUG on clear: prompt_hbar
-2011-08-21 12:21:29,463 game:DEBUG on prompt: do_prompt
-2011-08-21 12:21:29,471 game:DEBUG on setup: setup_nodes
-2011-08-21 12:21:29,480 game:DEBUG on command: parse_command
-2011-08-21 12:21:29,480 game:DEBUG on specialkey: on_specialkey
-2011-08-21 12:21:29,483 draw:DEBUG setting up screen
-2011-08-21 12:21:29,553 nodes:WARNING relinking 185.165.189.91 and 88.105.213.57
-2011-08-21 12:21:29,555 nodes:WARNING relinking 172.77.50.161 and 172.77.50.161
-2011-08-21 12:21:29,555 nodes:WARNING relinking 118.215.40.83 and 118.215.40.83
-2011-08-21 12:21:29,565 nodes:WARNING relinking 180.76.113.234 and 157.222.255.53
-2011-08-21 12:21:29,568 nodes:WARNING relinking 89.107.89.107 and 89.107.89.107
-2011-08-21 12:21:29,569 nodes:WARNING relinking 71.20.255.100 and 244.44.217.224
-2011-08-21 12:21:29,569 nodes:WARNING relinking 69.107.150.225 and 218.155.232.172
-2011-08-21 12:21:29,569 nodes:WARNING relinking 89.107.89.107 and 89.107.89.107
-2011-08-21 12:21:29,571 nodes:WARNING relinking 217.161.208.49 and 97.131.22.198
-2011-08-21 12:21:29,575 nodes:WARNING relinking 138.124.99.76 and 253.68.118.24
-2011-08-21 12:21:29,578 nodes:WARNING relinking 231.36.18.109 and 212.149.94.193
-2011-08-21 12:21:29,579 nodes:WARNING relinking 6.113.60.213 and 142.148.46.82
-2011-08-21 12:21:29,582 nodes:WARNING relinking 147.84.5.35 and 66.93.211.9
-2011-08-21 12:21:29,584 nodes:WARNING relinking 222.3.61.166 and 122.207.136.226
-2011-08-21 12:21:29,584 nodes:WARNING relinking 36.181.67.72 and 227.41.60.52
-2011-08-21 12:21:29,588 nodes:WARNING relinking 231.123.51.123 and 231.123.51.123
-2011-08-21 12:21:29,589 nodes:WARNING relinking 150.94.83.184 and 229.30.96.47
-2011-08-21 12:21:29,589 nodes:WARNING relinking 89.107.89.107 and 89.107.89.107
-2011-08-21 12:21:29,592 nodes:WARNING relinking 69.252.39.31 and 69.252.39.31
-2011-08-21 12:21:29,592 nodes:WARNING relinking 78.21.144.28 and 246.243.16.122
-2011-08-21 12:21:29,592 nodes:WARNING relinking 41.219.120.85 and 56.165.59.157
-2011-08-21 12:21:29,595 nodes:WARNING relinking 217.167.89.141 and 216.1.28.230
-2011-08-21 12:21:29,599 nodes:WARNING relinking 222.3.61.166 and 122.207.136.226
-2011-08-21 12:21:29,599 nodes:WARNING relinking 142.108.5.164 and 142.108.5.164
-2011-08-21 12:21:29,601 nodes:WARNING relinking 202.138.97.207 and 164.185.77.58
-2011-08-21 12:21:29,601 nodes:WARNING relinking 172.77.50.161 and 172.77.50.161
-2011-08-21 12:21:29,601 nodes:WARNING relinking 138.124.99.76 and 253.68.118.24
-2011-08-21 12:21:29,602 nodes:WARNING relinking 210.65.154.122 and 210.65.154.122
-2011-08-21 12:21:29,604 nodes:WARNING relinking 209.37.13.185 and 209.37.13.185
-2011-08-21 12:21:29,607 nodes:WARNING relinking 9.15.56.49 and 248.186.140.116
-2011-08-21 12:21:29,608 nodes:WARNING relinking 153.19.173.53 and 153.19.173.53
-2011-08-21 12:21:29,608 nodes:WARNING relinking 196.194.228.16 and 196.194.228.16
-2011-08-21 12:21:29,611 nodes:WARNING relinking 172.77.50.161 and 172.77.50.161
-2011-08-21 12:21:29,612 nodes:WARNING relinking 141.69.245.55 and 247.81.187.30
-2011-08-21 12:21:29,614 nodes:WARNING relinking 200.98.124.204 and 200.98.124.204
-2011-08-21 12:21:29,615 nodes:WARNING relinking 187.195.41.182 and 167.225.155.214
-2011-08-21 12:21:29,617 nodes:WARNING relinking 158.85.189.34 and 158.85.189.34
-2011-08-21 12:21:29,617 nodes:WARNING relinking 212.127.84.34 and 212.127.84.34
-2011-08-21 12:21:29,618 nodes:WARNING relinking 87.54.235.222 and 72.172.105.134
-2011-08-21 12:21:29,618 nodes:WARNING relinking 66.93.211.9 and 147.84.5.35
-2011-08-21 12:21:29,618 nodes:WARNING relinking 30.129.151.98 and 30.129.151.98
-2011-08-21 12:21:29,619 nodes:WARNING relinking 196.194.228.16 and 196.194.228.16
-2011-08-21 12:21:29,621 nodes:WARNING relinking 248.186.140.116 and 9.15.56.49
-2011-08-21 12:21:29,621 nodes:WARNING relinking 217.161.208.49 and 121.229.164.191
-2011-08-21 12:21:29,622 nodes:WARNING relinking 62.205.218.6 and 62.205.218.6
-2011-08-21 12:21:29,625 nodes:WARNING relinking 145.170.40.188 and 157.39.159.62
-2011-08-21 12:21:29,625 nodes:WARNING relinking 142.146.98.241 and 142.146.98.241
-2011-08-21 12:21:29,627 nodes:WARNING relinking 70.28.225.117 and 70.28.225.117
-2011-08-21 12:21:29,628 nodes:WARNING relinking 157.177.184.141 and 157.177.184.141
-2011-08-21 12:21:29,632 nodes:WARNING relinking 188.104.6.250 and 206.143.38.3
-2011-08-21 12:21:29,632 nodes:WARNING relinking 27.85.73.15 and 27.85.73.15
-2011-08-21 12:21:29,634 nodes:WARNING relinking 97.31.133.225 and 97.31.133.225
-2011-08-21 12:21:29,634 nodes:WARNING relinking 77.218.248.167 and 77.218.248.167
-2011-08-21 12:21:29,635 nodes:WARNING relinking 56.165.59.157 and 41.219.120.85
-2011-08-21 12:21:29,637 nodes:WARNING relinking 244.28.206.151 and 197.26.189.54
-2011-08-21 12:21:29,638 nodes:WARNING relinking 42.64.176.118 and 227.41.60.52
-2011-08-21 12:21:29,638 nodes:WARNING relinking 97.197.52.136 and 244.50.28.196
-2011-08-21 12:21:29,638 nodes:WARNING relinking 42.64.176.118 and 42.64.176.118
-2011-08-21 12:21:29,640 nodes:WARNING relinking 161.37.209.126 and 161.37.209.126
-2011-08-21 12:21:29,641 nodes:WARNING relinking 157.39.159.62 and 35.235.113.42
-2011-08-21 12:21:29,641 nodes:WARNING relinking 253.68.118.24 and 138.124.99.76
-2011-08-21 12:21:29,641 nodes:WARNING relinking 210.39.151.119 and 210.39.151.119
-2011-08-21 12:21:29,642 nodes:WARNING relinking 235.149.14.40 and 214.122.61.115
-2011-08-21 12:21:29,642 nodes:WARNING relinking 246.191.241.181 and 30.5.230.160
-2011-08-21 12:21:29,644 nodes:WARNING relinking 18.139.91.142 and 66.50.220.16
-2011-08-21 12:21:29,644 nodes:WARNING relinking 157.39.159.62 and 145.170.40.188
-2011-08-21 12:21:29,644 nodes:WARNING relinking 136.50.42.190 and 5.147.225.147
-2011-08-21 12:21:29,644 nodes:WARNING relinking 201.179.189.86 and 33.197.214.195
-2011-08-21 12:21:29,645 nodes:WARNING relinking 108.46.142.141 and 108.46.142.141
-2011-08-21 12:21:29,645 nodes:WARNING relinking 121.229.164.191 and 97.131.22.198
-2011-08-21 12:21:29,647 nodes:WARNING relinking 7.77.58.97 and 152.207.156.91
-2011-08-21 12:21:29,648 nodes:WARNING relinking 60.19.56.113 and 60.19.56.113
-2011-08-21 12:21:29,648 nodes:WARNING relinking 29.154.193.108 and 29.154.193.108
-2011-08-21 12:21:29,648 nodes:WARNING relinking 106.176.122.116 and 106.176.122.116
-2011-08-21 12:21:29,648 nodes:WARNING relinking 212.134.77.84 and 102.25.38.142
-2011-08-21 12:21:29,650 nodes:WARNING relinking 244.44.217.224 and 71.20.255.100
-2011-08-21 12:21:29,650 nodes:WARNING relinking 63.124.170.131 and 229.172.72.96
-2011-08-21 12:21:29,651 nodes:WARNING relinking 46.143.118.20 and 46.143.118.20
-2011-08-21 12:21:29,651 nodes:WARNING relinking 229.172.72.96 and 63.124.170.131
-2011-08-21 12:21:29,651 nodes:WARNING relinking 12.174.198.220 and 160.57.91.178
-2011-08-21 12:21:29,651 nodes:WARNING relinking 200.76.153.119 and 200.76.153.119
-2011-08-21 12:21:29,654 nodes:WARNING relinking 153.19.173.53 and 58.255.172.247
-2011-08-21 12:21:29,655 nodes:WARNING relinking 147.84.5.35 and 66.93.211.9
-2011-08-21 12:21:29,657 nodes:WARNING relinking 245.215.97.152 and 245.215.97.152
-2011-08-21 12:21:29,657 nodes:WARNING relinking 84.12.39.99 and 101.174.7.236
-2011-08-21 12:21:29,658 nodes:WARNING relinking 253.86.227.111 and 122.105.131.28
-2011-08-21 12:21:29,661 nodes:WARNING relinking 231.36.18.109 and 212.149.94.193
-2011-08-21 12:21:29,661 nodes:WARNING relinking 108.46.142.141 and 108.46.142.141
-2011-08-21 12:21:29,663 nodes:WARNING relinking 94.101.33.92 and 215.173.239.226
-2011-08-21 12:21:29,663 nodes:WARNING relinking 102.25.38.142 and 212.134.77.84
-2011-08-21 12:21:29,663 nodes:WARNING relinking 226.207.85.64 and 97.131.22.198
-2011-08-21 12:21:29,664 nodes:WARNING relinking 121.229.164.191 and 97.131.22.198
-2011-08-21 12:21:29,664 nodes:WARNING relinking 217.167.89.141 and 216.1.28.230
-2011-08-21 12:21:29,665 nodes:WARNING relinking 24.139.1.37 and 113.59.101.73
-2011-08-21 12:21:29,665 nodes:WARNING relinking 116.67.229.133 and 145.42.74.97
-2011-08-21 12:21:29,667 nodes:WARNING relinking 84.219.177.167 and 247.159.43.152
-2011-08-21 12:21:29,667 nodes:WARNING relinking 72.124.151.132 and 192.239.66.250
-2011-08-21 12:21:29,667 nodes:WARNING relinking 247.81.187.30 and 141.69.245.55
-2011-08-21 12:21:29,667 nodes:WARNING relinking 166.223.123.43 and 166.223.123.43
-2011-08-21 12:21:29,671 nodes:WARNING relinking 200.148.239.70 and 249.81.49.194
-2011-08-21 12:21:29,671 nodes:WARNING relinking 253.86.227.111 and 205.194.42.196
-2011-08-21 12:21:29,671 nodes:WARNING relinking 18.139.91.142 and 66.50.220.16
-2011-08-21 12:21:29,671 nodes:WARNING relinking 58.255.172.247 and 153.19.173.53
-2011-08-21 12:21:29,671 nodes:WARNING relinking 197.26.189.54 and 202.162.109.123
-2011-08-21 12:21:29,673 nodes:WARNING relinking 99.98.70.60 and 202.122.122.148
-2011-08-21 12:21:29,673 nodes:WARNING relinking 9.138.89.154 and 202.122.122.148
-2011-08-21 12:21:29,674 nodes:WARNING relinking 223.27.21.154 and 21.185.233.51
-2011-08-21 12:21:29,674 nodes:WARNING relinking 193.44.39.63 and 21.123.115.12
-2011-08-21 12:21:29,676 nodes:WARNING relinking 69.226.88.90 and 21.85.215.123
-2011-08-21 12:21:29,680 nodes:WARNING relinking 246.243.16.122 and 194.51.224.50
-2011-08-21 12:21:29,680 nodes:WARNING relinking 149.60.134.122 and 194.51.224.50
-2011-08-21 12:21:29,684 nodes:WARNING relinking 206.140.17.243 and 0.157.10.191
-2011-08-21 12:21:29,684 nodes:WARNING relinking 217.178.249.56 and 0.116.64.166
-2011-08-21 12:21:29,734 nodes:WARNING relinking 138.153.223.4 and 251.20.253.187
-2011-08-21 12:21:29,766 hud:DEBUG draw_hud
-2011-08-21 12:21:29,792 hud:DEBUG hud_tick
-2011-08-21 12:21:50,319 game:WARNING fired event time_taken and nobody cared
-2011-08-21 12:21:50,407 hud:DEBUG hud_tick
-2011-08-21 12:22:03,259 game:WARNING fired event time_taken and nobody cared
-2011-08-21 12:22:03,351 hud:DEBUG hud_tick
-2011-08-21 12:22:05,262 game:WARNING fired event time_taken and nobody cared
-2011-08-21 12:22:05,332 hud:DEBUG hud_tick
-2011-08-21 12:23:35,835 gameprompt:DEBUG took a ctrl-c
-2011-08-21 12:23:35,835 game:DEBUG shutting down
-2011-08-21 12:23:35,835 root:DEBUG Shutting down
+2011-08-21 15:18:18,042 game:DEBUG on setup: game.setup_state
+2011-08-21 15:18:18,042 game:DEBUG on shutdown: game.shutdown
+2011-08-21 15:18:18,042 game:DEBUG Starting up
+2011-08-21 15:18:18,043 game:DEBUG on setup: draw.setup
+2011-08-21 15:18:18,045 game:DEBUG on setup: hud.setup
+2011-08-21 15:18:18,045 game:DEBUG on tick: hud.topbar_tick
+2011-08-21 15:18:18,045 game:DEBUG on tick: hud.nodebar_tick
+2011-08-21 15:18:18,045 game:DEBUG on clear: hud.draw_hud
+2011-08-21 15:18:18,045 game:DEBUG on tick: hud.hud_tick
+2011-08-21 15:18:18,046 game:DEBUG on setup: terminal.setup_terminal
+2011-08-21 15:18:18,046 game:DEBUG on specialkey: terminal.on_specialkey
+2011-08-21 15:18:18,046 game:DEBUG on clear: terminal.on_clear
+2011-08-21 15:18:18,046 game:DEBUG on clear: gameprompt.prompt_hbar
+2011-08-21 15:18:18,048 game:DEBUG on prompt: gameprompt.do_prompt
+2011-08-21 15:18:18,065 game:DEBUG on setup: nodes.setup_nodes
+2011-08-21 15:18:18,079 game:DEBUG on command: commands.parse_command
+2011-08-21 15:18:18,079 game:DEBUG on specialkey: commands.on_specialkey
+2011-08-21 15:18:18,082 game:DEBUG on setup: npc.npc_setup
+2011-08-21 15:18:18,082 game:DEBUG on tick: npc.npc_tick
+2011-08-21 15:18:18,082 game:DEBUG on time_taken: npc.npc_time
+2011-08-21 15:18:18,082 draw:DEBUG setting up screen
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 129.7.232.83
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 223.190.157.78
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Saeder-Krupp Security to 223.47.210.215
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 84.144.196.198
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 40.188.117.30
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC Aztechnology Security to 233.24.245.125
+2011-08-21 15:18:18,338 nodes:DEBUG adding NPC EVO Corp Security to 37.148.16.126
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 176.40.14.113
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 174.65.65.248
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC EVO Corp Security to 247.206.216.254
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Ares Macrotechnology Security to 76.203.132.178
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Ares Macrotechnology Security to 2.231.34.13
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 68.128.75.244
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 84.4.185.244
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC Horizon Entertainment Security to 52.230.220.74
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC NeoNET Security to 25.89.220.203
+2011-08-21 15:18:18,339 nodes:DEBUG adding NPC NeoNET Security to 174.140.238.164
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC NeoNET Security to 25.19.81.1
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 128.105.166.214
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.129.95.211
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.155.152.191
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Renraku Computer Systems Security to 155.155.152.191
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 156.122.130.38
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 103.96.86.231
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 135.190.182.231
+2011-08-21 15:18:18,341 nodes:DEBUG adding NPC Wuxing Inc Security to 103.89.26.206
+2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 102.65.3.143
+2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
+2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:18:18,342 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
+2011-08-21 15:18:18,342 hud:DEBUG draw_hud
+2011-08-21 15:18:18,368 hud:DEBUG hud_tick
+2011-08-21 15:18:20,835 hud:DEBUG hud_tick
+2011-08-21 15:18:21,423 hud:DEBUG hud_tick
+2011-08-21 15:18:22,292 commands:WARNING err Cannot travel to a node you are already connected to
+2011-08-21 15:18:22,364 hud:DEBUG hud_tick
+2011-08-21 15:18:27,890 hud:DEBUG hud_tick
+2011-08-21 15:19:06,766 hud:DEBUG hud_tick
+2011-08-21 15:19:08,309 corps:DEBUG state: idle
+2011-08-21 15:19:08,460 hud:DEBUG hud_tick
+2011-08-21 15:19:11,575 hud:DEBUG hud_tick
+2011-08-21 15:19:12,496 corps:DEBUG state: idle
+2011-08-21 15:19:12,611 corps:DEBUG state: hacking
+2011-08-21 15:19:12,611 corps:DEBUG state: hacking
+2011-08-21 15:19:12,611 nodes:DEBUG adding NPC Shadow Team to 246.152.17.81
+2011-08-21 15:19:12,611 corps:DEBUG state: idle
+2011-08-21 15:19:12,717 corps:DEBUG state: idle
+2011-08-21 15:19:12,822 corps:DEBUG state: hacking
+2011-08-21 15:19:12,849 hud:DEBUG hud_tick
+2011-08-21 15:19:13,927 corps:DEBUG state: hacking
+2011-08-21 15:19:13,928 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
+2011-08-21 15:19:13,928 corps:DEBUG state: scan
+2011-08-21 15:19:13,928 corps:DEBUG state: idle
+2011-08-21 15:19:14,052 corps:DEBUG state: hacking
+2011-08-21 15:19:14,052 corps:DEBUG state: hacking
+2011-08-21 15:19:14,052 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
+2011-08-21 15:19:14,052 corps:DEBUG state: hacking
+2011-08-21 15:19:14,053 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
+2011-08-21 15:19:14,082 hud:DEBUG hud_tick
+2011-08-21 15:19:14,835 corps:DEBUG state: scan
+2011-08-21 15:19:14,835 corps:DEBUG state: idle
+2011-08-21 15:19:14,967 corps:DEBUG state: hacking
+2011-08-21 15:19:14,967 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
+2011-08-21 15:19:14,967 corps:DEBUG state: scan
+2011-08-21 15:19:14,967 corps:DEBUG state: idle
+2011-08-21 15:19:15,073 corps:DEBUG state: hacking
+2011-08-21 15:19:15,073 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:19:15,073 corps:DEBUG state: scan
+2011-08-21 15:19:15,073 corps:DEBUG state: idle
+2011-08-21 15:19:15,180 corps:DEBUG state: hacking
+2011-08-21 15:19:15,180 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
+2011-08-21 15:19:15,209 hud:DEBUG hud_tick
+2011-08-21 15:19:17,887 hud:DEBUG hud_tick
+2011-08-21 15:19:18,644 corps:DEBUG state: hacking
+2011-08-21 15:19:18,644 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
+2011-08-21 15:19:18,644 corps:DEBUG state: scan
+2011-08-21 15:19:18,644 corps:DEBUG state: idle
+2011-08-21 15:19:18,759 corps:DEBUG state: scan
+2011-08-21 15:19:18,759 corps:DEBUG state: idle
+2011-08-21 15:19:18,865 corps:DEBUG state: hacking
+2011-08-21 15:19:18,865 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
+2011-08-21 15:19:18,865 corps:DEBUG state: scan
+2011-08-21 15:19:18,865 corps:DEBUG state: idle
+2011-08-21 15:19:19,002 hud:DEBUG hud_tick
+2011-08-21 15:19:20,755 corps:DEBUG state: scan
+2011-08-21 15:19:20,755 corps:DEBUG state: idle
+2011-08-21 15:19:20,878 corps:DEBUG state: hacking
+2011-08-21 15:19:20,878 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
+2011-08-21 15:19:20,878 corps:DEBUG state: hacking
+2011-08-21 15:19:20,878 corps:DEBUG state: scan
+2011-08-21 15:19:20,878 corps:DEBUG state: hacking
+2011-08-21 15:19:20,878 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
+2011-08-21 15:19:20,910 hud:DEBUG hud_tick
+2011-08-21 15:19:21,430 corps:DEBUG state: scan
+2011-08-21 15:19:21,430 corps:DEBUG state: idle
+2011-08-21 15:19:21,548 corps:DEBUG state: hacking
+2011-08-21 15:19:21,549 corps:DEBUG state: hacking
+2011-08-21 15:19:21,549 nodes:DEBUG adding NPC Shadow Team to 246.152.17.81
+2011-08-21 15:19:21,549 corps:DEBUG state: idle
+2011-08-21 15:19:21,654 corps:DEBUG state: hacking
+2011-08-21 15:19:21,654 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:19:21,654 corps:DEBUG state: scan
+2011-08-21 15:19:21,654 corps:DEBUG state: idle
+2011-08-21 15:19:21,759 corps:DEBUG state: hacking
+2011-08-21 15:19:21,759 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
+2011-08-21 15:19:21,788 hud:DEBUG hud_tick
+2011-08-21 15:19:23,390 hud:DEBUG hud_tick
+2011-08-21 15:19:25,029 commands:WARNING err You must have root access to change homes
+2011-08-21 15:19:25,085 hud:DEBUG hud_tick
+2011-08-21 15:19:29,707 hud:DEBUG hud_tick
+2011-08-21 15:19:31,721 corps:DEBUG state: hacking
+2011-08-21 15:19:31,721 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
+2011-08-21 15:19:31,721 corps:DEBUG state: scan
+2011-08-21 15:19:31,721 corps:DEBUG state: idle
+2011-08-21 15:19:31,838 corps:DEBUG state: hacking
+2011-08-21 15:19:31,838 nodes:DEBUG adding NPC Shadow Team to 247.169.5.232
+2011-08-21 15:19:31,838 corps:DEBUG state: scan
+2011-08-21 15:19:31,838 corps:DEBUG state: idle
+2011-08-21 15:19:31,944 corps:DEBUG state: hacking
+2011-08-21 15:19:31,944 corps:DEBUG state: scan
+2011-08-21 15:19:31,944 corps:DEBUG state: idle
+2011-08-21 15:19:32,049 corps:DEBUG state: hacking
+2011-08-21 15:19:32,049 nodes:DEBUG adding NPC Shadow Team to 166.124.168.64
+2011-08-21 15:19:32,073 hud:DEBUG hud_tick
+2011-08-21 15:19:36,730 game:WARNING fired event rehome and nobody cared
+2011-08-21 15:19:36,730 corps:DEBUG state: scan
+2011-08-21 15:19:36,730 corps:DEBUG state: idle
+2011-08-21 15:19:36,845 corps:DEBUG state: hacking
+2011-08-21 15:19:36,845 corps:DEBUG state: hacking
+2011-08-21 15:19:36,845 corps:DEBUG state: hacking
+2011-08-21 15:19:36,846 corps:DEBUG state: hacking
+2011-08-21 15:19:36,846 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
+2011-08-21 15:19:36,846 corps:DEBUG state: scan
+2011-08-21 15:19:36,846 corps:DEBUG state: idle
+2011-08-21 15:19:36,951 corps:DEBUG state: hacking
+2011-08-21 15:19:36,951 nodes:DEBUG adding NPC Shadow Team to 234.230.101.147
+2011-08-21 15:19:36,951 corps:DEBUG state: scan
+2011-08-21 15:19:36,951 corps:DEBUG state: idle
+2011-08-21 15:19:37,056 corps:DEBUG state: hacking
+2011-08-21 15:19:37,058 nodes:DEBUG adding NPC Shadow Team to 137.166.69.168
+2011-08-21 15:19:37,058 corps:DEBUG state: scan
+2011-08-21 15:19:37,058 corps:DEBUG state: idle
+2011-08-21 15:19:37,170 corps:DEBUG state: hacking
+2011-08-21 15:19:37,170 corps:DEBUG state: hacking
+2011-08-21 15:19:37,170 corps:DEBUG state: hacking
+2011-08-21 15:19:37,170 corps:DEBUG state: hacking
+2011-08-21 15:19:37,170 corps:DEBUG state: hacking
+2011-08-21 15:19:37,170 corps:DEBUG state: idle
+2011-08-21 15:19:37,275 corps:DEBUG state: hacking
+2011-08-21 15:19:37,275 corps:DEBUG state: hacking
+2011-08-21 15:19:37,275 corps:DEBUG state: hacking
+2011-08-21 15:19:37,275 corps:DEBUG state: hacking
+2011-08-21 15:19:37,275 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
+2011-08-21 15:19:37,275 corps:DEBUG state: scan
+2011-08-21 15:19:37,275 corps:DEBUG state: idle
+2011-08-21 15:19:37,378 corps:DEBUG state: hacking
+2011-08-21 15:19:37,378 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:19:37,378 corps:DEBUG state: scan
+2011-08-21 15:19:37,378 corps:DEBUG state: idle
+2011-08-21 15:19:37,483 corps:DEBUG state: hacking
+2011-08-21 15:19:37,483 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
+2011-08-21 15:19:37,483 corps:DEBUG state: scan
+2011-08-21 15:19:37,484 corps:DEBUG state: idle
+2011-08-21 15:19:37,588 corps:DEBUG state: hacking
+2011-08-21 15:19:37,588 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:19:37,588 corps:DEBUG state: scan
+2011-08-21 15:19:37,588 corps:DEBUG state: idle
+2011-08-21 15:19:37,694 corps:DEBUG state: hacking
+2011-08-21 15:19:37,694 nodes:DEBUG adding NPC Shadow Team to 157.251.217.88
+2011-08-21 15:19:37,694 corps:DEBUG state: scan
+2011-08-21 15:19:37,694 corps:DEBUG state: idle
+2011-08-21 15:19:37,799 corps:DEBUG state: hacking
+2011-08-21 15:19:37,799 nodes:DEBUG adding NPC Shadow Team to 6.100.129.88
+2011-08-21 15:19:37,799 corps:DEBUG state: scan
+2011-08-21 15:19:37,799 corps:DEBUG state: idle
+2011-08-21 15:19:37,904 corps:DEBUG state: hacking
+2011-08-21 15:19:37,904 nodes:DEBUG adding NPC Shadow Team to 47.139.174.93
+2011-08-21 15:19:37,904 corps:DEBUG state: scan
+2011-08-21 15:19:37,904 corps:DEBUG state: idle
+2011-08-21 15:19:38,007 corps:DEBUG state: hacking
+2011-08-21 15:19:38,007 corps:DEBUG state: hacking
+2011-08-21 15:19:38,007 corps:DEBUG state: hacking
+2011-08-21 15:19:38,007 corps:DEBUG state: hacking
+2011-08-21 15:19:38,007 corps:DEBUG state: hacking
+2011-08-21 15:19:38,007 corps:DEBUG state: idle
+2011-08-21 15:19:38,111 corps:DEBUG state: hacking
+2011-08-21 15:19:38,135 hud:DEBUG hud_tick
+2011-08-21 15:20:22,030 gameprompt:DEBUG took a ctrl-c
+2011-08-21 15:20:22,581 game:DEBUG shutting down
+2011-08-21 15:20:22,586 root:DEBUG Shutting down

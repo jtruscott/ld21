@@ -54,8 +54,8 @@ You can transfer to a different <WHITE>Home Node<LIGHTGREY> via
 the '<LIGHTGREEN>rehome<LIGHTGREY>' command, but the process is very time-consuming.
 
 Outside of your home node, you can <WHITE>Tunnel<LIGHTGREY> between connected nodes.
-The '<LIGHTGREEN>neighbors<LIGHTGREY>' command allows you to view
-a node's connections, and with the '<LIGHTGREEN>--scan<LIGHTGREY>' option,
+The '<LIGHTGREEN>neighbors<LIGHTGREY>' command allows you to view a node's connections.
+By using the '<LIGHTGREEN>--scan<LIGHTGREY>' option,
 you can probe those connections for statistics.
 
 Most nodes on the Net, but not all, allow for anonymous connections
@@ -81,6 +81,8 @@ Hermes Ikon
 Fairlight Caliban
 Transys Avalon""".splitlines()
 
+corp_names = ['Saeder-Krupp', 'Aztechnology', 'EVO Corp', 'Ares Macrotechnology',
+                    'Horizon Entertainment', 'NeoNET', 'Renraku Computer Systems', 'Wuxing Inc']
 company_names = [n.capitalize() for n in """zugia
 fakia
 xape

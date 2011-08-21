@@ -1,8 +1,10 @@
 import game
 import random
 import logging
+import terminal
 import constants as C
 class ForbiddenError(Exception): pass
+class AlreadyThere(Exception): pass
 
 log = logging.getLogger('nodes')
 
@@ -21,11 +23,14 @@ def random_ip(octet=None):
             break
     return ip_addr
     
+def dice(num):
+    return sum([(random.randint(1,6) >= 5) for _ in range(num)])
 
+corp_nodes = {}
 class Node:
     name_range = ["Test Node"]
     guest_allowed = True
-    def __init__(self, name, ip_addr, processor, storage, bandwidth, security, exposure):
+    def __init__(self, name, ip_addr, processor, storage, bandwidth, security, exposure, allegiance=None, allegiance_strength=0):
         self.name = name
         self.ip_addr = ip_addr
         self.processor = processor
@@ -34,9 +39,17 @@ class Node:
         self.security = security
         self.exposure = exposure
 
+        self.allegiance=allegiance
+        self.allegiance_strength = allegiance_strength
+        if allegiance:
+            corp_nodes.setdefault(allegiance, []).append(self)
+
+        self.interest = 0.0
+        self.npcs = []
         self.links = []
         self.connected_to = False
         self.been_hacked = False
+        self.alarmed = False
         self.stats_known = False
         ip_mapping[ip_addr] = self
 
@@ -50,26 +63,92 @@ class Node:
     def scan_stats(self):
         self.stats_known = True
 
+    def warn_root(self, msg):
+        if self.user == 'root':
+            terminal.add_line('<YELLOW>WARNING:<LIGHTGREY>%s (%s): %s' % (self.name, self.ip_addr, msg))
+
     def travel_to(self):
+        if self in game.state.tunnels:
+            raise AlreadyThere()
         self.connected_to = True
         self.stats_known = True
         game.state.current_node = self
         game.state.tunnels.append(self)
         game.state.aggregate_bandwidth = min(game.state.home_node.bandwidth, min([n.bandwidth for n in game.state.tunnels]))
+        if self.npcs:
+            for npc in self.npcs:
+                self.warn_root("'%s' is currently logged into this node" % npc.name)
+        
+        if self.alarmed:
+            self.warn_root("An alarm is currently active")
+
+    #---
+
+    def add_npc(self, npc):
+        if npc not in self.npcs:
+            self.npcs.append(npc)
+            log.debug("adding NPC %s to %s", npc.name, self.ip_addr)
+            self.warn_root("'%s' has logged into this node" % npc.name)
+
+    def remove_npc(self, npc):
+        if npc in self.npcs:
+            self.npcs.remove(npc)
+            self.warn_root("'%s' has logged out of this node" % npc.name)
+    
+    def start_npc_hack(self, npc):
+        self.warn_root("'%s' is trying to hack into this node!'" % npc.name)
+    
+    def npc_hack(self, npc, power):
+        self.warn_root("'%s' is hacking into this node!'" % npc.name)
+        npc_roll = dice(power)
+        defense_roll = dice(self.security * 2)
+        if npc_roll > defense_roll:
+            return True
+
+    def purge(self, npc, power):
+        terminal.add_line("<YELLOW>PURGED")
+
+    #---
+    def alarm(self):
+        self.alarmed = True
+
+    def npc_disarm(self, npc):
+        self.warn_root("Alarm disabled by %s" % npc.name)
+        self.alarmed = True
+
+    def disarm(self):
+        if self.user != 'root':
+            raise ForbiddenError()
+        self.alarmed = False
 
     def proxy(self):
         if not self.guest_allowed:
             raise ForbiddenError()
         self.user = 'guest'
+        self.interest += 0.1
         self.travel_to()
-
+    
     def hack(self):
-        self.been_hacked = True
+        if self.been_hacked:
+            self.interest += 0.1
+        else:
+            self.interest += 0.3
+            player_roll = dice(game.state.home_node.processor + game.player.hacking)
+            defense_roll = dice(self.security * 2)
+            detection_roll = dice(self.processor)
+            if detection_roll > game.player.stealth:
+                self.alarm()
+            if player_roll > defense_roll:
+                self.been_hacked = True
+            else:
+                raise ForbiddenError()
+
         self.user = 'root'
         self.travel_to()
     
     def disconnect(self):
         self.user = None
+        self.interest -= 0.1
         if self in game.state.tunnels:
             game.state.tunnels.remove(self)
 
@@ -98,7 +177,7 @@ class Node:
     
 
     @classmethod
-    def create(cls, name=None, octet=None):
+    def create(cls, name=None, octet=None, **kwargs):
         if name is None:
             name = random.choice(cls.name_range) + " %s" % random_ids.pop()
         return cls(
@@ -108,7 +187,8 @@ class Node:
             storage = random.choice(cls.storage_range),
             bandwidth = random.choice(cls.bandwidth_range),
             security = random.choice(cls.security_range),
-            exposure = cls.exposure_mod
+            exposure = cls.exposure_mod,
+            **kwargs
         )
 
 class Commlink(Node):
@@ -144,6 +224,7 @@ class Office(Node):
 class Server(Node):
     type_name='Server'
     name_range = ['Server']
+    guest_allowed = False
     processor_range = range(3,5)
     storage_range = range(2,6)
     security_range = range(3,5)
@@ -162,9 +243,9 @@ class Laboratory(Node):
     max_links = 1
           
 class Datacenter(Node):
+    guest_allowed = False
     type_name='Datacenter'
-    name_range = ['Saeder-Krupp', 'Aztechnology', 'EVO Corp', 'Ares Macrotechnology',
-                    'Horizon Entertainment', 'NeoNET', 'Renraku Computer Systems', 'Wuxing Inc']
+    name_range = C.corp_names
     processor_range = range(4,5)
     storage_range = range(4,6)
     security_range = range(4,6)
@@ -173,6 +254,7 @@ class Datacenter(Node):
     max_links = 20
 
 class Military(Node):
+    guest_allowed = False
     type_name='Military'
     name_range = ['NORAD', 'NATO', 'CSTO', 'EURASEC']
     processor_range = range(7,14)
@@ -183,6 +265,7 @@ class Military(Node):
     max_links = 5
 
 class MilitaryServer(Node):
+    guest_allowed = False
     type_name='MilServer'
     name_range = ['Military-Grade Server']
     processor_range = range(6,12)
@@ -200,7 +283,7 @@ def setup_nodes():
     log.setLevel(logging.WARN)
     def link(source, target):
         if target in source.links:
-            log.warn('relinking %s and %s',source.ip_addr,target.ip_addr)
+            log.debug('relinking %s and %s',source.ip_addr,target.ip_addr)
             return
         source.links.append(target)
         target.links.append(source)
@@ -254,7 +337,7 @@ def setup_nodes():
         octet = random.randint(0,255)
         nodes = []
         for i in range(random.randint(3,8)):
-            nodes.append(Datacenter.create(name="%s - %i" % (corp, i), octet=octet))
+            nodes.append(Datacenter.create(name="%s - %i" % (corp, i), octet=octet, allegiance=corp, allegiance_strength=1.0))
         #link the rings together
         for i in range(len(nodes)):
             link(nodes[i],nodes[i-1])        
@@ -287,10 +370,12 @@ def setup_nodes():
     for company in Office.name_range:
         log.debug('creating office: %s', company)
         octet = random.randint(0,255)
-        node = Office.create(name = company, octet=octet)
+        corp = random.choice(datacenters.keys())
+        strength = random.uniform(0.1, 0.5)
+        node = Office.create(name = company, octet=octet, allegiance=corp, allegiance_strength=strength)
         #Create PCs behind offices
         for i in range(random.randint(2,16)):
-            pc = PC.create(name = "%s - Workstation %i" % (company, i), octet=octet)
+            pc = PC.create(name = "%s - Workstation %i" % (company, i), octet=octet, allegiance=corp, allegiance_strength=strength)
             link(node, pc)
             #randomly link some office PCs to commlinks
             if random.randint(0,3) == 0:
@@ -317,7 +402,7 @@ def setup_nodes():
         
         if random.randint(0,2) == 0:
             #link to a datacenter
-            dc = random.choice(random.choice(datacenters.values()))
+            dc = random.choice(datacenters[corp])
             link(node, dc)
         offices[company] = node 
                 
@@ -341,7 +426,7 @@ def setup_nodes():
             server = MilitaryServer.create(name = "%s - Server %i" % (mil, i), octet=octet)
             link(server, node)
         militaries[mil] = node
-        #link them to some of the sparsest commlinks and pcs each
+        #link them to some of the sparsest commlinks, offices, and pcs each
         for i in range(random.randint(0,6)):
             commlink = sparse_commlinks.pop()[1]
             link(node, commlink)
@@ -356,7 +441,7 @@ def setup_nodes():
     start_node = random.choice(laboratories)
     #Staticize that lab's stats
     start_node.name = "Home Node"
-    start_node.user = "self"
+    start_node.user = "root"
     start_node.connected_to = True
     start_node.command_prompt = '%s@"%s"' % (start_node.user, start_node.name)
     start_node.processor = 3
@@ -371,3 +456,4 @@ def setup_nodes():
 
     game.state.aggregate_bandwidth = start_node.bandwidth
     game.state.current_node = game.state.home_node = start_node
+    log.setLevel(logging.DEBUG)
