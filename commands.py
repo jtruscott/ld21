@@ -127,7 +127,7 @@ class NeighborsCommand(Command):
                 if stat >= 2: color = '<LIGHTGREY>'
                 if stat >= 4: color = '<WHITE>'
                 if stat >= 6: color = '<GREEN>'
-            return color + str(stat).center(width)
+            return color + str(stat).center(width) + '<LIGHTGREY>'
 
         (options, args) = self.parse(args)
         base = game.state.current_node

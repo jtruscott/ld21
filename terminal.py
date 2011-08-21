@@ -71,8 +71,8 @@ def add_line(msg=' '):
 class Terminal:
     top = 3
     left = 1
-    width = (97 - 1)
-    height = 54
+    width = 97
+    height = 58
 
     scroll_offset = 0
     buffer = []

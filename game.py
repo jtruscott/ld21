@@ -28,6 +28,8 @@ def setup_state():
     state.mission = 1
     state.time = 2500
     state.running = True
+    state.hp = state.max_hp = 12
+    state.tunnels = []
 
 @on('shutdown')
 def shutdown():

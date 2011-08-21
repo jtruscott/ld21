@@ -50,6 +50,7 @@ class Node:
 
     def travel_to(self):
         game.state.current_node = self
+        game.state.tunnels.append(self)
 
     @classmethod
     def create(cls, name=None, octet=None):
@@ -124,7 +125,7 @@ class Datacenter(Node):
     security_range = range(4,6)
     bandwidth_range = range(4,7)
     exposure_mod = 3
-    max_links = 10
+    max_links = 20
 
 class Military(Node):
     type_name='Military'
@@ -151,14 +152,15 @@ def setup_nodes():
     '''
         Generate the world map.
     '''
+    log.setLevel(logging.WARN)
     def link(source, target):
         if target in source.links:
             log.warn('relinking %s and %s',source.ip_addr,target.ip_addr)
             return
         source.links.append(target)
         target.links.append(source)
-        source.exposure = source.exposure_mod + (len(source.links) / 3)
-        target.exposure = target.exposure_mod + (len(target.links) / 3)
+        source.exposure = source.exposure_mod + (len(source.links) / 2)
+        target.exposure = target.exposure_mod + (len(target.links) / 2)
     
     def full(node):
         return len(node.links) > node.max_links
@@ -170,7 +172,7 @@ def setup_nodes():
         commlinks[(x,y)] = Commlink.create()
     
     #Randomly Link commlinks together by physical proximity
-    for i in range(random.randint(400,600)):
+    for i in range(random.randint(800,1200)):
         log.debug('i: %i', i)
 
         x,y = random.choice(commlinks.keys())
@@ -246,29 +248,38 @@ def setup_nodes():
             pc = PC.create(name = "%s - Workstation %i" % (company, i), octet=octet)
             link(node, pc)
             #randomly link some office PCs to commlinks
-            if random.randint(0,5) == 0:
+            if random.randint(0,3) == 0:
                 commlink = random.choice(commlinks.values())
                 if not full(commlink):
                     log.debug('adding officepc-commlink connection from %s to %s',pc.ip_addr,commlink.ip_addr)
                     link(pc, commlink)
             #and some to home PCs
-            if random.randint(0,3) == 0:
+            if random.randint(0,2) == 0:
                 homepc = random.choice(homes)
                 if not full(homepc):
                     log.debug('adding pc-pc connection from %s to %s',pc.ip_addr,homepc.ip_addr)
                     link(pc, homepc)
         
         #create Servers behind larger offices
-        for j in range(i / 4):
+        for j in range(i / 3):
             server = Server.create(name = "%s - Server %i" % (company, j), octet = octet)
         
         #create Labs in the big ones
-        for k in range(i / 7):
+        for k in range(i / 6):
             lab = Laboratory.create(name = "%s - Test Lab %i" % (company, k), octet = octet)
             link(node, lab)
             laboratories.append(lab)
-
-        offices[company] = node            
+        
+        if random.randint(0,2) == 0:
+            #link to a datacenter
+            dc = random.choice(random.choice(datacenters.values()))
+            link(node, dc)
+        offices[company] = node 
+                
+    #Randomly link offices together
+    for i in range(150,200):
+        source,dest = random.choice(offices.values()), random.choice(offices.values())
+        link(source, dest)
 
     sparse_commlinks = sorted([(len(n.links),n) for n in commlinks.values()])
     sparse_homes = sorted([(len(n.links),n) for n in homes])
@@ -308,4 +319,9 @@ def setup_nodes():
     start_node.bandwidth = 3
     start_node.security = 2
 
-    game.state.current_node = start_node
+    #Ensure some connectivity
+    start_office = start_node.links[0]
+    link(start_office, random.choice(offices.values()))
+    link(start_office, random.choice(offices.values()))
+
+    game.state.current_node = game.state.home_node = start_node

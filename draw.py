@@ -83,9 +83,11 @@ def draw_box(left=None, top=None, width=None, height=None,  box=None, **kwargs):
     W.puttext(left, top, left+width-1, top+height-1, box.buf)
     return box
 
-def draw_box_text(box):
+def draw_box_text(box, text=None):
+    if text is None:
+        text = box.text
     W.textbackground(box.interior_background_color)
-    for line in box.text:
+    for line in text:
         W.textcolor(line.color)
         if line.right_justify:
             W.gotoxy(box.left + box.width - line.x - len(line.text), box.top + line.y)

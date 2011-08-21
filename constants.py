@@ -1,5 +1,5 @@
-height = 60
-width = 120
+height = 64
+width = 128
 
 #Box drawing characters for cp437
 class Characters:
@@ -26,7 +26,9 @@ class Characters:
         top = chr(0xD1)
         bottom = chr(0xCF)
     bullet = chr(0xF9)
-    
+    half_box = chr(0xDD)
+    box = chr(0xDB)
+
 commlink_names = """Meta Link
 CMT Clip
 Sony Emperor
