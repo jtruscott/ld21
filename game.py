@@ -38,9 +38,12 @@ def setup_state():
     state.running = True
     state.tunnels = []
     state.aggregate_bandwidth = 0
+    state.defended_node = None
 
     player.hp = player.max_hp = 12
     player.vulnerable = False
+    player.attack = 2
+    player.defense = 2
     player.hacking = 2
     player.stealth = 2
 

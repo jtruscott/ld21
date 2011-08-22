@@ -98,24 +98,30 @@ class ErrorCommand(InternalCommand):
 '''
 class LSCommand(Command):
     arguments = "[-la] [target_directory]"
-    description = "Scan the current node and display a list of files"
-    time = 5
-    def add_options(self, p):
-        p.add_option('-l', '--long', dest='long', action='store_true', help='Provide long listings')
-        p.add_option('-a', '--all', dest='all', action='store_true', help='Show even hidden files')
+    description = "Scan the current node for useful files. Some nodes have programs you can scavenge - the better the Storage, the more likely to have files, but also the longer to scan."
+    time = 15
+    time_variable = True
 
     def action(self, args, command_line):
         (options, args) = self.parse(args)
-        files = game.state.current_node.files
-        terminal.add_line('<LIGHTGREY>      User     Type     Security  Filename')
-        for file_name in files:
-            terminal.add_line('      <DARKGREY>%s%s%s<WHITE>%s' % (
-                'root'.ljust(9),
-                'dir'.ljust(9),
-                'none'.ljust(10),
-                file_name
-            ))
-        return self.time
+        terminal.add_line('Scanning for files...')
+        try:
+            time = game.state.current_node.scan_files()
+        except ForbiddenError:
+            terminal.add_line('<RED>ERROR:<LIGHTGREY> You must be root to scan for files!')
+        return time
+
+class ProgramsCommand(Command):
+    command = "programs"
+    description = "Display the list of your programs and ratings"
+    time = 0
+
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        terminal.add_line('<LIGHTGREY>PROGRAM   RATING')
+        for program_name in ['attack', 'defense', 'hacking', 'stealth']:
+            terminal.add_line("%s%i" % (program_name.capitalize().ljust(10), getattr(game.player,program_name)))
+        
 
 class DisarmCommand(Command):
     command = "disarm"
@@ -143,7 +149,7 @@ class NeighborsCommand(Command):
     time = 15
     time_variable = True
     def add_options(self, p):
-        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 15s per unscanned neighbor)')
+        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 5m per unscanned neighbor)')
     
     def action(self, args, command_line):
         def format_stat(stat, width=5):
@@ -163,7 +169,7 @@ class NeighborsCommand(Command):
             i += 1
             if options.stats and not neighbor.stats_known:
                 neighbor.scan_stats()
-                t += 15
+                t += 5
 
             if neighbor.stats_known:
                 processor, storage, bandwidth, security, exposure = (
@@ -285,7 +291,8 @@ class ExitCommand(Command):
     time = 0
     def action(self, args, command_line):
         #game.state.killer = "Shadow Team"; gameprompt.death_screen();
-        gameprompt.confirm_exit()
+        if gameprompt.confirm_exit():
+            game.fire('shutdown')
 
 class HelpCommand(Command):
     command = "help"
@@ -298,6 +305,57 @@ class HelpCommand(Command):
                 continue
             terminal.add_line("    <WHITE>%s" % cmd.command)
         terminal.add_line('use "command --help" for more info')
+
+class IPCommand(Command):
+    arguments = "tunnel_id/node_ip/home"
+    def action(self, args, command_line):
+        (options, args) = self.parse(args)
+        if not args or not len(args) == 1:
+            self.parser.exit(help=True)
+        arg = args[0]
+        if 'home' in arg:
+            node = game.state.home_node
+        elif arg in nodes.ip_mapping:
+            #ip
+            node = nodes.ip_mapping[arg]
+            if node not in game.state.tunnels and node != game.state.home_node:
+                self.parser.error(msg="The Node IP must be one that you are connected to")
+        elif '.' in arg:
+            self.parser.error("The IP address must be valid")
+        else:
+            try:
+                idx = int(arg) - 1
+            except:
+                self.parser.error(msg="A numeric tunnel ID is required")
+            if idx == -1:
+                node = game.state.home_node
+            else:
+                if idx >= len(game.state.tunnels):
+                    self.parser.error(msg="A numeric ID that maps to a tunnel entry is required")
+                node = game.state.tunnels[idx]
+        return self.do_action(node)
+
+class DefendCommand(IPCommand):
+    command = "defend"
+    description = "Defend a node against intruders logging in. You may only defend one node at a time."
+    time = 5
+    def do_action(self, node):
+        terminal.add_line("You are now defending <GREEN>%s (%s)<LIGHTGREY>" % (node.name, node.ip_addr))
+        game.state.defended_node = node
+        return self.time
+
+class AttackCommand(IPCommand):
+    command = "attack"
+    description = "Attack all intruders currently on a node."
+    time = 10
+    def do_action(self, node):
+        if not node.npcs:
+            terminal.add_line("There's nobody to attack!")
+        for npc in node.npcs:
+            npc.defend()
+        return self.time
+
+
 '''
     Parser bits
 '''
@@ -351,6 +409,9 @@ commands = dict(
     exit=ExitCommand(),
     help=HelpCommand(),
     disarm=DisarmCommand(),
+    defend=DefendCommand(),
+    attack=AttackCommand(),
+    programs=ProgramsCommand(),
 
     _unknown=UnknownCommand(),
     _error=ErrorCommand(),

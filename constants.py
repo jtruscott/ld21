@@ -83,6 +83,7 @@ Transys Avalon""".splitlines()
 
 corp_names = ['Saeder-Krupp', 'Aztechnology', 'EVO Corp', 'Ares Macrotechnology',
                     'Horizon Entertainment', 'NeoNET', 'Renraku Computer Systems', 'Wuxing Inc']
+nato_alphabet = 'Alpha Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliet Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee Zulu'.split()
 company_names = [n.capitalize() for n in """zugia
 fakia
 xape

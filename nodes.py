@@ -49,6 +49,7 @@ class Node:
         self.interest = 0.0
         self.npcs = []
         self.links = []
+        self.rolled_loot = False
         self.connected_to = False
         self.been_hacked = False
         self.alarmed = False
@@ -57,11 +58,32 @@ class Node:
 
         self.user = None
         self.command_prompt = '%s@"%s"' % (self.user, self.name)
-        self.files = [
-            'secure',
-            'messages',
-            'junk'
-            ]
+    
+    def scan_files(self):
+        if self.rolled_loot:
+            terminal.add_line("This node has already been scanned for files.")
+            return 0
+        if self.user != 'root':
+            raise ForbiddenError()
+        
+        self.rolled_loot = True
+        nothing = True
+        time = 0
+        for i in range(self.storage):
+            time += 15
+            if random.randint(0,2) == 0:
+                nothing = False
+                program = random.choice(['attack', 'defense', 'hacking', 'stealth'])
+                rating = max(1, random.randint(self.security - 2, self.security))
+                if getattr(game.player, program) < rating:
+                    terminal.add_line("<LIGHTGREEN>PROGRAM:<LIGHTGREY> you found a <WHITE>Rating %i %s<LIGHTGREY> program on the node!" % (rating, program))
+                    setattr(game.player, program, rating)
+                else:
+                    terminal.add_line("<LIGHTGREEN>PROGRAM:<LIGHTGREY> you find a Rating %i %s program, but it's of no use to you" % (rating, program))
+        if nothing:
+            terminal.add_line("You find nothing of interest!")
+        return time
+
     def scan_stats(self):
         self.stats_known = True
 
@@ -174,6 +196,8 @@ class Node:
         self.interest -= 0.1
         if self in game.state.tunnels:
             game.state.tunnels.remove(self)
+        if game.state.defended_node == self:
+            game.state.defended_node = game.state.home_node
 
     def back(self):
         if self == game.state.home_node or self not in game.state.tunnels:
@@ -478,7 +502,7 @@ def setup_nodes():
     link(start_office, random.choice(offices.values()))
 
     game.state.aggregate_bandwidth = start_node.bandwidth
-    game.state.current_node = game.state.home_node = start_node
+    game.state.current_node = game.state.defended_node = game.state.home_node = start_node
     log.setLevel(logging.DEBUG)
 
 @game.on('time_taken')
