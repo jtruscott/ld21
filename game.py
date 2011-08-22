@@ -43,7 +43,7 @@ def setup_state():
     player.hp = player.max_hp = 12
     player.vulnerable = False
     player.engaged = False
-    
+
     player.attack = 2
     player.defense = 2
     player.hacking = 2
@@ -68,5 +68,11 @@ def start():
     fire('setup')
     fire('clear')
     while state.running:
-        fire('tick')
-        fire('prompt')
+        try:
+            fire('tick')
+            fire('prompt')
+        except GameShutdown:
+            raise
+        except Exception, e:
+            terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION: %s' % repr(e))
+            continue

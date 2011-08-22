@@ -178,13 +178,16 @@ def npc_tick():
 @game.on('time_taken')
 def npc_time(t):
     #hardcoding time
-    faction = corps['bbeg']
-    for npc in faction.members:
-        npc.delay -= t
-        while npc.delay < 0:
-            npc.act()
-    faction.spawn_clock -= t
-    if faction.spawn_clock < 0:
-        faction.spawn_clock = 23 * 60 + random.randint(0, 120)
-        faction.competence += random.uniform(0.1, 0.2)
-        faction.spawn_member()
+    try:
+        faction = corps['bbeg']
+        for npc in faction.members:
+            npc.delay -= t
+            while npc.delay < 0:
+                npc.act()
+        faction.spawn_clock -= t
+        if faction.spawn_clock < 0:
+            faction.spawn_clock = 23 * 60 + random.randint(0, 120)
+            faction.competence += random.uniform(0.1, 0.2)
+            faction.spawn_member()
+    except Exception, e:
+        terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION (NPC): %s' % repr(e))

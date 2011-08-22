@@ -107,9 +107,9 @@ class LSCommand(Command):
         terminal.add_line('Scanning for files...')
         try:
             time = game.state.current_node.scan_files()
+            return time
         except ForbiddenError:
             terminal.add_line('<RED>ERROR:<LIGHTGREY> You must be root to scan for files!')
-        return time
 
 class ProgramsCommand(Command):
     command = "programs"
@@ -409,6 +409,10 @@ def parse_command(command_line, match):
         terminal.add_line(e.msg)
     except CommandError, e:
         commands['_error'].action(e.msg, command_line)
+    except game.GameShutdown:
+            raise
+    except Exception, e:
+        terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION: %s' % repr(e))
     else:
         game.take_time(time_taken)
 
