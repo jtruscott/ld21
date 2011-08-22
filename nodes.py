@@ -113,6 +113,10 @@ class Node:
             self.npcs.append(npc)
             log.debug("adding NPC %s to %s", npc.name, self.ip_addr)
             self.warn_root("'%s' has logged into this node" % npc.name)
+            if self.user and not game.player.engaged:
+                game.player.engaged = True
+                terminal.add_line("A foe has connected to a system you are on!")
+                terminal.add_line("If you don't know what to do, try running '<LIGHTGREEN>help combat<LIGHTGREY>' for advice")
 
     def remove_npc(self, npc):
         if npc in self.npcs:

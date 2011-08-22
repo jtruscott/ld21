@@ -42,6 +42,8 @@ def setup_state():
 
     player.hp = player.max_hp = 12
     player.vulnerable = False
+    player.engaged = False
+    
     player.attack = 2
     player.defense = 2
     player.hacking = 2

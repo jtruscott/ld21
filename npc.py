@@ -103,10 +103,13 @@ class NPC:
                 self.state = 'idle'
                 return
 
-            self.delay += 60
             if self.target.npc_hack(self, self.power):
+                self.delay += random.randint(15, 30)
                 self.go_to(self.target)
                 self.state = 'scan'
+                return
+            else:
+                self.delay += 60
                 return
 
         if self.state == 'scan':

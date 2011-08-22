@@ -228,7 +228,7 @@ class TunnelCommand(NeighborCommand):
 
 class HackCommand(NeighborCommand):
     command = "hack"
-    description = """Hack into an adjacent node as root"""
+    description = """Hack into an adjacent node and gain root access"""
     time = 60
     time_variable = True
     def do_action(self, neighbor):
@@ -236,7 +236,7 @@ class HackCommand(NeighborCommand):
         try:
             neighbor.hack()
         except ForbiddenError:
-            terminal.add_line('<RED>ERROR:<LIGHTGREY> Hack failed!')
+            terminal.add_line('<RED>ERROR:<LIGHTGREY> Hack failed! (try again?)')
         return self.time
 
 class BackCommand(Command):
@@ -299,12 +299,36 @@ class HelpCommand(Command):
     description = """Print some help text"""
     time = 0
     def action(self, args, command_line):
-        terminal.add_line("Commands:")
-        for cmd in gameprompt.commands:
-            if cmd.hide:
-                continue
-            terminal.add_line("    <WHITE>%s" % cmd.command)
-        terminal.add_line('use "command --help" for more info')
+        (options, args) = self.parse(args)
+        if 'combat' in args:
+            terminal.add_line("<WHITE>Combat Primer")
+            terminal.add_line("<WHITE>--------------------------------------")
+            terminal.add_line("<WHITE>Enemy<LIGHTGREY> players will try to hunt you down and destroy you.")
+            terminal.add_line("They will do this by searching for and hacking into nodes they find you present in")
+            terminal.add_line("and trying to <WHITE>Purge<LIGHTGREY> the node. If they purge your home node, you're")
+            terminal.add_line("gone. If they purge a node you are connected through, your connection will be severed")
+            terminal.add_line("and you will take damage from the shock.")
+            terminal.add_line()
+            terminal.add_line("You can, however, fight back. You can passively '<LIGHTGREEN>defend<LIGHTGREY>' a single node at")
+            terminal.add_line("any time. Defended nodes cannot be purged; instead, the adversary must fight you in")
+            terminal.add_line("<WHITE>Cybercombat<LIGHTGREY>. Additionally, you can '<LIGHTGREEN>attack<LIGHTGREY>' other users who are")
+            terminal.add_line("logged into nodes, damaging them. During Cybercombat, you will likely take damage as well -")
+            terminal.add_line("use the '<LIGHTGREEN>heal<LIGHTGREY>' command to repair yourself at the cost of time.")
+        elif 'programs' in args:
+            terminal.add_line("<WHITE>Programs")
+            terminal.add_line("<WHITE>--------------------------------------")
+            terminal.add_line("You will find various <WHITE>Programs<LIGHTGREY> during your exploration of the Net. There are")
+            terminal.add_line("four types of program: <WHITE>Attack, Defend, Hacking, and Stealth<LIGHTGREY>. Sometimes enemies")
+            terminal.add_line("defeated in cybercombat will have salveageable programs; you can also scan for them")
+            terminal.add_line("on nodes with the '<LIGHTGREEN>dir<LIGHTGREY>' command. Higher ratings have greater chances of success")
+        else:
+            terminal.add_line("<WHITE>Commands:")
+            terminal.add_line("<WHITE>--------------------------------------")
+            for cmd in gameprompt.commands:
+                if cmd.hide:
+                    continue
+                terminal.add_line("    <WHITE>%s" % cmd.command)
+            terminal.add_line("Use '<LIGHTGREEN>command --help<LIGHTGREY>' for more info, or see subtopics at '<LIGHTGREEN>help combat<LIGHTGREY>' and '<LIGHTGREEN>help programs<LIGHTGREY>'")
 
 class IPCommand(Command):
     arguments = "tunnel_id/node_ip/home"

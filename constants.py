@@ -149,4 +149,9 @@ fieldscanner
 excitedfiction
 brightdragon
 decisivepython
-olivinedeer""".splitlines()]
+olivinedeer
+ludum
+daresys
+initech
+skynet
+""".splitlines()]
