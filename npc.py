@@ -189,5 +189,7 @@ def npc_time(t):
             faction.spawn_clock = 23 * 60 + random.randint(0, 120)
             faction.competence += random.uniform(0.1, 0.2)
             faction.spawn_member()
+    except game.GameShutdown, e:
+        raise
     except Exception, e:
         terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION (NPC): %s' % repr(e))

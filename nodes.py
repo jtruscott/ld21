@@ -139,12 +139,14 @@ class Node:
         if self == game.state.home_node:
             game.player.lose_hp(game.player.hp, npc.name)
         else:
+            if self not in game.state.tunnels:
+                return
             idx = game.state.tunnels.index(self)
             lost = len(game.state.tunnels)- idx
             game.state.tunnels = game.state.tunnels[:idx]
             dumpshock = 1 + (lost/2)
             game.player.lose_hp(dumpshock, npc.name)
-            terminal.add_line("You suffer <LIGHTRED>%i<LIGHTGREY> condition damage from dumpshock." % (self.name, self.ip_addr, npc.name))
+            terminal.add_line("You suffer <LIGHTRED>%s<LIGHTGREY> condition damage from dumpshock." % (dumpshock, ))
             if idx == 0:
                 game.state.current_node = game.state.home_node
             else:

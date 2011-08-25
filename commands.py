@@ -149,7 +149,7 @@ class NeighborsCommand(Command):
     time = 15
     time_variable = True
     def add_options(self, p):
-        p.add_option('-s', '--stats', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 5m per unscanned neighbor)')
+        p.add_option('-s', '--stats', '--scan', dest='stats', action='store_true', help='Also probe each neighbor for node statistics (takes an additional 5m per unscanned neighbor)')
     
     def action(self, args, command_line):
         def format_stat(stat, width=5):
