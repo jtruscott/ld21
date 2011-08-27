@@ -224,7 +224,8 @@ def show_confirmation(line1=' ', line2=' '):
 def prompt_hbar():
     W.textcolor(W.WHITE)
     W.gotoxy(0, C.height-3)
-    print C.Characters.box_single.horiz * C.width
+    #print C.Characters.box_single.horiz * C.width
+    W.cputs(C.Characters.box_single.horiz * C.width)
 
 @game.on('prompt')
 def do_prompt():

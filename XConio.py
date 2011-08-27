@@ -35,19 +35,79 @@ W = curses.initscr()
 curses.start_color()
 
 import constants
+
+cc = constants.Characters
 bd = constants.Characters.box_double
+bs = constants.Characters.box_single
+sb = constants.Characters.scrollbar
+
 conversion = {
-    bd.horiz: curses.ACS_HLINE
+    #bd.horiz: ord('-'),
+    #bd.vert: ord('|'),
+    #bd.tl: ord('+'),
+    #bd.bl: ord('+'),
+    #bd.tr: ord('+'),
+    #bd.br: ord('+'),
+    #
+    #bd.cross: ord('+'),
+    #bd.teedown: ord('+'),
+    #bd.teeleft: ord('+'),
+    #bd.teeup: ord('+'),
+    #bd.teeright: ord('+'),
+    #
+    #bs.horiz: ord('-'),
+    #
+    #sb.vert: ord('|'),
+    #sb.cross: ord('+'),
+    #sb.top: ord('-'),
+    #sb.bottom: ord('-'),
+    #
+    #cc.bullet: ord('*'),
+    #cc.half_box: ord('@'),
+    #cc.box: ord('#'),
+    #
+    #179: ord('?'),
+    #185: ord('?'),
+    #186: ord('?'),
+    #187: ord('?'),
+    #188: ord('?'),
+    #200: ord('?'),
+    #201: ord('?'),
+    #202: ord('?'),
+    #203: ord('?'),
+    #204: ord('?'),
+    #205: ord('?'),
+    #209: ord('?'),
+    #221: ord('?'),
+
+    179: ord('|'),
+    185: ord('*'),
+    186: ord('+'),
+    187: ord('&'),
+    188: ord('\\'),
+    196: ord('='),
+    200: ord('|'),
+    201: ord('^'),
+    202: ord('/'),
+    203: ord('.'),
+    204: ord(','),
+    205: ord('-'),
+    209: ord('%'),
+    221: ord('#'),
 }
+
+def cursifychar(c):
+    i = ord(c)
+    j = conversion.get(i, i)
+    if j < 32: raise Exception("got %r (%d)" % (c, i))
+    if j > 126: raise Exception("got %r (%d)" % (c, i))
+    return j
+
+def cursifystr(s):
+    return ''.join([chr(cursifychar(c)) for c in s])
+
 def cursify(s):
-    ret = []
-    for c in s:
-        c = ord(c)
-        if c in conversion:
-            ret.append(conversion[c])
-        else:
-            ret.append(c)
-    return ret
+    return [cursifychar(c) for c in s]
 
 def textmode():
     textattr(LIGHTGRAY)
@@ -88,21 +148,21 @@ def puttext(left, top, right, bottom, buf):
     height = bottom - top +1
     buf_text = buf[::2]
     row = 0
-    log.debug('l: %s, t: %s, w: %s h: %s',left, top, width, height)
-    log.debug(buf_text)
+    log.debug('left=%r top=%r width=%r height=%r',left, top, width, height)
+    #log.debug(repr(buf_text))
     while True:
-        line = buf_text[row*width:(row+1)*width]
-        log.debug("%i; %s", row, cursify(line))
+        line = buf_text[row * width:(row + 1) * width]
+        line2 = cursify(line)
+        #log.debug("before(%i): %r", row, line)
+        log.debug("after(%i):  %r", row, line2)
         row += 1
-        line = cursify(line)
+        line = line2
         for i in range(len(line)):
             W.addch(top+row, left+i, line[i], curses.A_BOLD | curses.color_pair(10))
         if row >= height:
             break
-    curses.doupdate()
-    import time
-    time.sleep(1)
-    raise Exception()
+    W.noutrefresh()
+    curses.doupdate() #xyz
 
 def gotoxy(x, y):
     try:
@@ -112,8 +172,9 @@ def gotoxy(x, y):
         raise
 
 def cputs(msg):
-    W.addstr(msg)
-    curses.doupdate()
+    W.addstr(cursifystr(msg))
+    W.noutrefresh()
+    curses.doupdate() #xyz
 
 def getch():
     return (3,3)
