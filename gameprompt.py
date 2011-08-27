@@ -3,7 +3,12 @@ import draw
 import hud
 import constants as C
 import WConio as W
-from winsound import MessageBeep
+try:
+    from winsound import MessageBeep
+except:
+    def MessageBeep(*args):
+        pass
+        
 import string
 import logging
 import terminal

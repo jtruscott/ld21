@@ -11,6 +11,13 @@ hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.DEBUG)
 
+import sys
+import os
+if 'nt' not in sys.argv:
+    import XConio
+    import curses
+    import game
+    game.start = curses.wrapper(game.start)
 import WConio as W
 defaultcolor = W.gettextinfo()[4]
 

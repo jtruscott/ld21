@@ -15,8 +15,13 @@ class Text:
 def setup():
     #setup the screen
     log.debug('setting up screen')
-    import subprocess
-    subprocess.call(['mode', 'con', 'lines=%i' % (C.height+1), 'cols=%i' % C.width], shell=True)
+    import os
+    if 'nt' in os.name:
+        import subprocess
+        subprocess.call(['mode', 'con', 'lines=%i' % (C.height+1), 'cols=%i' % C.width], shell=True)
+    else:
+        W.resize(C.height+1,C.width)
+        
     W.settitle('On The Run! (LD#21: Escape)')
     W.textmode()
 

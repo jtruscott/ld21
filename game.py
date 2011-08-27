@@ -61,7 +61,7 @@ def take_time(time_taken):
     state.time += time_taken
     fire('time_taken', time_taken)
 
-def start():
+def start(*args):
     log.debug("Starting up")
     import draw, hud, gameprompt, terminal, nodes, commands, npc
 
@@ -74,5 +74,6 @@ def start():
         except GameShutdown:
             raise
         except Exception, e:
+            log.exception(e)
             terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION: %s' % repr(e))
             continue
