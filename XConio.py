@@ -8,34 +8,39 @@ sys.modules['WConio'] = sys.modules['XConio']
 
 import logging
 log = logging.getLogger('XConio')
-log.setLevel(logging.INFO)
+#log.setLevel(logging.DEBUG)
+import curses
+import constants
 #predefined constants
 
-BLACK = 0
-BLUE = 1
-GREEN = 2
-CYAN = 3
-RED = 4
-MAGENTA = 5
-BROWN = 6
-LIGHTGRAY = LIGHTGREY = 7
-DARKGRAY = DARKGREY = 8
-LIGHTBLUE = 9
-LIGHTGREEN = 10
-LIGHTCYAN = 11
-LIGHTRED = 12
-LIGHTMAGENTA = 13
-YELLOW = 14
-WHITE = 15
+#encode the bolditude in a bit curses coloring doesnt use, as a filthy hack
+HACK_BOLD = 0x8
+
+BLACK = curses.COLOR_BLACK
+BLUE = curses.COLOR_BLUE
+GREEN = curses.COLOR_GREEN
+CYAN = curses.COLOR_CYAN
+RED = curses.COLOR_RED
+MAGENTA = curses.COLOR_MAGENTA
+BROWN = curses.COLOR_YELLOW
+
+LIGHTGRAY = LIGHTGREY = curses.COLOR_WHITE
+DARKGRAY = DARKGREY = curses.COLOR_BLACK | HACK_BOLD
+LIGHTBLUE = curses.COLOR_BLUE | HACK_BOLD
+LIGHTGREEN = curses.COLOR_GREEN | HACK_BOLD
+LIGHTCYAN = curses.COLOR_CYAN | HACK_BOLD
+LIGHTRED = curses.COLOR_RED | HACK_BOLD
+LIGHTMAGENTA = curses.COLOR_MAGENTA | HACK_BOLD
+YELLOW = curses.COLOR_YELLOW | HACK_BOLD
+WHITE = curses.COLOR_WHITE | HACK_BOLD
+
 
 #functions
-import curses
 import itertools
 
 W = curses.initscr()
 curses.start_color()
 
-import constants
 
 cc = constants.Characters
 bd = constants.Characters.box_double
@@ -94,12 +99,44 @@ conversion = {
     204: ord(','),
     205: ord('-'),
     209: ord('%'),
+    216: ord('+'),
     221: ord('#'),
 }
 
 input_conversion = {
+    #newline
     '\n': '\r',
+    #backspace
+    chr(127): chr(8),
 }
+
+color_pairs = {
+}
+next_pair = 0
+def color_attr(chr):
+    global next_pair
+
+    if isinstance(chr, basestring):
+        byte = ord(chr)
+    else:
+        byte = chr
+
+    #note: we don't use bg color atm
+    _bg, fg = (byte & 0x00F0, byte & 0x000F)
+    if fg not in color_pairs:
+        log.debug("creating fg: %s", bin(fg))
+            
+        fgcolor, bold = (fg & 0x7, fg & 0x8)
+        color = fgcolor
+        next_pair += 1
+
+        curses.init_pair(next_pair, color, curses.COLOR_BLACK)
+        color_pair = curses.color_pair(next_pair)
+        if bold:
+            color_pair |= curses.A_BOLD
+        
+        color_pairs[fg] = color_pair
+    return color_pairs[fg]
 
 def cursifychar(c):
     i = ord(c)
@@ -119,9 +156,10 @@ def textmode():
     clrscr()
     setcursortype(1)
 
+CURR_COLOR = -1
 def textcolor(c):
-    bgcolor = gettextinfo()[4] & 0x00F0
-    textattr(c | bgcolor)
+    global CURR_COLOR
+    CURR_COLOR = color_attr(c)
 
 def textbackground(c):
     fgcolor = gettextinfo()[4] & 0x000F
@@ -152,18 +190,20 @@ def puttext(left, top, right, bottom, buf):
     width = right - left +1
     height = bottom - top +1
     buf_text = buf[::2]
+    buf_color = buf[1::2]
     row = 0
-    log.debug('left=%r top=%r width=%r height=%r',left, top, width, height)
+    #log.debug('left=%r top=%r width=%r height=%r',left, top, width, height)
     #log.debug(repr(buf_text))
     while True:
         line = buf_text[row * width:(row + 1) * width]
+        line_color = buf_color[row * width:(row + 1) * width]
         line2 = cursify(line)
         #log.debug("before(%i): %r", row, line)
-        log.debug("after(%i):  %r", row, line2)
+        #log.debug("after(%i):  %r", row, line2)
         row += 1
         line = line2
         for i in range(len(line)):
-            W.addch(top+row, left+i, line[i], curses.A_BOLD | curses.color_pair(10))
+            W.addch(top+row, left+i, line[i], color_attr(line_color[i]))
         if row >= height:
             break
     W.noutrefresh()
@@ -183,19 +223,52 @@ def wherey():
     return W.getyx()[0]
 
 def cputs(msg):
-    W.addstr(cursifystr(msg))
+    W.addstr(cursifystr(msg), CURR_COLOR)
     W.noutrefresh()
     curses.doupdate() #xyz
 
+__keydict = {
+    #this was an ord-to-name translation table but the details dont matter. so make it ansi-key to name.
+    'A': 'up',
+    'B': 'down',
+    'C': 'right',
+    'D': 'left',
+}
+LOOKING_FOR_SPECIAL = False
 def getch():
+    global LOOKING_FOR_SPECIAL
     key = W.getkey()
     log.info("key: '%s' (%i)", key, ord(key))
+    if LOOKING_FOR_SPECIAL:
+        LOOKING_FOR_SPECIAL = False
+        #parsing ansi is a goddamn pain
+        buf = [key]
+        while key in '0123456789;':
+            key = W.getkey()
+            log.info("key2: '%s' (%i)", key, ord(key))
+            buf.append(key)
+        key = ''.join(buf)
+        log.info("returning special key value: '%s'", key)
+        return (key, key)
+        return 
+    #normal key
+    if key in [chr(27)]:
+        #ansi escape gobbledeygook
+        #swallow a [
+        key = W.getkey()
+        if key != chr(91):
+            #wtf!?
+            return (-1, '')
+        
+        LOOKING_FOR_SPECIAL = True
+        return (0, '')
+
     if key in input_conversion:
         key = input_conversion[key]
         log.info("converted key: %s", key)
     if len(key) > 1:
         raise KeyboardInterrupt("key is %s" % key)
-    return (-1,key)
+    return (ord(key), key)
 
 def gettext(left, right, top, bottom):
     return ''
@@ -206,6 +279,6 @@ def resize(h, w):
         raise Exception("Your window is x=%s, y=%s. Minimum required is x=%s, y=%s" % (x, y, w, h))
     curses.resizeterm(h, w)
     W.resize(h, w)
-    curses.nocbreak()
-    curses.echo()
+    #curses.nocbreak()
+    #curses.echo()
     W.keypad(False)

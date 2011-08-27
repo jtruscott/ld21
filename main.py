@@ -13,7 +13,7 @@ logger.setLevel(logging.DEBUG)
 
 import sys
 import os
-if 'nt' not in sys.argv:
+if 'nt' not in os.name:
     import XConio
     import curses
     import game
