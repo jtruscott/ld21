@@ -76,4 +76,4 @@ def start(*args):
         except Exception, e:
             log.exception(e)
             terminal.add_line('<LIGHTRED>INTERNAL EXCEPTION: %s' % repr(e))
-            continue
+            raise#continue

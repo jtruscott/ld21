@@ -8,6 +8,7 @@ sys.modules['WConio'] = sys.modules['XConio']
 
 import logging
 log = logging.getLogger('XConio')
+log.setLevel(logging.INFO)
 #predefined constants
 
 BLACK = 0
@@ -96,6 +97,10 @@ conversion = {
     221: ord('#'),
 }
 
+input_conversion = {
+    '\n': '\r',
+}
+
 def cursifychar(c):
     i = ord(c)
     j = conversion.get(i, i)
@@ -171,13 +176,26 @@ def gotoxy(x, y):
         log.exception("x=%i,y=%i" % (x,y))
         raise
 
+def wherex():
+    return W.getyx()[1]
+
+def wherey():
+    return W.getyx()[0]
+
 def cputs(msg):
     W.addstr(cursifystr(msg))
     W.noutrefresh()
     curses.doupdate() #xyz
 
 def getch():
-    return (3,3)
+    key = W.getkey()
+    log.info("key: '%s' (%i)", key, ord(key))
+    if key in input_conversion:
+        key = input_conversion[key]
+        log.info("converted key: %s", key)
+    if len(key) > 1:
+        raise KeyboardInterrupt("key is %s" % key)
+    return (-1,key)
 
 def gettext(left, right, top, bottom):
     return ''
@@ -190,3 +208,4 @@ def resize(h, w):
     W.resize(h, w)
     curses.nocbreak()
     curses.echo()
+    W.keypad(False)
